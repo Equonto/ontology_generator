@@ -28,9 +28,9 @@ Before you begin, ensure you have a Python virtual environment (venv) set up and
 
 3. **Install Dependencies**
 
-With your virtual environment activated, install the project dependencies using: ```pip install -r requirements.txt```
+    With your virtual environment activated, install the project dependencies using: ```pip install -r requirements.txt```
 
-o update your requirements.txt with the latest packages, you can create a snapshot of the installed packages using: ```pip3 freeze > requirements.txt```
+    To update your requirements.txt with the latest packages, you can create a snapshot of the installed packages using: ```pip3 freeze > requirements.txt```
 
 ### Generating an Ontology
 
