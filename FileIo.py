@@ -21,3 +21,6 @@ def read_json_file(file_path):
     with open(file_path, "r") as file:
         json_str = file.read()
     return json.loads(json_str)
+
+def folder_exists(folder_location):
+    return os.path.exists(folder_location)

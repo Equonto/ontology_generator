@@ -1,10 +1,10 @@
 import subprocess
 import os
 
-def run_lutra_process(ontology_filename, ontology_shortname):
+def run_lutra_process(ontology_filename, ontology_shortname, location):
 
-    filenames = os.listdir("generator/config/templates/bottr/"+ontology_shortname)
-    full_filenames = ["templates/bottr/"+ontology_shortname+"/"+filename for filename in filenames]
+    filenames = os.listdir("config/"+location+"/templates/bottr/"+ontology_shortname)
+    full_filenames = [location+"templates/bottr/"+ontology_shortname+"/"+filename for filename in filenames]
     filenames_string = ' '.join(full_filenames)
 
     outputType = "wottr"
@@ -27,11 +27,11 @@ def run_lutra_process(ontology_filename, ontology_shortname):
         , stdout=subprocess.PIPE
         , stderr=subprocess.PIPE
         , shell=True
-        , cwd="generator/config")
+        , cwd="config/"+location)
         
     print(result.stderr.decode("utf-8"))
     
-def run_docttr():
+def run_docttr(location):
 
     command = "java -jar lutra.jar -m docttrLibrary -o output/docttr.html -L stottr -l templates/stottr --fetchMissing"
 
@@ -39,6 +39,6 @@ def run_docttr():
         , stdout=subprocess.PIPE
         , stderr=subprocess.PIPE
         , shell=True
-        , cwd="generator/config")
+        , cwd="config/"+location)
     
     print(result.stderr.decode("utf-8"))

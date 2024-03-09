@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-def run_widoco(ontology_filename, ontology_shortname):
+def run_widoco(ontology_filename, ontology_shortname, location):
 
     command = """
         java -jar widoco-1.4.20-jar-with-dependencies_JDK-17.jar \\
@@ -26,6 +26,6 @@ def run_widoco(ontology_filename, ontology_shortname):
         , stdout=subprocess.PIPE
         , stderr=subprocess.PIPE
         , shell=True
-        , cwd="generator/config")
+        , cwd="config/"+location)
         
     print(result.stderr.decode("utf-8"))
