@@ -24,3 +24,24 @@ def read_json_file(file_path):
 
 def folder_exists(folder_location):
     return os.path.exists(folder_location)
+
+def delete_file(file_path):
+    os.remove(file_path)
+
+def list_files_in_directory(directory):
+    return os.listdir(directory)
+
+def get_ontology_filename(ontology_json, extension="ttl"):
+    version_number = ontology_json['ontology_version'].replace(".", "_")
+    filename = ontology_json['ontology_filename']
+    return f"{filename}_v{version_number}.{extension}"
+
+def get_ontology_shortname(ontology_json):
+    return ontology_json['ontology_shortname']
+
+def get_ontology_settings(location):
+    settings = read_json_file("config/"+location+"/settings.json")
+    return settings
+
+def directory_exists(directory):
+    return os.path.exists(directory)

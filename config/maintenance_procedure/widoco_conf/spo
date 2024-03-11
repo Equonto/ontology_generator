@@ -2,9 +2,9 @@
 abstract=The OMPD Static Procedure Ontology captures static information found in most insdutrial maintenance procedures.
 ontologyTitle=Ontology for Maintenance Procedure Documentation (OMPD) Static Procedure Ontology
 ontologyPrefix=[Ontology NS Prefix]
-ontologyNamespaceURI=http://spec.equonto.com/ontology/maintenance-procedure/static-procedure-ontology
+ontologyNamespaceURI=http://spec.equonto.org/ontology/maintenance-procedure/static-procedure-ontology
 ontologyName=Maintenance Procedures - Static Procedure Ontology
-thisVersionURI=http://spec.equonto.com/ontology/202312/maintenance-procedure/static-procedure-ontology
+thisVersionURI=http://spec.equonto.org/ontology/202312/maintenance-procedure/static-procedure-ontology
 latestVersionURI=
 previousVersionURI=
 dateCreated=

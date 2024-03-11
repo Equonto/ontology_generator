@@ -4,7 +4,7 @@ import os
 def run_lutra_process(ontology_filename, ontology_shortname, location):
 
     filenames = os.listdir("config/"+location+"/templates/bottr/"+ontology_shortname)
-    full_filenames = [location+"templates/bottr/"+ontology_shortname+"/"+filename for filename in filenames]
+    full_filenames = ["templates/bottr/"+ontology_shortname+"/"+filename for filename in filenames]
     filenames_string = ' '.join(full_filenames)
 
     outputType = "wottr"
@@ -27,7 +27,7 @@ def run_lutra_process(ontology_filename, ontology_shortname, location):
         , stdout=subprocess.PIPE
         , stderr=subprocess.PIPE
         , shell=True
-        , cwd="config/"+location)
+        , cwd="config/"+location+"/")
         
     print(result.stderr.decode("utf-8"))
     
@@ -39,6 +39,6 @@ def run_docttr(location):
         , stdout=subprocess.PIPE
         , stderr=subprocess.PIPE
         , shell=True
-        , cwd="config/"+location)
+        , cwd="config/"+location+"/")
     
     print(result.stderr.decode("utf-8"))

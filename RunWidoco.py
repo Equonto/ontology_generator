@@ -26,6 +26,6 @@ def run_widoco(ontology_filename, ontology_shortname, location):
         , stdout=subprocess.PIPE
         , stderr=subprocess.PIPE
         , shell=True
-        , cwd="config/"+location)
+        , cwd="config/"+location+"/")
         
     print(result.stderr.decode("utf-8"))

@@ -2,9 +2,9 @@
 abstract=The OMPD Conditional Mainteance Task Ontology captures conditial task information (i.e. in response to some limit or functional failure) present in some industrial maintenance procedures.
 ontologyTitle=Ontology for Maintenance Procedure Documentation (OMPD) Conditional Maintenance Task Ontology
 ontologyPrefix=[Ontology NS Prefix]
-ontologyNamespaceURI=http://spec.equonto.com/ontology/maintenance-procedure/conditional-maintenance-task-ontology
+ontologyNamespaceURI=http://spec.equonto.org/ontology/maintenance-procedure/conditional-maintenance-task-ontology
 ontologyName=Maintenance Procedures - Conditional Maintenance Task Ontology
-thisVersionURI=http://spec.equonto.com/ontology/202312/maintenance-procedure/conditional-maintenance-task-ontology
+thisVersionURI=http://spec.equonto.org/ontology/202312/maintenance-procedure/conditional-maintenance-task-ontology
 latestVersionURI=
 previousVersionURI=
 dateCreated=
