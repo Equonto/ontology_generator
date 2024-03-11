@@ -66,11 +66,11 @@
 
 _:b0    owl:intersectionOf  _:b1 .
 
-_:b1    rdf:rest   _:b2 ;
-        rdf:first  lis:InformationObject .
-
 _:b2    rdf:rest   rdf:nil ;
         rdf:first  _:b3 .
+
+_:b1    rdf:rest   _:b2 ;
+        rdf:first  lis:InformationObject .
 
 _:b0    rdf:type  owl:Class ;
         rdf:type  owl:Class .
@@ -197,11 +197,11 @@ proc-cmto:functionalFailureRealisedIn
         rdf:type                owl:ObjectProperty ;
         owl:propertyChainAxiom  _:b10 .
 
-_:b10   rdf:rest   _:b11 ;
-        rdf:first  proc-cmto:functionalFailureRealizedIn .
-
 _:b11   rdf:rest   rdf:nil ;
         rdf:first  proc-cmto:triggers .
+
+_:b10   rdf:rest   _:b11 ;
+        rdf:first  proc-cmto:functionalFailureRealizedIn .
 
 proc-cmto:functionalFailureRealisedIn
         rdf:type  owl:ObjectProperty .

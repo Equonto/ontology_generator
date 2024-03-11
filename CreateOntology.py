@@ -2,7 +2,7 @@ from FileIo import *
 from RunLutra import run_lutra_process, run_docttr
 from RunWidoco import run_widoco
 from RdfLibUtilities import convert_ontology_filetypes
-from CreateSWRL import add_swrl
+from AddSwrl import create_swrl
 
 class CreateOntology:
 
@@ -22,8 +22,7 @@ class CreateOntology:
     def generate_ontologies(self):
         for ontology in self.ontologies:
             run_lutra_process(ontology["ontology_filename"], ontology["ontology_shortname"], self.location)
-        convert_ontology_filetypes(self.location)
-        add_swrl(self.location)
+        create_swrl(self.location)
 
     def generate_documentation(self):
         run_docttr(self.location)

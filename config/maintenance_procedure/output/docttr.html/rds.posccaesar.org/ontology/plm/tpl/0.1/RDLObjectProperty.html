@@ -1,0 +1,2026 @@
+<!DOCTYPE html><html><head lang="en"><meta charset="UTF-8"><style>@import url("https://ottr.xyz/inc/style.css");body{padding-bottom:50px}div{max-width:1200px}p,li,pre,svg{max-width:100%}code,p code,li code{background-color:transparent}table,tr,td{border:0;font-size:100%;vertical-align:top}th{border:0;border-bottom:1px solid #ccc}summary{font-family:arial,sans-serif;font-size:100%}b.heading{color:#333;font-family:arial,sans-serif;font-size:100%;margin-bottom:3px;margin-top:3px}.info{color:#888;font-size:9pt;max-width:800px;padding:1px}span.colourbox{border:1px #ccc solid;display:inline-block;height:12px;margin:0 10px;width:12px}.error{color:red}.button{cursor:pointer}img.logo{float:right;margin:20px}details>details{margin-left:25px}details span.leaf{display:list-item;list-style-type:circle;margin-left:40px}details ul{margin-bottom:0;margin-top:0}p.treeviewbuttons{color:#555;font-family:arial,sans-serif;font-size:10pt}p.treeviewbuttons .button{margin-right:5px}div#ToC{background-color:rgba(255,255,255,0.7);font-family:arial,sans-serif;font-size:80%;padding:10px;position:fixed;right:0;top:0}div#ToC ul{margin:0;margin-top:3px;padding-left:10px}div#ToC ul li{font-family:arial,sans-serif}div#metadata dt.deprecated,div#metadata dt.inv-hasPreviousVersion{border-left:10px solid red;padding-left:5px}</style><title>Template: plmtpl:RDLObjectProperty</title></head><body><span id="top"></span><div id="ToC"><b>Contents</b><ul><li><a href="#top">top</a></li><li><a href="#Parameters">Parameters</a></li><li><a href="#Pattern">Pattern</a></li><li><a href="#Dependencies">Dependencies</a></li><li><a href="#Metrics">Metrics</a></li><li><a href="#Serialisations">Serialisations</a></li><li><a href="#Prefixes">Prefixes</a></li></ul></div><h1>Template: <code>plmtpl:RDLObjectProperty</code></h1><div><div><p>URI: <code><a href="http://rds.posccaesar.org/ontology/plm/tpl/0.1/RDLObjectProperty">http://rds.posccaesar.org/ontology/plm/tpl/0.1/RDLObjectProperty</a></code></p></div><div id="metadata"></div><div id="parameters"><h2 id="Parameters">Parameters</h2><p class="info">&#128712; The parameters defined by the signature are listed here. Unfortunately parameter names are not informative; fixing it is a planned future feature. An optional parameter will accept the value ottr:none as an argument. A parameter which allows blanks will accept a blank node as argument value. </p><table><tr><th>Index</th><th>Name</th><th>Type</th><th>Optional</th><th>Blanks allowed</th><th>Default value</th></tr><tr><td>1</td><td>RDLOP</td><td>owl:ObjectProperty</td><td>no</td><td>no</td><td>no</td></tr><tr><td>2</td><td>superprop</td><td>List&lt;owl:ObjectProperty&gt;</td><td>yes</td><td>yes</td><td>no</td></tr><tr><td>3</td><td>label</td><td>xsd:string</td><td>yes</td><td>no</td><td>no</td></tr><tr><td>4</td><td>description</td><td>xsd:string</td><td>yes</td><td>no</td><td>no</td></tr><tr><td>5</td><td>seeAlso</td><td>List&lt;rdfs:Resource&gt;</td><td>yes</td><td>yes</td><td>no</td></tr><tr><td>6</td><td>definedBy</td><td>ottr:IRI</td><td>yes</td><td>yes</td><td>no</td></tr><tr><td>7</td><td>domain</td><td>owl:Class</td><td>yes</td><td>yes</td><td>no</td></tr><tr><td>8</td><td>range</td><td>owl:Class</td><td>yes</td><td>yes</td><td>no</td></tr><tr><td>9</td><td>propertyType</td><td>NEList&lt;ottr:IRI&gt;</td><td>yes</td><td>yes</td><td>no</td></tr><tr><td>10</td><td>inverse</td><td>owl:ObjectProperty</td><td>yes</td><td>yes</td><td>no</td></tr></table></div><div id="pattern"><h2 id="Pattern">Pattern</h2><h4>stOTTR</h4><p class="info">&#128712; stOTTR serialisation of the template without annotation instances.</p><pre>plmtpl:RDLObjectProperty[
+    ! owl:ObjectProperty ?RDLOP,
+    ? List&lt;owl:ObjectProperty&gt; ?superprop,
+    !? xsd:string ?label,
+    !? xsd:string ?description,
+    ? List&lt;rdfs:Resource&gt; ?seeAlso,
+    ? ottr:IRI ?definedBy,
+    ? owl:Class ?domain,
+    ? owl:Class ?range,
+    ? NEList&lt;ottr:IRI&gt; ?propertyType,
+    ? owl:ObjectProperty ?inverse
+] :: {
+    ottr:Triple(?RDLOP, owl:inverseOf, ?inverse),
+    ottr:Triple(?RDLOP, rdfs:domain, ?domain),
+    ottr:Triple(?RDLOP, rdfs:range, ?range),
+    cross | o-owl-ax:SubPropertyOf(?RDLOP, ++?superprop),
+    o-owl-dec:ObjectProperty(?RDLOP, ?label, ?description, ?seeAlso, ?definedBy),
+    cross | o-rdf:Type(?RDLOP, ++?propertyType)
+} .</pre><p class="info">&#128712; The pattern of the template is illustrated by expanding a generated instance. Below the generated instance is shown in different serialisations, and its expansion is presented in different formats.</p><h4>Generated instance</h4><b class="heading">stOTTR</b><pre>plmtpl:RDLObjectProperty(x:argument1, (x:argument2-1, x:argument2-2), _:argument3, _:argument4, (_:argument5-1, _:argument5-2), x:argument6, x:argument7, x:argument8, (x:argument9-1, x:argument9-2), x:argument10)</pre><b class="heading">RDF/wOTTR</b><pre>
+[ ottr:of      plmtpl:RDLObjectProperty ;
+  ottr:values  ( x:argument1 ( x:argument2-1 x:argument2-2 )
+                 [] 
+                 [] 
+                 ( [] 
+                   [] 
+                 )
+                 x:argument6 x:argument7 x:argument8 ( x:argument9-1 x:argument9-2 ) x:argument10
+               )
+] .</pre><h4>Visualisation of expanded RDF graph</h4><p class="info">&#128712; Each resource node is linked to its IRI. Type relationships are not visualised, rather each node contains its type.</p><div><details open="open"><summary>Hierarchical horizontal layout (dot)</summary><div><svg width="594px" height="460px"
+ viewBox="0.00 0.00 594.00 460.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 456.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-456 590,-456 590,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;1&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;2&lt;/font&gt;&lt;/b&gt;, owl:ObjectProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="335,-242.5 0,-242.5 0,-206.5 335,-206.5 335,-242.5"/>
+<text text-anchor="start" x="8" y="-228.3" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;1</text>
+<text text-anchor="start" x="102" y="-228.3" font-family="Arial" font-style="italic" font-size="14.00">, </text>
+<text text-anchor="start" x="110" y="-228.3" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;2</text>
+<text text-anchor="start" x="204" y="-228.3" font-family="Arial" font-style="italic" font-size="14.00">, owl:ObjectProperty</text>
+<text text-anchor="start" x="126.5" y="-214.3" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="node2" class="node">
+<title>http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node2"><a xlink:href="http://example.ottr.xyz/argument/argument8" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument8&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="580,-452 482,-452 482,-429 580,-429 580,-452"/>
+<text text-anchor="start" x="490" y="-437.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument8</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge10" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M180.65,-242.66C206.57,-279.84 271.26,-364.59 348,-405.5 386.15,-425.84 434.39,-434.47 471.62,-438.08"/>
+<polygon fill="black" stroke="black" points="471.55,-441.59 481.81,-438.97 472.16,-434.61 471.55,-441.59"/>
+<text text-anchor="start" x="375" y="-440.3" font-family="Arial" font-size="14.00">rdfs:range</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument7" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument7&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="580,-404 482,-404 482,-381 580,-381 580,-404"/>
+<text text-anchor="start" x="490" y="-389.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument7</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge9" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M187.79,-242.58C218.96,-270.77 283.44,-324.89 348,-353.5 387.43,-370.97 435.21,-380.83 471.92,-386.26"/>
+<polygon fill="black" stroke="black" points="471.57,-389.74 481.96,-387.67 472.55,-382.81 471.57,-389.74"/>
+<text text-anchor="start" x="369.5" y="-388.3" font-family="Arial" font-size="14.00">rdfs:domain</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="node4" class="node">
+<title>http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node4"><a xlink:href="http://example.ottr.xyz/argument/argument10" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument10&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="584,-356 478,-356 478,-333 584,-333 584,-356"/>
+<text text-anchor="start" x="486" y="-341.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument10</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge8" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M202.71,-242.59C238.19,-260.71 295.71,-288.32 348,-305.5 386.98,-318.31 432.06,-328.01 467.61,-334.53"/>
+<polygon fill="black" stroke="black" points="467.38,-338.04 477.84,-336.36 468.61,-331.15 467.38,-338.04"/>
+<text text-anchor="start" x="364" y="-336.3" font-family="Arial" font-size="14.00">owl:inverseOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node5" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node5"><a xlink:href="http://example.ottr.xyz/argument/argument2-1" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="586,-308 476,-308 476,-285 586,-285 586,-308"/>
+<text text-anchor="start" x="484" y="-293.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge7" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M246.09,-242.59C277.64,-249.74 314.5,-257.83 348,-264.5 386.95,-272.26 430.78,-280 465.67,-285.92"/>
+<polygon fill="black" stroke="black" points="465.28,-289.4 475.73,-287.62 466.45,-282.5 465.28,-289.4"/>
+<text text-anchor="start" x="348" y="-288.3" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node6" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node6"><a xlink:href="http://example.ottr.xyz/argument/argument2-2" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="586,-260 476,-260 476,-237 586,-237 586,-260"/>
+<text text-anchor="start" x="484" y="-245.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge6" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M335.23,-235.57C381.6,-238.65 429.21,-241.81 465.75,-244.23"/>
+<polygon fill="black" stroke="black" points="465.55,-247.73 475.76,-244.9 466.01,-240.74 465.55,-247.73"/>
+<text text-anchor="start" x="348" y="-247.3" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node7" class="node">
+<title>argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="542,-211.5 520,-211.5 520,-189.5 542,-189.5 542,-211.5"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge5" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M302.14,-206.46C317.58,-204.87 333.12,-203.49 348,-202.5 406.38,-198.61 475.53,-199.3 509.32,-199.98"/>
+<polygon fill="black" stroke="black" points="509.65,-203.49 519.72,-200.21 509.8,-196.49 509.65,-203.49"/>
+<text text-anchor="start" x="363.5" y="-206.3" font-family="Arial" font-size="14.00">rdfs:comment</text>
+</g>
+<!-- argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node8" class="node">
+<title>argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="542,-164.5 520,-164.5 520,-142.5 542,-142.5 542,-164.5"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge4" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M229.54,-206.49C264.06,-196.82 308.17,-185.31 348,-177.5 406.16,-166.1 475.87,-158.6 509.65,-155.35"/>
+<polygon fill="black" stroke="black" points="510.04,-158.82 519.66,-154.41 509.38,-151.86 510.04,-158.82"/>
+<text text-anchor="start" x="368" y="-181.3" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node9" class="node">
+<title>argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="542,-117.5 520,-117.5 520,-95.5 542,-95.5 542,-117.5"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge3" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M200.2,-206.33C235.28,-187 294,-156.85 348,-139.5 405.13,-121.15 475.84,-112 509.85,-108.4"/>
+<polygon fill="black" stroke="black" points="510.31,-111.88 519.91,-107.39 509.61,-104.91 510.31,-111.88"/>
+<text text-anchor="start" x="368" y="-143.3" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node10" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="542,-70.5 520,-70.5 520,-48.5 542,-48.5 542,-70.5"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M187.14,-206.39C217.91,-177.6 282.47,-121.79 348,-93.5 403.15,-69.69 474.76,-62.52 509.42,-60.39"/>
+<polygon fill="black" stroke="black" points="509.88,-63.87 519.68,-59.84 509.51,-56.88 509.88,-63.87"/>
+<text text-anchor="start" x="378" y="-97.3" font-family="Arial" font-size="14.00">rdfs:label</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="node11" class="node">
+<title>http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node11"><a xlink:href="http://example.ottr.xyz/argument/argument6" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument6&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="580,-23 482,-23 482,0 580,0 580,-23"/>
+<text text-anchor="start" x="490" y="-8.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument6</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M180.59,-206.24C206.42,-168.87 270.94,-83.8 348,-43.5 386.2,-23.52 434.44,-15.7 471.66,-12.78"/>
+<polygon fill="black" stroke="black" points="472.11,-16.26 481.84,-12.08 471.63,-9.27 472.11,-16.26"/>
+<text text-anchor="start" x="356" y="-47.3" font-family="Arial" font-size="14.00">rdfs:isDefinedBy</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Hierarchical vertical layout (dot)</summary><div><svg width="1204px" height="108px"
+ viewBox="0.00 0.00 1204.00 108.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 104.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-104 1200,-104 1200,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;1&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;2&lt;/font&gt;&lt;/b&gt;, owl:ObjectProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="806.5,-100 471.5,-100 471.5,-64 806.5,-64 806.5,-100"/>
+<text text-anchor="start" x="479.5" y="-85.8" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;1</text>
+<text text-anchor="start" x="573.5" y="-85.8" font-family="Arial" font-style="italic" font-size="14.00">, </text>
+<text text-anchor="start" x="581.5" y="-85.8" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;2</text>
+<text text-anchor="start" x="675.5" y="-85.8" font-family="Arial" font-style="italic" font-size="14.00">, owl:ObjectProperty</text>
+<text text-anchor="start" x="598" y="-71.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="node2" class="node">
+<title>http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node2"><a xlink:href="http://example.ottr.xyz/argument/argument8" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument8&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="98,-23 0,-23 0,0 98,0 98,-23"/>
+<text text-anchor="start" x="8" y="-8.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument8</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge10" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M471.37,-76.81C352.06,-72.7 202.6,-64.96 142,-51 119.87,-45.9 96.25,-36.06 78.35,-27.61"/>
+<polygon fill="black" stroke="black" points="79.56,-24.3 69.04,-23.09 76.51,-30.6 79.56,-24.3"/>
+<text text-anchor="start" x="142" y="-39.8" font-family="Arial" font-size="14.00">rdfs:range</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument7" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument7&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="221,-23 123,-23 123,0 221,0 221,-23"/>
+<text text-anchor="start" x="131" y="-8.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument7</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge9" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M471.45,-75.28C383.37,-70.89 285.12,-63.4 243,-51 226.17,-46.05 208.83,-36.74 195.5,-28.51"/>
+<polygon fill="black" stroke="black" points="197.28,-25.5 186.97,-23.06 193.51,-31.4 197.28,-25.5"/>
+<text text-anchor="start" x="243" y="-39.8" font-family="Arial" font-size="14.00">rdfs:domain</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="node4" class="node">
+<title>http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node4"><a xlink:href="http://example.ottr.xyz/argument/argument10" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument10&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="352,-23 246,-23 246,0 352,0 352,-23"/>
+<text text-anchor="start" x="254" y="-8.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument10</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge8" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M471.41,-72.54C418.61,-68.03 367.84,-61.21 344,-51 333.22,-46.39 323.12,-38.25 315.23,-30.64"/>
+<polygon fill="black" stroke="black" points="317.62,-28.07 308.13,-23.35 312.61,-32.96 317.62,-28.07"/>
+<text text-anchor="start" x="344" y="-39.8" font-family="Arial" font-size="14.00">owl:inverseOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node5" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node5"><a xlink:href="http://example.ottr.xyz/argument/argument2-1" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="487,-23 377,-23 377,0 487,0 487,-23"/>
+<text text-anchor="start" x="385" y="-8.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge7" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M471.41,-64.98C457.92,-61.26 447.13,-56.66 441,-51 436.15,-46.52 433.68,-39.98 432.48,-33.56"/>
+<polygon fill="black" stroke="black" points="435.92,-32.85 431.46,-23.24 428.96,-33.54 435.92,-32.85"/>
+<text text-anchor="start" x="441" y="-39.8" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node6" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node6"><a xlink:href="http://example.ottr.xyz/argument/argument2-2" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="622,-23 512,-23 512,0 622,0 622,-23"/>
+<text text-anchor="start" x="520" y="-8.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge6" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M578.97,-63.89C573.91,-60.37 569.43,-56.12 566,-51 562.6,-45.93 561.76,-39.59 562.07,-33.52"/>
+<polygon fill="black" stroke="black" points="565.59,-33.63 563.59,-23.22 558.67,-32.6 565.59,-33.63"/>
+<text text-anchor="start" x="566" y="-39.8" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node7" class="node">
+<title>argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="723,-22.5 701,-22.5 701,-0.5 723,-0.5 723,-22.5"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge5" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M667.05,-63.91C672.6,-59.98 678.18,-55.59 683,-51 689.16,-45.12 695.01,-37.84 699.81,-31.19"/>
+<polygon fill="black" stroke="black" points="702.86,-32.93 705.66,-22.71 697.1,-28.96 702.86,-32.93"/>
+<text text-anchor="start" x="696" y="-39.8" font-family="Arial" font-size="14.00">rdfs:comment</text>
+</g>
+<!-- argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node8" class="node">
+<title>argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="837,-22.5 815,-22.5 815,-0.5 837,-0.5 837,-22.5"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge4" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M754.74,-63.95C765.6,-60.42 776.2,-56.15 786,-51 795.65,-45.93 804.58,-37.83 811.54,-30.36"/>
+<polygon fill="black" stroke="black" points="814.31,-32.51 818.27,-22.68 809.05,-27.9 814.31,-32.51"/>
+<text text-anchor="start" x="805" y="-39.8" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node9" class="node">
+<title>argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="942,-22.5 920,-22.5 920,-0.5 942,-0.5 942,-22.5"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge3" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M806.6,-67.78C840.32,-63.46 870.23,-57.93 886,-51 897.01,-46.16 907.36,-37.7 915.35,-29.94"/>
+<polygon fill="black" stroke="black" points="918.04,-32.19 922.49,-22.58 913.01,-27.32 918.04,-32.19"/>
+<text text-anchor="start" x="907" y="-39.8" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node10" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="1047,-22.5 1025,-22.5 1025,-0.5 1047,-0.5 1047,-22.5"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M806.73,-75.77C879.24,-71.63 954.97,-64.22 988,-51 999.72,-46.31 1010.86,-37.74 1019.44,-29.87"/>
+<polygon fill="black" stroke="black" points="1022.09,-32.18 1026.83,-22.7 1017.22,-27.15 1022.09,-32.18"/>
+<text text-anchor="start" x="1012" y="-39.8" font-family="Arial" font-size="14.00">rdfs:label</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="node11" class="node">
+<title>http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node11"><a xlink:href="http://example.ottr.xyz/argument/argument6" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument6&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="1170,-23 1072,-23 1072,0 1170,0 1170,-23"/>
+<text text-anchor="start" x="1080" y="-8.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument6</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M806.67,-79.66C907.64,-76.87 1025.56,-69.54 1073,-51 1084.61,-46.46 1095.61,-38.06 1104.15,-30.26"/>
+<polygon fill="black" stroke="black" points="1106.77,-32.59 1111.51,-23.11 1101.9,-27.57 1106.77,-32.59"/>
+<text text-anchor="start" x="1097" y="-39.8" font-family="Arial" font-size="14.00">rdfs:isDefinedBy</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Spring model layout (neato)</summary><div><svg width="503px" height="389px"
+ viewBox="0.00 0.00 503.08 388.72" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 384.72)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-384.72 499.08,-384.72 499.08,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;1&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;2&lt;/font&gt;&lt;/b&gt;, owl:ObjectProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="419.58,-208.96 84.58,-208.96 84.58,-172.96 419.58,-172.96 419.58,-208.96"/>
+<text text-anchor="start" x="92.58" y="-194.76" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;1</text>
+<text text-anchor="start" x="186.58" y="-194.76" font-family="Arial" font-style="italic" font-size="14.00">, </text>
+<text text-anchor="start" x="194.58" y="-194.76" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;2</text>
+<text text-anchor="start" x="288.58" y="-194.76" font-family="Arial" font-style="italic" font-size="14.00">, owl:ObjectProperty</text>
+<text text-anchor="start" x="211.08" y="-180.76" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="node2" class="node">
+<title>http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node2"><a xlink:href="http://example.ottr.xyz/argument/argument8" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument8&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="453.83,-310.56 355.83,-310.56 355.83,-287.56 453.83,-287.56 453.83,-310.56"/>
+<text text-anchor="start" x="363.83" y="-296.36" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument8</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge10" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M277.65,-209.05C306,-229.12 351.46,-261.29 379.65,-281.25"/>
+<polygon fill="black" stroke="black" points="377.97,-284.34 388.16,-287.26 382.02,-278.63 377.97,-284.34"/>
+<text text-anchor="start" x="272.03" y="-252.05" font-family="Arial" font-size="14.00">rdfs:range</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument7" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument7&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="242.15,-23 144.15,-23 144.15,0 242.15,0 242.15,-23"/>
+<text text-anchor="start" x="152.15" y="-8.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument7</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge9" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M246.11,-172.76C235.18,-139.49 212.03,-68.99 200.29,-33.25"/>
+<polygon fill="black" stroke="black" points="203.49,-31.76 197.04,-23.35 196.83,-33.94 203.49,-31.76"/>
+<text text-anchor="start" x="149.68" y="-102.19" font-family="Arial" font-size="14.00">rdfs:domain</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="node4" class="node">
+<title>http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node4"><a xlink:href="http://example.ottr.xyz/argument/argument10" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument10&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="248.71,-380.72 142.71,-380.72 142.71,-357.72 248.71,-357.72 248.71,-380.72"/>
+<text text-anchor="start" x="150.71" y="-366.52" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument10</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge8" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M246.37,-209.03C235.91,-242.08 213.77,-312.11 202.54,-347.62"/>
+<polygon fill="black" stroke="black" points="199.11,-346.86 199.43,-357.45 205.78,-348.97 199.11,-346.86"/>
+<text text-anchor="start" x="140" y="-271.71" font-family="Arial" font-size="14.00">owl:inverseOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node5" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node5"><a xlink:href="http://example.ottr.xyz/argument/argument2-1" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="366.72,-379.65 256.72,-379.65 256.72,-356.65 366.72,-356.65 366.72,-379.65"/>
+<text text-anchor="start" x="264.72" y="-365.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge7" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M258.24,-209.25C269.35,-242.27 292.7,-311.63 304.53,-346.77"/>
+<polygon fill="black" stroke="black" points="301.29,-348.14 307.8,-356.5 307.93,-345.91 301.29,-348.14"/>
+<text text-anchor="start" x="282.95" y="-271.47" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node6" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node6"><a xlink:href="http://example.ottr.xyz/argument/argument2-2" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="156.43,-313.18 46.43,-313.18 46.43,-290.18 156.43,-290.18 156.43,-313.18"/>
+<text text-anchor="start" x="54.43" y="-298.98" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge6" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M227.54,-208.99C199.4,-229.67 153.57,-263.36 125.59,-283.92"/>
+<polygon fill="black" stroke="black" points="123.16,-281.36 117.18,-290.1 127.31,-287 123.16,-281.36"/>
+<text text-anchor="start" x="57.18" y="-253.48" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node7" class="node">
+<title>argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="75.92,-202.72 53.92,-202.72 53.92,-180.72 75.92,-180.72 75.92,-202.72"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge5" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M84.24,-191.64C84.15,-191.65 84.06,-191.65 83.97,-191.65"/>
+<polygon fill="black" stroke="black" points="86.19,-188.14 76.2,-191.68 86.22,-195.14 86.19,-188.14"/>
+<text text-anchor="start" x="0" y="-195.45" font-family="Arial" font-size="14.00">rdfs:comment</text>
+</g>
+<!-- argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node8" class="node">
+<title>argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="449.77,-199.61 427.77,-199.61 427.77,-177.61 449.77,-177.61 449.77,-199.61"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge4" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M419.84,-188.85C419.94,-188.85 420.03,-188.84 420.12,-188.84"/>
+<polygon fill="black" stroke="black" points="417.77,-192.37 427.72,-188.75 417.68,-185.37 417.77,-192.37"/>
+<text text-anchor="start" x="420.08" y="-192.64" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node9" class="node">
+<title>argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="111.49,-92.85 89.49,-92.85 89.49,-70.85 111.49,-70.85 111.49,-92.85"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge3" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M227.05,-172.94C196.98,-151.3 147.18,-115.46 119.88,-95.81"/>
+<polygon fill="black" stroke="black" points="121.7,-92.81 111.54,-89.81 117.61,-98.49 121.7,-92.81"/>
+<text text-anchor="start" x="94.21" y="-135.11" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node10" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="414.25,-88.57 392.25,-88.57 392.25,-66.57 414.25,-66.57 414.25,-88.57"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M276.37,-172.74C306.34,-150.26 356.69,-112.49 384.08,-91.94"/>
+<polygon fill="black" stroke="black" points="386.22,-94.72 392.12,-85.92 382.02,-89.12 386.22,-94.72"/>
+<text text-anchor="start" x="279.43" y="-132.99" font-family="Arial" font-size="14.00">rdfs:label</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="node11" class="node">
+<title>http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node11"><a xlink:href="http://example.ottr.xyz/argument/argument6" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument6&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="356.51,-26.6 258.51,-26.6 258.51,-3.6 356.51,-3.6 356.51,-26.6"/>
+<text text-anchor="start" x="266.51" y="-12.4" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument6</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M257.8,-172.8C268.13,-140.04 289.83,-71.19 300.82,-36.32"/>
+<polygon fill="black" stroke="black" points="304.2,-37.25 303.86,-26.66 297.52,-35.15 304.2,-37.25"/>
+<text text-anchor="start" x="280.77" y="-103.73" font-family="Arial" font-size="14.00">rdfs:isDefinedBy</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Spring model layout (fdp)</summary><div><svg width="704px" height="617px"
+ viewBox="0.00 0.00 704.00 617.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 613.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-613 700,-613 700,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;1&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;2&lt;/font&gt;&lt;/b&gt;, owl:ObjectProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="539.86,-313.44 204.86,-313.44 204.86,-277.44 539.86,-277.44 539.86,-313.44"/>
+<text text-anchor="start" x="212.86" y="-299.24" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;1</text>
+<text text-anchor="start" x="306.86" y="-299.24" font-family="Arial" font-style="italic" font-size="14.00">, </text>
+<text text-anchor="start" x="314.86" y="-299.24" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;2</text>
+<text text-anchor="start" x="408.86" y="-299.24" font-family="Arial" font-style="italic" font-size="14.00">, owl:ObjectProperty</text>
+<text text-anchor="start" x="331.36" y="-285.24" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="node2" class="node">
+<title>http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node2"><a xlink:href="http://example.ottr.xyz/argument/argument8" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument8&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="670.96,-449.68 572.96,-449.68 572.96,-426.68 670.96,-426.68 670.96,-449.68"/>
+<text text-anchor="start" x="580.96" y="-435.48" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument8</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge10" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M403.98,-313.51C452.8,-341.44 545.83,-394.64 592.99,-421.62"/>
+<polygon fill="black" stroke="black" points="591.37,-424.72 601.79,-426.65 594.85,-418.64 591.37,-424.72"/>
+<text text-anchor="start" x="441.82" y="-373.85" font-family="Arial" font-size="14.00">rdfs:range</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument7" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument7&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="326.27,-60.96 228.27,-60.96 228.27,-37.96 326.27,-37.96 326.27,-60.96"/>
+<text text-anchor="start" x="236.27" y="-46.76" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument7</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge9" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M365.37,-277.35C348.19,-232.89 303.94,-118.44 285.51,-70.78"/>
+<polygon fill="black" stroke="black" points="288.67,-69.24 281.8,-61.17 282.14,-71.76 288.67,-69.24"/>
+<text text-anchor="start" x="251.54" y="-172.95" font-family="Arial" font-size="14.00">rdfs:domain</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="node4" class="node">
+<title>http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node4"><a xlink:href="http://example.ottr.xyz/argument/argument10" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument10&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="106.28,-474.04 0.28,-474.04 0.28,-451.04 106.28,-451.04 106.28,-474.04"/>
+<text text-anchor="start" x="8.28" y="-459.84" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument10</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge8" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M337.91,-313.48C275.5,-346.16 144.65,-414.69 84.61,-446.13"/>
+<polygon fill="black" stroke="black" points="82.84,-443.11 75.6,-450.85 86.08,-449.31 82.84,-443.11"/>
+<text text-anchor="start" x="123.44" y="-386.13" font-family="Arial" font-size="14.00">owl:inverseOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node5" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node5"><a xlink:href="http://example.ottr.xyz/argument/argument2-1" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="542.91,-566.65 432.91,-566.65 432.91,-543.65 542.91,-543.65 542.91,-566.65"/>
+<text text-anchor="start" x="440.91" y="-552.45" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge7" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M380.49,-313.7C401.3,-360.48 456.45,-484.43 478.55,-534.11"/>
+<polygon fill="black" stroke="black" points="475.48,-535.82 482.75,-543.53 481.88,-532.98 475.48,-535.82"/>
+<text text-anchor="start" x="316.51" y="-432.17" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node6" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node6"><a xlink:href="http://example.ottr.xyz/argument/argument2-2" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="332.64,-609.44 222.64,-609.44 222.64,-586.44 332.64,-586.44 332.64,-609.44"/>
+<text text-anchor="start" x="230.64" y="-595.24" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge6" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M366.72,-313.45C350.22,-366.15 302.09,-519.84 284.33,-576.57"/>
+<polygon fill="black" stroke="black" points="280.94,-575.69 281.29,-586.28 287.62,-577.78 280.94,-575.69"/>
+<text text-anchor="start" x="208.9" y="-454.01" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node7" class="node">
+<title>argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="122.89,-170.84 100.89,-170.84 100.89,-148.84 122.89,-148.84 122.89,-170.84"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge5" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M337.77,-277.43C282.58,-248.7 176.31,-193.37 132.02,-170.32"/>
+<polygon fill="black" stroke="black" points="133.58,-167.18 123.09,-165.67 130.34,-173.39 133.58,-167.18"/>
+<text text-anchor="start" x="146.35" y="-225.31" font-family="Arial" font-size="14.00">rdfs:comment</text>
+</g>
+<!-- argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node8" class="node">
+<title>argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="696.39,-227.31 674.39,-227.31 674.39,-205.31 696.39,-205.31 696.39,-227.31"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge4" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M443.79,-277.38C514.98,-259.39 619.93,-232.86 664.33,-221.64"/>
+<polygon fill="black" stroke="black" points="665.42,-224.97 674.25,-219.13 663.7,-218.19 665.42,-224.97"/>
+<text text-anchor="start" x="489.14" y="-250.76" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node9" class="node">
+<title>argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="229.48,-343.44 207.48,-343.44 207.48,-321.44 229.48,-321.44 229.48,-343.44"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge3" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M297.22,-313.5C275.98,-318.61 254.56,-323.76 239.43,-327.4"/>
+<polygon fill="black" stroke="black" points="238.52,-324.02 229.62,-329.76 240.16,-330.83 238.52,-324.02"/>
+<text text-anchor="start" x="263.27" y="-325.47" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node10" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="559.93,-22.28 537.93,-22.28 537.93,-0.28 559.93,-0.28 559.93,-22.28"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M398.96,-277.4C429.17,-255.53 477.84,-215.88 505.3,-170.24 532.09,-125.71 542.83,-64.37 546.8,-32.48"/>
+<polygon fill="black" stroke="black" points="550.29,-32.83 547.95,-22.5 543.33,-32.04 550.29,-32.83"/>
+<text text-anchor="start" x="450.92" y="-172.99" font-family="Arial" font-size="14.00">rdfs:label</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="node11" class="node">
+<title>http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node11"><a xlink:href="http://example.ottr.xyz/argument/argument6" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument6&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="502.1,-167.04 404.1,-167.04 404.1,-144.04 502.1,-144.04 502.1,-167.04"/>
+<text text-anchor="start" x="412.1" y="-152.84" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument6</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M382.75,-277.43C397.76,-251.42 425.44,-203.46 441.23,-176.1"/>
+<polygon fill="black" stroke="black" points="444.32,-177.76 446.28,-167.35 438.25,-174.26 444.32,-177.76"/>
+<text text-anchor="start" x="315.48" y="-226.26" font-family="Arial" font-size="14.00">rdfs:isDefinedBy</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Radial layout (twopi)</summary><div><svg width="421px" height="355px"
+ viewBox="0.00 0.00 420.78 355.17" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 351.17)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-351.17 416.78,-351.17 416.78,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;1&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;2&lt;/font&gt;&lt;/b&gt;, owl:ObjectProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="376.89,-191.33 41.89,-191.33 41.89,-155.33 376.89,-155.33 376.89,-191.33"/>
+<text text-anchor="start" x="49.89" y="-177.13" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;1</text>
+<text text-anchor="start" x="143.89" y="-177.13" font-family="Arial" font-style="italic" font-size="14.00">, </text>
+<text text-anchor="start" x="151.89" y="-177.13" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;2</text>
+<text text-anchor="start" x="245.89" y="-177.13" font-family="Arial" font-style="italic" font-size="14.00">, owl:ObjectProperty</text>
+<text text-anchor="start" x="168.39" y="-163.13" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="node2" class="node">
+<title>http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node2"><a xlink:href="http://example.ottr.xyz/argument/argument8" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument8&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="412.78,-235 314.78,-235 314.78,-212 412.78,-212 412.78,-235"/>
+<text text-anchor="start" x="322.78" y="-220.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument8</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge10" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M265.13,-191.44C282.74,-197.17 301.98,-203.42 318.75,-208.87"/>
+<polygon fill="black" stroke="black" points="317.72,-212.21 328.31,-211.97 319.88,-205.56 317.72,-212.21"/>
+<text text-anchor="start" x="235.52" y="-205.44" font-family="Arial" font-size="14.00">rdfs:range</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument7" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument7&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="353.81,-316.17 255.81,-316.17 255.81,-293.17 353.81,-293.17 353.81,-316.17"/>
+<text text-anchor="start" x="263.81" y="-301.97" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument7</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge9" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M222.66,-191.6C240.52,-216.18 272.18,-259.76 290.54,-285.03"/>
+<polygon fill="black" stroke="black" points="287.73,-287.11 296.44,-293.15 293.39,-283 287.73,-287.11"/>
+<text text-anchor="start" x="187.62" y="-246.27" font-family="Arial" font-size="14.00">rdfs:domain</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="node4" class="node">
+<title>http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node4"><a xlink:href="http://example.ottr.xyz/argument/argument10" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument10&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="262.39,-347.17 156.39,-347.17 156.39,-324.17 262.39,-324.17 262.39,-347.17"/>
+<text text-anchor="start" x="164.39" y="-332.97" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument10</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge8" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M209.39,-191.64C209.39,-221.76 209.39,-281.62 209.39,-313.87"/>
+<polygon fill="black" stroke="black" points="205.89,-314.03 209.39,-324.03 212.89,-314.03 205.89,-314.03"/>
+<text text-anchor="start" x="126.39" y="-261.62" font-family="Arial" font-size="14.00">owl:inverseOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node5" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node5"><a xlink:href="http://example.ottr.xyz/argument/argument2-1" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="168.97,-316.17 58.97,-316.17 58.97,-293.17 168.97,-293.17 168.97,-316.17"/>
+<text text-anchor="start" x="66.97" y="-301.97" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge7" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M196.12,-191.6C178.26,-216.18 146.6,-259.76 128.24,-285.03"/>
+<polygon fill="black" stroke="black" points="125.39,-283 122.34,-293.15 131.05,-287.11 125.39,-283"/>
+<text text-anchor="start" x="44.16" y="-246.27" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node6" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node6"><a xlink:href="http://example.ottr.xyz/argument/argument2-2" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="110,-235 0,-235 0,-212 110,-212 110,-235"/>
+<text text-anchor="start" x="8" y="-220.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge6" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M153.65,-191.44C136.03,-197.17 116.8,-203.42 100.03,-208.87"/>
+<polygon fill="black" stroke="black" points="98.9,-205.56 90.47,-211.97 101.06,-212.21 98.9,-205.56"/>
+<text text-anchor="start" x="122.26" y="-205.44" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node7" class="node">
+<title>argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="66,-134.17 44,-134.17 44,-112.17 66,-112.17 66,-134.17"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge5" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M153.65,-155.22C126.56,-146.42 95.64,-136.38 75.75,-129.91"/>
+<polygon fill="black" stroke="black" points="76.77,-126.56 66.18,-126.8 74.61,-133.22 76.77,-126.56"/>
+<text text-anchor="start" x="110.1" y="-129.87" font-family="Arial" font-size="14.00">rdfs:comment</text>
+</g>
+<!-- argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node8" class="node">
+<title>argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="124.97,-53 102.97,-53 102.97,-31 124.97,-31 124.97,-53"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge4" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M196.12,-155.07C178.24,-130.47 146.55,-86.84 128.19,-61.58"/>
+<polygon fill="black" stroke="black" points="130.8,-59.2 122.09,-53.17 125.13,-63.32 130.8,-59.2"/>
+<text text-anchor="start" x="84.13" y="-107.96" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node9" class="node">
+<title>argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="220.39,-22 198.39,-22 198.39,0 220.39,0 220.39,-22"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge3" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M209.39,-155.03C209.39,-124.77 209.39,-64.46 209.39,-32.32"/>
+<polygon fill="black" stroke="black" points="212.89,-32.23 209.39,-22.23 205.89,-32.23 212.89,-32.23"/>
+<text text-anchor="start" x="134.39" y="-92.28" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node10" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="315.81,-53 293.81,-53 293.81,-31 315.81,-31 315.81,-53"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M222.66,-155.07C240.53,-130.47 272.23,-86.84 290.58,-61.58"/>
+<polygon fill="black" stroke="black" points="293.65,-63.32 296.69,-53.17 287.98,-59.2 293.65,-63.32"/>
+<text text-anchor="start" x="204.65" y="-107.96" font-family="Arial" font-size="14.00">rdfs:label</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="node11" class="node">
+<title>http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node11"><a xlink:href="http://example.ottr.xyz/argument/argument6" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument6&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="412.78,-134.67 314.78,-134.67 314.78,-111.67 412.78,-111.67 412.78,-134.67"/>
+<text text-anchor="start" x="322.78" y="-120.47" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument6</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M265.13,-155.22C282.74,-149.5 301.98,-143.25 318.75,-137.8"/>
+<polygon fill="black" stroke="black" points="319.88,-141.11 328.31,-134.69 317.72,-134.46 319.88,-141.11"/>
+<text text-anchor="start" x="197.52" y="-133.82" font-family="Arial" font-size="14.00">rdfs:isDefinedBy</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Circular layout (circo)</summary><div><svg width="558px" height="473px"
+ viewBox="0.00 0.00 557.79 473.38" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 469.38)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-469.38 553.79,-469.38 553.79,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;1&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument9&#45;2&lt;/font&gt;&lt;/b&gt;, owl:ObjectProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="443.76,-248.86 108.76,-248.86 108.76,-212.86 443.76,-212.86 443.76,-248.86"/>
+<text text-anchor="start" x="116.76" y="-234.66" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;1</text>
+<text text-anchor="start" x="210.76" y="-234.66" font-family="Arial" font-style="italic" font-size="14.00">, </text>
+<text text-anchor="start" x="218.76" y="-234.66" font-family="Arial" font-weight="bold" font-style="italic" font-size="14.00" fill="red">x:argument9&#45;2</text>
+<text text-anchor="start" x="312.76" y="-234.66" font-family="Arial" font-style="italic" font-size="14.00">, owl:ObjectProperty</text>
+<text text-anchor="start" x="235.26" y="-220.66" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="node2" class="node">
+<title>http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node2"><a xlink:href="http://example.ottr.xyz/argument/argument8" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument8&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="549.79,-242.36 451.79,-242.36 451.79,-219.36 549.79,-219.36 549.79,-242.36"/>
+<text text-anchor="start" x="459.79" y="-228.16" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument8</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge10" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument8 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M443.84,-230.86C444.01,-230.86 444.17,-230.86 444.34,-230.86"/>
+<polygon fill="black" stroke="black" points="441.69,-234.36 451.69,-230.86 441.69,-227.36 441.69,-234.36"/>
+<text text-anchor="start" x="444.28" y="-219.66" font-family="Arial" font-size="14.00">rdfs:range</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument7" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument7&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="493.96,-390.52 395.96,-390.52 395.96,-367.52 493.96,-367.52 493.96,-390.52"/>
+<text text-anchor="start" x="403.96" y="-376.32" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument7</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge9" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument7 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M296.95,-249.03C329.39,-277.52 391.88,-332.4 424.3,-360.88"/>
+<polygon fill="black" stroke="black" points="422.04,-363.55 431.86,-367.52 426.66,-358.29 422.04,-363.55"/>
+<text text-anchor="start" x="292.52" y="-312.18" font-family="Arial" font-size="14.00">rdfs:domain</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="node4" class="node">
+<title>http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node4"><a xlink:href="http://example.ottr.xyz/argument/argument10" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument10&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="355.22,-465.38 249.22,-465.38 249.22,-442.38 355.22,-442.38 355.22,-465.38"/>
+<text text-anchor="start" x="257.22" y="-451.18" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument10</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge8" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument10 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M278.39,-249.11C283.13,-289.88 294.57,-388.2 299.68,-432.09"/>
+<polygon fill="black" stroke="black" points="296.23,-432.71 300.86,-442.24 303.18,-431.9 296.23,-432.71"/>
+<text text-anchor="start" x="206.62" y="-349.41" font-family="Arial" font-size="14.00">owl:inverseOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node5" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node5"><a xlink:href="http://example.ottr.xyz/argument/argument2-1" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="197.4,-422.61 87.4,-422.61 87.4,-399.61 197.4,-399.61 197.4,-422.61"/>
+<text text-anchor="start" x="95.4" y="-408.41" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;1</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge7" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;1 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M262.69,-249.14C237.45,-283.13 183.46,-355.82 157.27,-391.1"/>
+<polygon fill="black" stroke="black" points="154.39,-389.09 151.24,-399.21 160.01,-393.27 154.39,-389.09"/>
+<text text-anchor="start" x="92.06" y="-327.84" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node6" class="node">
+<title>http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node6"><a xlink:href="http://example.ottr.xyz/argument/argument2-2" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&#45;2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="110,-280.48 0,-280.48 0,-257.48 110,-257.48 110,-280.48"/>
+<text text-anchor="start" x="8" y="-266.28" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2&#45;2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge6" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2&#45;2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M171.46,-248.91C153.89,-251.94 136.12,-255 119.93,-257.79"/>
+<polygon fill="black" stroke="black" points="119.33,-254.34 110.07,-259.49 120.52,-261.24 119.33,-254.34"/>
+<text text-anchor="start" x="140.73" y="-258.01" font-family="Arial" font-size="14.00">rdfs:subPropertyOf</text>
+</g>
+<!-- argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node7" class="node">
+<title>argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="84.26,-145.94 62.26,-145.94 62.26,-123.94 84.26,-123.94 84.26,-145.94"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge5" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument4 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M238.08,-212.82C195.41,-192.65 127.87,-160.74 94.03,-144.75"/>
+<polygon fill="black" stroke="black" points="95.21,-141.44 84.67,-140.33 92.22,-147.77 95.21,-141.44"/>
+<text text-anchor="start" x="77.5" y="-180.43" font-family="Arial" font-size="14.00">rdfs:comment</text>
+</g>
+<!-- argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node8" class="node">
+<title>argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="148.41,-65.42 126.41,-65.42 126.41,-43.42 148.41,-43.42 148.41,-65.42"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge4" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;1 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M261.93,-212.64C235.59,-179.18 179.75,-108.22 152.71,-73.87"/>
+<polygon fill="black" stroke="black" points="155.13,-71.28 146.2,-65.59 149.63,-75.61 155.13,-71.28"/>
+<text text-anchor="start" x="129.2" y="-143.09" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node9" class="node">
+<title>argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="241.75,-22 219.75,-22 219.75,0 241.75,0 241.75,-22"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge3" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument5&#45;2 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M272.46,-212.49C264.09,-172.05 244.09,-75.47 235.17,-32.39"/>
+<polygon fill="black" stroke="black" points="238.57,-31.51 233.11,-22.42 231.71,-32.93 238.57,-31.51"/>
+<text text-anchor="start" x="177.76" y="-121.15" font-family="Arial" font-size="14.00">rdfs:seeAlso</text>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node10" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="344.65,-24.8 322.65,-24.8 322.65,-2.8 344.65,-2.8 344.65,-24.8"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M281.06,-212.73C291.61,-172.8 316.82,-77.45 328.07,-34.91"/>
+<polygon fill="black" stroke="black" points="331.5,-35.64 330.67,-25.07 324.73,-33.85 331.5,-35.64"/>
+<text text-anchor="start" x="305.89" y="-122.59" font-family="Arial" font-size="14.00">rdfs:label</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="node11" class="node">
+<title>http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node11"><a xlink:href="http://example.ottr.xyz/argument/argument6" xlink:title="&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument6&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="493.96,-94.2 395.96,-94.2 395.96,-71.2 493.96,-71.2 493.96,-94.2"/>
+<text text-anchor="start" x="403.96" y="-80" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument6</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument6 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M296.95,-212.69C329.39,-184.2 391.88,-129.32 424.3,-100.84"/>
+<polygon fill="black" stroke="black" points="426.66,-103.43 431.86,-94.2 422.04,-98.17 426.66,-103.43"/>
+<text text-anchor="start" x="265.52" y="-157.14" font-family="Arial" font-size="14.00">rdfs:isDefinedBy</text>
+</g>
+</g>
+</svg>
+</div></details></div><h4>Expanded RDF graph</h4><pre>
+x:argument1  rdf:type       x:argument9-1 , x:argument9-2 , owl:ObjectProperty ;
+        rdfs:comment        []  ;
+        rdfs:domain         x:argument7 ;
+        rdfs:isDefinedBy    x:argument6 ;
+        rdfs:label          []  ;
+        rdfs:range          x:argument8 ;
+        rdfs:seeAlso        []  ;
+        rdfs:seeAlso        []  ;
+        rdfs:subPropertyOf  x:argument2-1 , x:argument2-2 ;
+        owl:inverseOf       x:argument10 .</pre><h4>Interactive expansion</h4><p class="info">&#128712; Click the list to expand/contract one list element. Click &#x27;expand/contact all&#x27; to expand/contract all elements. Note that the interactive expansion is not correct for instances that are marked by list expanders.</p><div><div class="treeview toggle-all click-first"><details><summary><code>plmtpl:RDLObjectProperty(x:argument1, (x:argument2-1, x:argument2-2), _:argument3, _:argument4, (_:argument5-1, _:argument5-2), x:argument6, x:argument7, x:argument8, (x:argument9-1, x:argument9-2), x:argument10)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:range, x:argument8)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:domain, x:argument7)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, owl:inverseOf, x:argument10)</code></span><details><summary><code>cross | o-owl-ax:SubPropertyOf(x:argument1, ++(x:argument2-1, x:argument2-2))</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:subPropertyOf, (x:argument2-1, x:argument2-2))</code></span></details><details><summary><code>o-owl-dec:ObjectProperty(x:argument1, _:argument3, _:argument4, (_:argument5-1, _:argument5-2), x:argument6)</code></summary><details><summary><code>o-rdfs:TypedResourceDescription(x:argument1, owl:ObjectProperty, _:argument3, _:argument4, (_:argument5-1, _:argument5-2), x:argument6)</code></summary><details><summary><code>o-rdf:Type(x:argument1, owl:ObjectProperty)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdf:type, owl:ObjectProperty)</code></span></details><details><summary><code>o-rdfs:ResourceDescription(x:argument1, _:argument3, _:argument4, (_:argument5-1, _:argument5-2), x:argument6)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:comment, _:argument4)</code></span><span class="leaf"><code>cross | ottr:Triple(x:argument1, rdfs:seeAlso, ++(_:argument5-1, _:argument5-2))</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:isDefinedBy, x:argument6)</code></span><details><summary><code>o-rdfs:Label(x:argument1, _:argument3)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:label, _:argument3)</code></span></details></details></details></details><details><summary><code>cross | o-rdf:Type(x:argument1, ++(x:argument9-1, x:argument9-2))</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdf:type, (x:argument9-1, x:argument9-2))</code></span></details></details></div></div></div><div id="dependencies"><h2 id="Dependencies">Dependencies</h2><h4>Dependency graph</h4> <p class="info">&#128712; The graph shows all the templates that this template depends on. The colour of the node indicates its namespace. Each node is linked to its documentation page.</p> <div><details open="open"><summary>Hierarchical horizontal layout (dot)</summary><div><svg width="1037px" height="171px"
+ viewBox="0.00 0.00 1037.00 170.50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 166.5)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-166.5 1033,-166.5 1033,4 -4,4"/>
+<!-- plmtpl:RDLObjectProperty -->
+<g id="node1" class="node">
+<title>plmtpl:RDLObjectProperty</title>
+<g id="a_node1"><a xlink:href="RDLObjectProperty.html" xlink:title="plmtpl:RDLObjectProperty">
+<polygon fill="#fff69f" stroke="black" points="175,-98 0,-98 0,-75 175,-75 175,-98"/>
+<text text-anchor="middle" x="87.5" y="-82.8" font-family="Arial" font-size="14.00">plmtpl:RDLObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- ottr:Triple -->
+<g id="node2" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="1029,-73 955,-73 955,-50 1029,-50 1029,-73"/>
+<text text-anchor="middle" x="992" y="-57.8" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M125.75,-98.04C197.78,-119.3 361.46,-162.5 502.5,-162.5 502.5,-162.5 502.5,-162.5 728,-162.5 820.59,-162.5 847.32,-153.18 930,-111.5 945.74,-103.56 961.08,-90.96 972.44,-80.4"/>
+<polygon fill="black" stroke="black" points="975.18,-82.62 979.95,-73.16 970.32,-77.58 975.18,-82.62"/>
+</g>
+<!-- ax:SubPropertyOf -->
+<g id="node3" class="node">
+<title>ax:SubPropertyOf</title>
+<g id="a_node3"><a xlink:href="../../../../../tpl.ottr.xyz/owl/axiom/0.1/SubPropertyOf.html" xlink:title="ax:SubPropertyOf">
+<polygon fill="#ffdbe5" stroke="black" points="566,-123 441,-123 441,-100 566,-100 566,-123"/>
+<text text-anchor="middle" x="503.5" y="-107.8" font-family="Arial" font-size="14.00">ax:SubPropertyOf</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf -->
+<g id="edge3" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf</title>
+<path fill="none" stroke="black" d="M175.04,-91.73C250.84,-96.3 359.69,-102.88 430.74,-107.17"/>
+<polygon fill="black" stroke="black" points="430.75,-110.67 440.94,-107.78 431.17,-103.69 430.75,-110.67"/>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;dec:ObjectProperty</title>
+<g id="a_node4"><a xlink:href="../../../../../tpl.ottr.xyz/owl/declaration/0.1/ObjectProperty.html" xlink:title="o&#45;owl&#45;dec:ObjectProperty">
+<polygon fill="#fde8dc" stroke="black" points="370,-73 200,-73 200,-50 370,-50 370,-73"/>
+<text text-anchor="middle" x="285" y="-57.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;dec:ObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty -->
+<g id="edge2" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty</title>
+<path fill="none" stroke="black" d="M175.1,-75.43C179.95,-74.81 184.84,-74.18 189.72,-73.56"/>
+<polygon fill="black" stroke="black" points="190.22,-77.02 199.7,-72.28 189.34,-70.08 190.22,-77.02"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node5" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node5"><a xlink:href="../../../../../tpl.ottr.xyz/rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="765.5,-23 688.5,-23 688.5,0 765.5,0 765.5,-23"/>
+<text text-anchor="middle" x="727" y="-7.8" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M108.67,-74.93C130.42,-63.12 166.46,-45.42 200,-37.5 372.23,3.14 584.68,-2.81 678.1,-8.13"/>
+<polygon fill="black" stroke="black" points="678.17,-11.64 688.36,-8.74 678.59,-4.65 678.17,-11.64"/>
+</g>
+<!-- ax:SubPropertyOf&#45;&gt;ottr:Triple -->
+<g id="edge5" class="edge">
+<title>ax:SubPropertyOf&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M566.29,-113.73C649.84,-115.39 803.01,-113.62 930,-85.5 939.04,-83.5 948.5,-80.34 957.19,-76.97"/>
+<polygon fill="black" stroke="black" points="958.69,-80.14 966.62,-73.12 956.04,-73.66 958.69,-80.14"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription -->
+<g id="node6" class="node">
+<title>o&#45;rdfs:TypedResourceDescription</title>
+<g id="a_node6"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/TypedResourceDescription.html" xlink:title="o&#45;rdfs:TypedResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="612,-73 395,-73 395,-50 612,-50 612,-73"/>
+<text text-anchor="middle" x="503.5" y="-57.8" font-family="Arial" font-size="14.00">o&#45;rdfs:TypedResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription</title>
+<path fill="none" stroke="black" d="M370.01,-61.5C374.81,-61.5 379.68,-61.5 384.57,-61.5"/>
+<polygon fill="black" stroke="black" points="384.64,-65 394.64,-61.5 384.64,-58 384.64,-65"/>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge7" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M765.77,-9.38C807.06,-8.18 874.69,-9.54 930,-26.5 942.95,-30.47 956.13,-37.57 966.91,-44.35"/>
+<polygon fill="black" stroke="black" points="965.06,-47.32 975.35,-49.88 968.91,-41.47 965.06,-47.32"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type -->
+<g id="edge9" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M555.59,-49.97C592.61,-41.61 642.31,-30.39 678.48,-22.23"/>
+<polygon fill="black" stroke="black" points="679.31,-25.63 688.3,-20.01 677.77,-18.8 679.31,-25.63"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription -->
+<g id="node7" class="node">
+<title>o&#45;rdfs:ResourceDescription</title>
+<g id="a_node7"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/ResourceDescription.html" xlink:title="o&#45;rdfs:ResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="817,-73 637,-73 637,-50 817,-50 817,-73"/>
+<text text-anchor="middle" x="727" y="-57.8" font-family="Arial" font-size="14.00">o&#45;rdfs:ResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription -->
+<g id="edge8" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription</title>
+<path fill="none" stroke="black" d="M612.01,-61.5C616.79,-61.5 621.57,-61.5 626.33,-61.5"/>
+<polygon fill="black" stroke="black" points="626.69,-65 636.69,-61.5 626.69,-58 626.69,-65"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple -->
+<g id="edge11" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M766.59,-49.95C807.42,-39.36 873.62,-26.81 930,-37.5 939.44,-39.29 949.29,-42.51 958.26,-46.02"/>
+<polygon fill="black" stroke="black" points="956.99,-49.29 967.57,-49.9 959.68,-42.83 956.99,-49.29"/>
+</g>
+<!-- o&#45;rdfs:Label -->
+<g id="node8" class="node">
+<title>o&#45;rdfs:Label</title>
+<g id="a_node8"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/Label.html" xlink:title="o&#45;rdfs:Label">
+<polygon fill="#d1f7ce" stroke="black" points="930,-73 842,-73 842,-50 930,-50 930,-73"/>
+<text text-anchor="middle" x="886" y="-57.8" font-family="Arial" font-size="14.00">o&#45;rdfs:Label</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label -->
+<g id="edge10" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label</title>
+<path fill="none" stroke="black" d="M817.05,-61.5C822.01,-61.5 826.92,-61.5 831.68,-61.5"/>
+<polygon fill="black" stroke="black" points="831.86,-65 841.86,-61.5 831.86,-58 831.86,-65"/>
+</g>
+<!-- o&#45;rdfs:Label&#45;&gt;ottr:Triple -->
+<g id="edge12" class="edge">
+<title>o&#45;rdfs:Label&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M930.2,-61.5C934.91,-61.5 939.72,-61.5 944.47,-61.5"/>
+<polygon fill="black" stroke="black" points="944.7,-65 954.7,-61.5 944.7,-58 944.7,-65"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Hierarchical vertical layout (dot)</summary><div><svg width="432px" height="271px"
+ viewBox="0.00 0.00 431.50 271.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 267.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-267 427.5,-267 427.5,4 -4,4"/>
+<!-- plmtpl:RDLObjectProperty -->
+<g id="node1" class="node">
+<title>plmtpl:RDLObjectProperty</title>
+<g id="a_node1"><a xlink:href="RDLObjectProperty.html" xlink:title="plmtpl:RDLObjectProperty">
+<polygon fill="#fff69f" stroke="black" points="304.5,-263 129.5,-263 129.5,-240 304.5,-240 304.5,-263"/>
+<text text-anchor="middle" x="217" y="-247.8" font-family="Arial" font-size="14.00">plmtpl:RDLObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- ottr:Triple -->
+<g id="node2" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="189,-23 115,-23 115,0 189,0 189,-23"/>
+<text text-anchor="middle" x="152" y="-7.8" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M129.36,-246.3C69.14,-238.13 0,-215.83 0,-156.5 0,-156.5 0,-156.5 0,-106.5 0,-56.45 60.34,-32.15 104.99,-21.03"/>
+<polygon fill="black" stroke="black" points="105.88,-24.41 114.82,-18.72 104.28,-17.6 105.88,-24.41"/>
+</g>
+<!-- ax:SubPropertyOf -->
+<g id="node3" class="node">
+<title>ax:SubPropertyOf</title>
+<g id="a_node3"><a xlink:href="../../../../../tpl.ottr.xyz/owl/axiom/0.1/SubPropertyOf.html" xlink:title="ax:SubPropertyOf">
+<polygon fill="#ffdbe5" stroke="black" points="163.5,-167 38.5,-167 38.5,-144 163.5,-144 163.5,-167"/>
+<text text-anchor="middle" x="101" y="-151.8" font-family="Arial" font-size="14.00">ax:SubPropertyOf</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf -->
+<g id="edge3" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf</title>
+<path fill="none" stroke="black" d="M199.81,-239.97C189.2,-233.22 175.47,-224.07 164,-215 148.06,-202.39 131.25,-186.64 119.01,-174.66"/>
+<polygon fill="black" stroke="black" points="121.25,-171.96 111.68,-167.41 116.32,-176.93 121.25,-171.96"/>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;dec:ObjectProperty</title>
+<g id="a_node4"><a xlink:href="../../../../../tpl.ottr.xyz/owl/declaration/0.1/ObjectProperty.html" xlink:title="o&#45;owl&#45;dec:ObjectProperty">
+<polygon fill="#fde8dc" stroke="black" points="346,-215 176,-215 176,-192 346,-192 346,-215"/>
+<text text-anchor="middle" x="261" y="-199.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;dec:ObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty -->
+<g id="edge2" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty</title>
+<path fill="none" stroke="black" d="M227.21,-239.83C232.09,-234.72 238.08,-228.46 243.65,-222.64"/>
+<polygon fill="black" stroke="black" points="246.47,-224.76 250.85,-215.11 241.41,-219.92 246.47,-224.76"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node5" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node5"><a xlink:href="../../../../../tpl.ottr.xyz/rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="423.5,-119 346.5,-119 346.5,-96 423.5,-96 423.5,-119"/>
+<text text-anchor="middle" x="385" y="-103.8" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M304.57,-240.91C348.93,-230.73 397.63,-209.83 418,-167 422.39,-157.77 421.74,-153.51 418,-144 415.39,-137.37 410.9,-131.24 406.06,-126.01"/>
+<polygon fill="black" stroke="black" points="408.49,-123.5 398.89,-119.03 403.61,-128.51 408.49,-123.5"/>
+</g>
+<!-- ax:SubPropertyOf&#45;&gt;ottr:Triple -->
+<g id="edge5" class="edge">
+<title>ax:SubPropertyOf&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M104.83,-143.83C113.29,-120.29 133.66,-63.58 144.66,-32.95"/>
+<polygon fill="black" stroke="black" points="148.04,-33.89 148.12,-23.3 141.45,-31.53 148.04,-33.89"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription -->
+<g id="node6" class="node">
+<title>o&#45;rdfs:TypedResourceDescription</title>
+<g id="a_node6"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/TypedResourceDescription.html" xlink:title="o&#45;rdfs:TypedResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="405.5,-167 188.5,-167 188.5,-144 405.5,-144 405.5,-167"/>
+<text text-anchor="middle" x="297" y="-151.8" font-family="Arial" font-size="14.00">o&#45;rdfs:TypedResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription</title>
+<path fill="none" stroke="black" d="M269.35,-191.83C273.26,-186.84 278.03,-180.74 282.5,-175.03"/>
+<polygon fill="black" stroke="black" points="285.29,-177.14 288.7,-167.11 279.78,-172.83 285.29,-177.14"/>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge7" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M371.1,-95.93C353.39,-82.92 321.41,-60.98 291,-48 261.55,-35.43 226.62,-26.53 199.14,-20.79"/>
+<polygon fill="black" stroke="black" points="199.5,-17.29 189,-18.74 198.11,-24.15 199.5,-17.29"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type -->
+<g id="edge9" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M317.41,-143.83C328.74,-137.91 343.03,-130.44 355.55,-123.89"/>
+<polygon fill="black" stroke="black" points="357.46,-126.85 364.7,-119.11 354.22,-120.64 357.46,-126.85"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription -->
+<g id="node7" class="node">
+<title>o&#45;rdfs:ResourceDescription</title>
+<g id="a_node7"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/ResourceDescription.html" xlink:title="o&#45;rdfs:ResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="321,-119 141,-119 141,-96 321,-96 321,-119"/>
+<text text-anchor="middle" x="231" y="-103.8" font-family="Arial" font-size="14.00">o&#45;rdfs:ResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription -->
+<g id="edge8" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription</title>
+<path fill="none" stroke="black" d="M281.69,-143.83C273.61,-138.2 263.52,-131.17 254.48,-124.86"/>
+<polygon fill="black" stroke="black" points="256.43,-121.96 246.22,-119.11 252.43,-127.7 256.43,-121.96"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple -->
+<g id="edge11" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M209.53,-95.85C198.94,-89.75 186.63,-81.25 178,-71 168.7,-59.95 162.15,-45.05 157.94,-33.05"/>
+<polygon fill="black" stroke="black" points="161.24,-31.87 154.84,-23.42 154.58,-34.01 161.24,-31.87"/>
+</g>
+<!-- o&#45;rdfs:Label -->
+<g id="node8" class="node">
+<title>o&#45;rdfs:Label</title>
+<g id="a_node8"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/Label.html" xlink:title="o&#45;rdfs:Label">
+<polygon fill="#d1f7ce" stroke="black" points="278,-71 190,-71 190,-48 278,-48 278,-71"/>
+<text text-anchor="middle" x="234" y="-55.8" font-family="Arial" font-size="14.00">o&#45;rdfs:Label</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label -->
+<g id="edge10" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label</title>
+<path fill="none" stroke="black" d="M231.7,-95.83C231.98,-91.53 232.31,-86.42 232.63,-81.44"/>
+<polygon fill="black" stroke="black" points="236.15,-81.32 233.31,-71.11 229.16,-80.86 236.15,-81.32"/>
+</g>
+<!-- o&#45;rdfs:Label&#45;&gt;ottr:Triple -->
+<g id="edge12" class="edge">
+<title>o&#45;rdfs:Label&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M214.98,-47.83C204.53,-41.97 191.37,-34.59 179.79,-28.09"/>
+<polygon fill="black" stroke="black" points="181.35,-24.95 170.92,-23.11 177.92,-31.06 181.35,-24.95"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Spring model layout (neato)</summary><div><svg width="499px" height="399px"
+ viewBox="0.00 0.00 498.99 398.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 394.51)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-394.51 494.99,-394.51 494.99,4 -4,4"/>
+<!-- plmtpl:RDLObjectProperty -->
+<g id="node1" class="node">
+<title>plmtpl:RDLObjectProperty</title>
+<g id="a_node1"><a xlink:href="RDLObjectProperty.html" xlink:title="plmtpl:RDLObjectProperty">
+<polygon fill="#fff69f" stroke="black" points="175,-193.32 0,-193.32 0,-170.32 175,-170.32 175,-193.32"/>
+<text text-anchor="middle" x="87.5" y="-178.12" font-family="Arial" font-size="14.00">plmtpl:RDLObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- ottr:Triple -->
+<g id="node2" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="286.5,-103.59 212.5,-103.59 212.5,-80.59 286.5,-80.59 286.5,-103.59"/>
+<text text-anchor="middle" x="249.5" y="-88.39" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M108.35,-170.28C136.66,-154.6 187.43,-126.47 219.74,-108.58"/>
+<polygon fill="black" stroke="black" points="221.68,-111.5 228.73,-103.6 218.29,-105.38 221.68,-111.5"/>
+</g>
+<!-- ax:SubPropertyOf -->
+<g id="node3" class="node">
+<title>ax:SubPropertyOf</title>
+<g id="a_node3"><a xlink:href="../../../../../tpl.ottr.xyz/owl/axiom/0.1/SubPropertyOf.html" xlink:title="ax:SubPropertyOf">
+<polygon fill="#ffdbe5" stroke="black" points="156.26,-23 31.26,-23 31.26,0 156.26,0 156.26,-23"/>
+<text text-anchor="middle" x="93.76" y="-7.8" font-family="Arial" font-size="14.00">ax:SubPropertyOf</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf -->
+<g id="edge3" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf</title>
+<path fill="none" stroke="black" d="M87.93,-170.12C88.97,-141.92 91.61,-69.87 92.95,-33.38"/>
+<polygon fill="black" stroke="black" points="96.45,-33.41 93.32,-23.29 89.46,-33.15 96.45,-33.41"/>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;dec:ObjectProperty</title>
+<g id="a_node4"><a xlink:href="../../../../../tpl.ottr.xyz/owl/declaration/0.1/ObjectProperty.html" xlink:title="o&#45;owl&#45;dec:ObjectProperty">
+<polygon fill="#fde8dc" stroke="black" points="193.01,-387.97 23.01,-387.97 23.01,-364.97 193.01,-364.97 193.01,-387.97"/>
+<text text-anchor="middle" x="108.01" y="-372.77" font-family="Arial" font-size="14.00">o&#45;owl&#45;dec:ObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty -->
+<g id="edge2" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty</title>
+<path fill="none" stroke="black" d="M88.72,-193.42C92.06,-225.05 101.35,-313.26 105.71,-354.59"/>
+<polygon fill="black" stroke="black" points="102.24,-355.11 106.77,-364.69 109.21,-354.38 102.24,-355.11"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node5" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node5"><a xlink:href="../../../../../tpl.ottr.xyz/rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="258.55,-264.58 181.55,-264.58 181.55,-241.58 258.55,-241.58 258.55,-264.58"/>
+<text text-anchor="middle" x="220.05" y="-249.38" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M109.09,-193.43C130.95,-205.18 164.94,-223.46 189.55,-236.68"/>
+<polygon fill="black" stroke="black" points="188.01,-239.83 198.47,-241.48 191.32,-233.66 188.01,-239.83"/>
+</g>
+<!-- ax:SubPropertyOf&#45;&gt;ottr:Triple -->
+<g id="edge5" class="edge">
+<title>ax:SubPropertyOf&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M116.07,-23.05C142.79,-36.87 187.71,-60.12 217.96,-75.77"/>
+<polygon fill="black" stroke="black" points="216.74,-79.08 227.23,-80.57 219.95,-72.86 216.74,-79.08"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription -->
+<g id="node6" class="node">
+<title>o&#45;rdfs:TypedResourceDescription</title>
+<g id="a_node6"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/TypedResourceDescription.html" xlink:title="o&#45;rdfs:TypedResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="418.04,-390.51 201.04,-390.51 201.04,-367.51 418.04,-367.51 418.04,-390.51"/>
+<text text-anchor="middle" x="309.54" y="-375.31" font-family="Arial" font-size="14.00">o&#45;rdfs:TypedResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription</title>
+<path fill="none" stroke="black" d="M193.19,-377.54C193.35,-377.55 193.51,-377.55 193.67,-377.55"/>
+<polygon fill="black" stroke="black" points="190.91,-381.02 200.95,-377.64 191,-374.02 190.91,-381.02"/>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge7" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M222.17,-241.51C227.05,-214.83 239.15,-148.7 245.48,-114.05"/>
+<polygon fill="black" stroke="black" points="248.97,-114.47 247.32,-104 242.08,-113.21 248.97,-114.47"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type -->
+<g id="edge9" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M301.28,-367.39C285.96,-345.84 253,-299.45 234.11,-272.87"/>
+<polygon fill="black" stroke="black" points="236.94,-270.8 228.29,-264.68 231.23,-274.86 236.94,-270.8"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription -->
+<g id="node7" class="node">
+<title>o&#45;rdfs:ResourceDescription</title>
+<g id="a_node7"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/ResourceDescription.html" xlink:title="o&#45;rdfs:ResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="490.99,-216.53 310.99,-216.53 310.99,-193.53 490.99,-193.53 490.99,-216.53"/>
+<text text-anchor="middle" x="400.99" y="-201.33" font-family="Arial" font-size="14.00">o&#45;rdfs:ResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription -->
+<g id="edge8" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription</title>
+<path fill="none" stroke="black" d="M315.68,-367.33C330.91,-338.36 370.57,-262.9 389.98,-225.98"/>
+<polygon fill="black" stroke="black" points="393.32,-227.14 394.88,-216.66 387.13,-223.89 393.32,-227.14"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple -->
+<g id="edge11" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M385.35,-193.37C358.82,-173.59 304.82,-133.33 273.48,-109.97"/>
+<polygon fill="black" stroke="black" points="275.39,-107.03 265.28,-103.86 271.21,-112.64 275.39,-107.03"/>
+</g>
+<!-- o&#45;rdfs:Label -->
+<g id="node8" class="node">
+<title>o&#45;rdfs:Label</title>
+<g id="a_node8"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/Label.html" xlink:title="o&#45;rdfs:Label">
+<polygon fill="#d1f7ce" stroke="black" points="457.84,-49.42 369.84,-49.42 369.84,-26.42 457.84,-26.42 457.84,-49.42"/>
+<text text-anchor="middle" x="413.84" y="-34.22" font-family="Arial" font-size="14.00">o&#45;rdfs:Label</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label -->
+<g id="edge10" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label</title>
+<path fill="none" stroke="black" d="M401.9,-193.28C404.03,-165.52 409.41,-95.57 412.16,-59.77"/>
+<polygon fill="black" stroke="black" points="415.68,-59.68 412.95,-49.44 408.7,-59.14 415.68,-59.68"/>
+</g>
+<!-- o&#45;rdfs:Label&#45;&gt;ottr:Triple -->
+<g id="edge12" class="edge">
+<title>o&#45;rdfs:Label&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M378.58,-49.54C353.91,-57.68 320.76,-68.61 294.23,-77.35"/>
+<polygon fill="black" stroke="black" points="292.82,-74.13 284.41,-80.59 295.01,-80.78 292.82,-74.13"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Spring model layout (fdp)</summary><div><svg width="499px" height="408px"
+ viewBox="0.00 0.00 499.00 408.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 404.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-404 495,-404 495,4 -4,4"/>
+<!-- plmtpl:RDLObjectProperty -->
+<g id="node1" class="node">
+<title>plmtpl:RDLObjectProperty</title>
+<g id="a_node1"><a xlink:href="RDLObjectProperty.html" xlink:title="plmtpl:RDLObjectProperty">
+<polygon fill="#fff69f" stroke="black" points="287.66,-245.98 112.66,-245.98 112.66,-222.98 287.66,-222.98 287.66,-245.98"/>
+<text text-anchor="middle" x="200.16" y="-230.78" font-family="Arial" font-size="14.00">plmtpl:RDLObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- ottr:Triple -->
+<g id="node2" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="337.31,-160.89 263.31,-160.89 263.31,-137.89 337.31,-137.89 337.31,-160.89"/>
+<text text-anchor="middle" x="300.31" y="-145.69" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M214.09,-222.65C230.83,-208.42 259.11,-184.39 278.7,-167.75"/>
+<polygon fill="black" stroke="black" points="281.15,-170.26 286.5,-161.12 276.62,-164.93 281.15,-170.26"/>
+</g>
+<!-- ax:SubPropertyOf -->
+<g id="node3" class="node">
+<title>ax:SubPropertyOf</title>
+<g id="a_node3"><a xlink:href="../../../../../tpl.ottr.xyz/owl/axiom/0.1/SubPropertyOf.html" xlink:title="ax:SubPropertyOf">
+<polygon fill="#ffdbe5" stroke="black" points="131.94,-129.88 6.94,-129.88 6.94,-106.88 131.94,-106.88 131.94,-129.88"/>
+<text text-anchor="middle" x="69.44" y="-114.68" font-family="Arial" font-size="14.00">ax:SubPropertyOf</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf -->
+<g id="edge3" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf</title>
+<path fill="none" stroke="black" d="M187.15,-222.93C164.44,-202.76 117.4,-160.99 90.17,-136.79"/>
+<polygon fill="black" stroke="black" points="92.2,-133.92 82.4,-129.89 87.55,-139.15 92.2,-133.92"/>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;dec:ObjectProperty</title>
+<g id="a_node4"><a xlink:href="../../../../../tpl.ottr.xyz/owl/declaration/0.1/ObjectProperty.html" xlink:title="o&#45;owl&#45;dec:ObjectProperty">
+<polygon fill="#fde8dc" stroke="black" points="170.47,-400.2 0.47,-400.2 0.47,-377.2 170.47,-377.2 170.47,-400.2"/>
+<text text-anchor="middle" x="85.47" y="-385" font-family="Arial" font-size="14.00">o&#45;owl&#45;dec:ObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty -->
+<g id="edge2" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty</title>
+<path fill="none" stroke="black" d="M191.54,-246.07C172.11,-272.2 124.71,-335.93 100.4,-368.63"/>
+<polygon fill="black" stroke="black" points="97.35,-366.86 94.19,-376.97 102.97,-371.04 97.35,-366.86"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node5" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node5"><a xlink:href="../../../../../tpl.ottr.xyz/rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="410.38,-283.71 333.38,-283.71 333.38,-260.71 410.38,-260.71 410.38,-283.71"/>
+<text text-anchor="middle" x="371.88" y="-268.51" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M252.61,-246.01C275.19,-250.97 301.43,-256.73 323.53,-261.59"/>
+<polygon fill="black" stroke="black" points="322.85,-265.02 333.37,-263.75 324.35,-258.19 322.85,-265.02"/>
+</g>
+<!-- ax:SubPropertyOf&#45;&gt;ottr:Triple -->
+<g id="edge5" class="edge">
+<title>ax:SubPropertyOf&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M132.22,-126.81C170.38,-131.94 218.31,-138.38 253.22,-143.06"/>
+<polygon fill="black" stroke="black" points="252.77,-146.53 263.15,-144.4 253.7,-139.6 252.77,-146.53"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription -->
+<g id="node6" class="node">
+<title>o&#45;rdfs:TypedResourceDescription</title>
+<g id="a_node6"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/TypedResourceDescription.html" xlink:title="o&#45;rdfs:TypedResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="374.04,-369.19 157.04,-369.19 157.04,-346.19 374.04,-346.19 374.04,-369.19"/>
+<text text-anchor="middle" x="265.54" y="-353.99" font-family="Arial" font-size="14.00">o&#45;rdfs:TypedResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription</title>
+<path fill="none" stroke="black" d="M152.27,-377.2C164.08,-375.16 176.46,-373.03 188.52,-370.96"/>
+<polygon fill="black" stroke="black" points="189.29,-374.37 198.56,-369.23 188.11,-367.47 189.29,-374.37"/>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge7" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M365.01,-260.44C352.85,-239.56 327.38,-195.85 312.28,-169.93"/>
+<polygon fill="black" stroke="black" points="315.11,-167.83 307.05,-160.95 309.06,-171.35 315.11,-167.83"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type -->
+<g id="edge9" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M279.88,-346.17C297.72,-331.83 328.38,-307.18 349.36,-290.31"/>
+<polygon fill="black" stroke="black" points="351.82,-292.82 357.42,-283.83 347.44,-287.37 351.82,-292.82"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription -->
+<g id="node7" class="node">
+<title>o&#45;rdfs:ResourceDescription</title>
+<g id="a_node7"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/ResourceDescription.html" xlink:title="o&#45;rdfs:ResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="348.36,-22.83 168.36,-22.83 168.36,0.17 348.36,0.17 348.36,-22.83"/>
+<text text-anchor="middle" x="258.36" y="-7.63" font-family="Arial" font-size="14.00">o&#45;rdfs:ResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription -->
+<g id="edge8" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription</title>
+<path fill="none" stroke="black" d="M269.17,-346.13C275.12,-326.46 286.72,-285.12 290.86,-249.18 292.35,-236.2 294.12,-232.44 290.86,-219.78 283.8,-192.4 267.32,-191.43 260.11,-164.09 248.17,-118.83 251.86,-63.39 255.31,-33.3"/>
+<polygon fill="black" stroke="black" points="258.82,-33.44 256.58,-23.08 251.87,-32.57 258.82,-33.44"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple -->
+<g id="edge11" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M261.94,-23.1C269,-46.33 284.81,-98.37 293.78,-127.89"/>
+<polygon fill="black" stroke="black" points="290.49,-129.09 296.74,-137.64 297.18,-127.06 290.49,-129.09"/>
+</g>
+<!-- o&#45;rdfs:Label -->
+<g id="node8" class="node">
+<title>o&#45;rdfs:Label</title>
+<g id="a_node8"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/Label.html" xlink:title="o&#45;rdfs:Label">
+<polygon fill="#d1f7ce" stroke="black" points="490.6,-39.84 402.6,-39.84 402.6,-16.84 490.6,-16.84 490.6,-39.84"/>
+<text text-anchor="middle" x="446.6" y="-24.64" font-family="Arial" font-size="14.00">o&#45;rdfs:Label</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label -->
+<g id="edge10" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label</title>
+<path fill="none" stroke="black" d="M348.62,-19.48C363.51,-20.83 378.53,-22.19 392.18,-23.42"/>
+<polygon fill="black" stroke="black" points="392.05,-26.92 402.33,-24.34 392.68,-19.95 392.05,-26.92"/>
+</g>
+<!-- o&#45;rdfs:Label&#45;&gt;ottr:Triple -->
+<g id="edge12" class="edge">
+<title>o&#45;rdfs:Label&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M432.57,-39.94C407.08,-61.04 352.97,-105.81 322.45,-131.07"/>
+<polygon fill="black" stroke="black" points="319.98,-128.56 314.51,-137.64 324.45,-133.96 319.98,-128.56"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Radial layout (twopi)</summary><div><svg width="574px" height="632px"
+ viewBox="0.00 0.00 574.19 632.13" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 628.13)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-628.13 570.19,-628.13 570.19,4 -4,4"/>
+<!-- plmtpl:RDLObjectProperty -->
+<g id="node1" class="node">
+<title>plmtpl:RDLObjectProperty</title>
+<g id="a_node1"><a xlink:href="RDLObjectProperty.html" xlink:title="plmtpl:RDLObjectProperty">
+<polygon fill="#fff69f" stroke="black" points="308.02,-323.56 133.02,-323.56 133.02,-300.56 308.02,-300.56 308.02,-323.56"/>
+<text text-anchor="middle" x="220.52" y="-308.36" font-family="Arial" font-size="14.00">plmtpl:RDLObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- ottr:Triple -->
+<g id="node2" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="306.35,-473.85 232.35,-473.85 232.35,-450.85 306.35,-450.85 306.35,-473.85"/>
+<text text-anchor="middle" x="269.35" y="-458.65" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M224.35,-323.86C232.55,-349.1 251.9,-408.66 262.36,-440.84"/>
+<polygon fill="black" stroke="black" points="259.11,-442.18 265.53,-450.61 265.77,-440.02 259.11,-442.18"/>
+</g>
+<!-- ax:SubPropertyOf -->
+<g id="node3" class="node">
+<title>ax:SubPropertyOf</title>
+<g id="a_node3"><a xlink:href="../../../../../tpl.ottr.xyz/owl/axiom/0.1/SubPropertyOf.html" xlink:title="ax:SubPropertyOf">
+<polygon fill="#ffdbe5" stroke="black" points="125,-323.56 0,-323.56 0,-300.56 125,-300.56 125,-323.56"/>
+<text text-anchor="middle" x="62.5" y="-308.36" font-family="Arial" font-size="14.00">ax:SubPropertyOf</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf -->
+<g id="edge3" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf</title>
+<path fill="none" stroke="black" d="M132.73,-312.06C132.57,-312.06 132.41,-312.06 132.25,-312.06"/>
+<polygon fill="black" stroke="black" points="135.1,-308.56 125.1,-312.06 135.1,-315.56 135.1,-308.56"/>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;dec:ObjectProperty</title>
+<g id="a_node4"><a xlink:href="../../../../../tpl.ottr.xyz/owl/declaration/0.1/ObjectProperty.html" xlink:title="o&#45;owl&#45;dec:ObjectProperty">
+<polygon fill="#fde8dc" stroke="black" points="256.69,-173.28 86.69,-173.28 86.69,-150.28 256.69,-150.28 256.69,-173.28"/>
+<text text-anchor="middle" x="171.69" y="-158.08" font-family="Arial" font-size="14.00">o&#45;owl&#45;dec:ObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty -->
+<g id="edge2" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty</title>
+<path fill="none" stroke="black" d="M216.68,-300.27C208.48,-275.03 189.13,-215.46 178.67,-183.29"/>
+<polygon fill="black" stroke="black" points="181.92,-181.95 175.5,-173.52 175.26,-184.11 181.92,-181.95"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node5" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node5"><a xlink:href="../../../../../tpl.ottr.xyz/rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="386.85,-230.68 309.85,-230.68 309.85,-207.68 386.85,-207.68 386.85,-230.68"/>
+<text text-anchor="middle" x="348.35" y="-215.48" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M236.45,-300.49C258.46,-284.5 298.35,-255.51 324.08,-236.82"/>
+<polygon fill="black" stroke="black" points="326.19,-239.62 332.22,-230.91 322.07,-233.95 326.19,-239.62"/>
+</g>
+<!-- ax:SubPropertyOf&#45;&gt;ottr:Triple -->
+<g id="edge5" class="edge">
+<title>ax:SubPropertyOf&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M78.39,-323.61C114.41,-349.78 202.47,-413.75 245.24,-444.83"/>
+<polygon fill="black" stroke="black" points="243.26,-447.72 253.4,-450.76 247.37,-442.05 243.26,-447.72"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription -->
+<g id="node6" class="node">
+<title>o&#45;rdfs:TypedResourceDescription</title>
+<g id="a_node6"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/TypedResourceDescription.html" xlink:title="o&#45;rdfs:TypedResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="231.36,-23 14.36,-23 14.36,0 231.36,0 231.36,-23"/>
+<text text-anchor="middle" x="122.86" y="-7.8" font-family="Arial" font-size="14.00">o&#45;rdfs:TypedResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription</title>
+<path fill="none" stroke="black" d="M167.85,-149.99C159.65,-124.75 140.3,-65.18 129.85,-33.01"/>
+<polygon fill="black" stroke="black" points="133.09,-31.67 126.67,-23.24 126.43,-33.83 133.09,-31.67"/>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge7" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M344.54,-230.91C332.08,-269.27 292.4,-391.38 276.27,-441.04"/>
+<polygon fill="black" stroke="black" points="272.88,-440.14 273.12,-450.74 279.54,-442.31 272.88,-440.14"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type -->
+<g id="edge9" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M135.63,-23.26C173.07,-57.75 282.79,-158.8 328.26,-200.68"/>
+<polygon fill="black" stroke="black" points="326,-203.35 335.72,-207.55 330.74,-198.2 326,-203.35"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription -->
+<g id="node7" class="node">
+<title>o&#45;rdfs:ResourceDescription</title>
+<g id="a_node7"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/ResourceDescription.html" xlink:title="o&#45;rdfs:ResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="566.19,-509.32 386.19,-509.32 386.19,-486.32 566.19,-486.32 566.19,-509.32"/>
+<text text-anchor="middle" x="476.19" y="-494.12" font-family="Arial" font-size="14.00">o&#45;rdfs:ResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription -->
+<g id="edge8" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription</title>
+<path fill="none" stroke="black" d="M137.05,-23.04C163.56,-45.09 221.39,-95.64 259.89,-147.08 286.14,-182.17 284.4,-196.13 306.65,-233.88 361.51,-326.97 433.16,-434.29 462.63,-477.88"/>
+<polygon fill="black" stroke="black" points="459.75,-479.87 468.26,-486.19 465.55,-475.94 459.75,-479.87"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple -->
+<g id="edge11" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M409.03,-486.3C378.8,-481.12 343.84,-475.12 316.46,-470.43"/>
+<polygon fill="black" stroke="black" points="316.81,-466.93 306.36,-468.69 315.62,-473.83 316.81,-466.93"/>
+</g>
+<!-- o&#45;rdfs:Label -->
+<g id="node8" class="node">
+<title>o&#45;rdfs:Label</title>
+<g id="a_node8"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/Label.html" xlink:title="o&#45;rdfs:Label">
+<polygon fill="#d1f7ce" stroke="black" points="166.86,-624.13 78.86,-624.13 78.86,-601.13 166.86,-601.13 166.86,-624.13"/>
+<text text-anchor="middle" x="122.86" y="-608.93" font-family="Arial" font-size="14.00">o&#45;rdfs:Label</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label -->
+<g id="edge10" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label</title>
+<path fill="none" stroke="black" d="M440.69,-509.36C376.01,-530.37 239.08,-574.87 167.92,-597.99"/>
+<polygon fill="black" stroke="black" points="166.76,-594.68 158.33,-601.1 168.92,-601.34 166.76,-594.68"/>
+</g>
+<!-- o&#45;rdfs:Label&#45;&gt;ottr:Triple -->
+<g id="edge12" class="edge">
+<title>o&#45;rdfs:Label&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M134.35,-600.84C159.6,-574.94 220.07,-512.9 250.78,-481.39"/>
+<polygon fill="black" stroke="black" points="253.43,-483.69 257.9,-474.08 248.42,-478.8 253.43,-483.69"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Circular layout (circo)</summary><div><svg width="359px" height="258px"
+ viewBox="0.00 0.00 358.50 258.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 254.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-254 354.5,-254 354.5,4 -4,4"/>
+<!-- plmtpl:RDLObjectProperty -->
+<g id="node1" class="node">
+<title>plmtpl:RDLObjectProperty</title>
+<g id="a_node1"><a xlink:href="RDLObjectProperty.html" xlink:title="plmtpl:RDLObjectProperty">
+<polygon fill="#fff69f" stroke="black" points="319.76,-56.24 144.76,-56.24 144.76,-33.24 319.76,-33.24 319.76,-56.24"/>
+<text text-anchor="middle" x="232.26" y="-41.04" font-family="Arial" font-size="14.00">plmtpl:RDLObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- ottr:Triple -->
+<g id="node2" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="108.74,-56.24 34.74,-56.24 34.74,-33.24 108.74,-33.24 108.74,-56.24"/>
+<text text-anchor="middle" x="71.74" y="-41.04" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M144.49,-44.74C135.84,-44.74 127.3,-44.74 119.29,-44.74"/>
+<polygon fill="black" stroke="black" points="119.1,-41.24 109.1,-44.74 119.1,-48.24 119.1,-41.24"/>
+</g>
+<!-- ax:SubPropertyOf -->
+<g id="node3" class="node">
+<title>ax:SubPropertyOf</title>
+<g id="a_node3"><a xlink:href="../../../../../tpl.ottr.xyz/owl/axiom/0.1/SubPropertyOf.html" xlink:title="ax:SubPropertyOf">
+<polygon fill="#ffdbe5" stroke="black" points="214.5,-23 89.5,-23 89.5,0 214.5,0 214.5,-23"/>
+<text text-anchor="middle" x="152" y="-7.8" font-family="Arial" font-size="14.00">ax:SubPropertyOf</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf -->
+<g id="edge3" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;ax:SubPropertyOf</title>
+<path fill="none" stroke="black" d="M204.19,-33.12C199.4,-31.13 194.35,-29.04 189.36,-26.98"/>
+<polygon fill="black" stroke="black" points="190.5,-23.66 179.92,-23.06 187.82,-30.12 190.5,-23.66"/>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;dec:ObjectProperty</title>
+<g id="a_node4"><a xlink:href="../../../../../tpl.ottr.xyz/owl/declaration/0.1/ObjectProperty.html" xlink:title="o&#45;owl&#45;dec:ObjectProperty">
+<polygon fill="#fde8dc" stroke="black" points="350.5,-136.5 180.5,-136.5 180.5,-113.5 350.5,-113.5 350.5,-136.5"/>
+<text text-anchor="middle" x="265.5" y="-121.3" font-family="Arial" font-size="14.00">o&#45;owl&#45;dec:ObjectProperty</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty -->
+<g id="edge2" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;owl&#45;dec:ObjectProperty</title>
+<path fill="none" stroke="black" d="M237.17,-56.59C242.3,-68.99 250.47,-88.72 256.73,-103.81"/>
+<polygon fill="black" stroke="black" points="253.63,-105.47 260.69,-113.37 260.09,-102.79 253.63,-105.47"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node5" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node5"><a xlink:href="../../../../../tpl.ottr.xyz/rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="77,-136.5 0,-136.5 0,-113.5 77,-113.5 77,-136.5"/>
+<text text-anchor="middle" x="38.5" y="-121.3" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>plmtpl:RDLObjectProperty&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M204.09,-56.41C170.27,-70.42 113.44,-93.96 75.95,-109.49"/>
+<polygon fill="black" stroke="black" points="74.29,-106.39 66.39,-113.45 76.97,-112.85 74.29,-106.39"/>
+</g>
+<!-- ax:SubPropertyOf&#45;&gt;ottr:Triple -->
+<g id="edge5" class="edge">
+<title>ax:SubPropertyOf&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M123.93,-23.13C119.14,-25.11 114.09,-27.2 109.1,-29.27"/>
+<polygon fill="black" stroke="black" points="107.56,-26.12 99.66,-33.18 110.24,-32.59 107.56,-26.12"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription -->
+<g id="node6" class="node">
+<title>o&#45;rdfs:TypedResourceDescription</title>
+<g id="a_node6"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/TypedResourceDescription.html" xlink:title="o&#45;rdfs:TypedResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="340.76,-216.76 123.76,-216.76 123.76,-193.76 340.76,-193.76 340.76,-216.76"/>
+<text text-anchor="middle" x="232.26" y="-201.56" font-family="Arial" font-size="14.00">o&#45;rdfs:TypedResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;dec:ObjectProperty&#45;&gt;o&#45;rdfs:TypedResourceDescription</title>
+<path fill="none" stroke="black" d="M260.6,-136.84C255.46,-149.24 247.29,-168.98 241.04,-184.07"/>
+<polygon fill="black" stroke="black" points="237.67,-183.05 237.08,-193.63 244.14,-185.73 237.67,-183.05"/>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge7" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M43.41,-113.16C48.54,-100.76 56.71,-81.03 62.97,-65.94"/>
+<polygon fill="black" stroke="black" points="66.33,-66.95 66.93,-56.37 59.87,-64.27 66.33,-66.95"/>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type -->
+<g id="edge9" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M204.09,-193.59C170.27,-179.58 113.44,-156.04 75.95,-140.51"/>
+<polygon fill="black" stroke="black" points="76.97,-137.15 66.39,-136.56 74.29,-143.62 76.97,-137.15"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription -->
+<g id="node7" class="node">
+<title>o&#45;rdfs:ResourceDescription</title>
+<g id="a_node7"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/ResourceDescription.html" xlink:title="o&#45;rdfs:ResourceDescription">
+<polygon fill="#d1f7ce" stroke="black" points="242,-250 62,-250 62,-227 242,-227 242,-250"/>
+<text text-anchor="middle" x="152" y="-234.8" font-family="Arial" font-size="14.00">o&#45;rdfs:ResourceDescription</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription -->
+<g id="edge8" class="edge">
+<title>o&#45;rdfs:TypedResourceDescription&#45;&gt;o&#45;rdfs:ResourceDescription</title>
+<path fill="none" stroke="black" d="M204.19,-216.89C199.4,-218.87 194.35,-220.96 189.36,-223.03"/>
+<polygon fill="black" stroke="black" points="187.82,-219.88 179.92,-226.94 190.5,-226.35 187.82,-219.88"/>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple -->
+<g id="edge11" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M126.59,-226.82C124.23,-224.84 122.14,-222.56 120.56,-219.96 118.86,-217.16 119.54,-193.78 118.94,-190.56 110.48,-145.1 91.76,-94.16 80.6,-66.13"/>
+<polygon fill="black" stroke="black" points="83.73,-64.53 76.73,-56.57 77.24,-67.15 83.73,-64.53"/>
+</g>
+<!-- o&#45;rdfs:Label -->
+<g id="node8" class="node">
+<title>o&#45;rdfs:Label</title>
+<g id="a_node8"><a xlink:href="../../../../../tpl.ottr.xyz/rdfs/0.2/Label.html" xlink:title="o&#45;rdfs:Label">
+<polygon fill="#d1f7ce" stroke="black" points="115.74,-216.76 27.74,-216.76 27.74,-193.76 115.74,-193.76 115.74,-216.76"/>
+<text text-anchor="middle" x="71.74" y="-201.56" font-family="Arial" font-size="14.00">o&#45;rdfs:Label</text>
+</a>
+</g>
+</g>
+<!-- o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label -->
+<g id="edge10" class="edge">
+<title>o&#45;rdfs:ResourceDescription&#45;&gt;o&#45;rdfs:Label</title>
+<path fill="none" stroke="black" d="M123.93,-226.88C119.14,-224.89 114.09,-222.8 109.1,-220.74"/>
+<polygon fill="black" stroke="black" points="110.24,-217.42 99.66,-216.82 107.56,-223.88 110.24,-217.42"/>
+</g>
+<!-- o&#45;rdfs:Label&#45;&gt;ottr:Triple -->
+<g id="edge12" class="edge">
+<title>o&#45;rdfs:Label&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M73.69,-193.7C75.79,-180.63 78.98,-158.71 80.2,-139.7 81.81,-114.57 78.52,-85.77 75.59,-66.54"/>
+<polygon fill="black" stroke="black" points="79,-65.73 73.94,-56.42 72.09,-66.86 79,-65.73"/>
+</g>
+</g>
+</svg>
+</div></details></div> <h4>List of dependencies</h4> <p class="info">&#128712; The number in parenthesis is the number of instances of each template.</p> <div class="treeview toggle-all click-first"><details><summary><span>plmtpl:RDLObjectProperty</span></summary><span class="leaf"><span>ottr:Triple<span> (3)</span></span></span><details><summary><span>ax:SubPropertyOf<span> (1)</span></span></summary><span class="leaf"><span>ottr:Triple<span> (1)</span></span></span></details><details><summary><span>o-owl-dec:ObjectProperty<span> (1)</span></span></summary><details><summary><span>o-rdfs:TypedResourceDescription<span> (1)</span></span></summary><details><summary><span>o-rdf:Type<span> (1)</span></span></summary><span class="leaf"><span>ottr:Triple<span> (1)</span></span></span></details><details><summary><span>o-rdfs:ResourceDescription<span> (1)</span></span></summary><span class="leaf"><span>ottr:Triple<span> (3)</span></span></span><details><summary><span>o-rdfs:Label<span> (1)</span></span></summary><span class="leaf"><span>ottr:Triple<span> (1)</span></span></span></details></details></details></details><details><summary><span>o-rdf:Type<span> (1)</span></span></summary><span class="leaf"><span>ottr:Triple<span> (1)</span></span></span></details></details></div><h4>Depending templates</h4><p class="info">&#128712; The templates in this library that depend on this template.</p><ul><li><a href="../../../../../tpl.equonto.com/ontology/maintenance-procedure/PCA_ObjectPropertyWithPropertyChain.html">proc-tpl:PCA_ObjectPropertyWithPropertyChain</a></li></ul></div><div id="metrics"><h2 id="Metrics">Metrics</h2><p class="info">&#128712; Dependency graph metrics. Depth is the number of steps to a leaf node in the dependency graph. Branching is the number of outgoing edges from a node.</p><ul><li>Max. dependency depth: 5</li><li>Min. dependency depth: 1</li><li>Max. branching: 6</li><li>Min. branching: 1</li></ul><h4>Templates used</h4><table><tr><td><b class="heading">Direct dependencies</b><ul><li>Number of instances: 6</li><li>Templates used: (4 templates)<ul><li><a>ottr:Triple</a> (3)</li><li><a href="../../../../../tpl.ottr.xyz/owl/axiom/0.1/SubPropertyOf.html">ax:SubPropertyOf</a> (1)</li><li><a href="../../../../../tpl.ottr.xyz/owl/declaration/0.1/ObjectProperty.html">o-owl-dec:ObjectProperty</a> (1)</li><li><a href="../../../../../tpl.ottr.xyz/rdf/0.1/Type.html">o-rdf:Type</a> (1)</li></ul></li></ul></td><td><b class="heading">Complete expansion</b><ul><li>Number of instances: 18</li><li>Templates used: (8 templates)<ul><li><a>ottr:Triple</a> (10)</li><li><a href="RDLObjectProperty.html">plmtpl:RDLObjectProperty</a> (1)</li><li><a href="../../../../../tpl.ottr.xyz/owl/axiom/0.1/SubPropertyOf.html">ax:SubPropertyOf</a> (1)</li><li><a href="../../../../../tpl.ottr.xyz/owl/declaration/0.1/ObjectProperty.html">o-owl-dec:ObjectProperty</a> (1)</li><li><a href="../../../../../tpl.ottr.xyz/rdf/0.1/Type.html">o-rdf:Type</a> (2)</li><li><a href="../../../../../tpl.ottr.xyz/rdfs/0.2/Label.html">o-rdfs:Label</a> (1)</li><li><a href="../../../../../tpl.ottr.xyz/rdfs/0.2/ResourceDescription.html">o-rdfs:ResourceDescription</a> (1)</li><li><a href="../../../../../tpl.ottr.xyz/rdfs/0.2/TypedResourceDescription.html">o-rdfs:TypedResourceDescription</a> (1)</li></ul></li></ul></td></tr></table><h4>Vocabulary introduced</h4><table><tr><td><b class="heading">Direct dependencies</b><ul><li>Namespaces introduced: (2)<ul><li><b class="heading">owl</b>: <code>http://www.w3.org/2002/07/owl#</code><ul><li><a href="http://www.w3.org/2002/07/owl#inverseOf">owl:inverseOf</a></li></ul></li><li><b class="heading">rdfs</b>: <code>http://www.w3.org/2000/01/rdf-schema#</code><ul><li><a href="http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></li><li><a href="http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></li></ul></li></ul></li></ul></td><td><b class="heading">Complete expansion</b><ul><li>Namespaces introduced: (3)<ul><li><b class="heading">rdf</b>: <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code><ul><li><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a></li></ul></li><li><b class="heading">owl</b>: <code>http://www.w3.org/2002/07/owl#</code><ul><li><a href="http://www.w3.org/2002/07/owl#ObjectProperty">owl:ObjectProperty</a></li><li><a href="http://www.w3.org/2002/07/owl#inverseOf">owl:inverseOf</a></li></ul></li><li><b class="heading">rdfs</b>: <code>http://www.w3.org/2000/01/rdf-schema#</code><ul><li><a href="http://www.w3.org/2000/01/rdf-schema#comment">rdfs:comment</a></li><li><a href="http://www.w3.org/2000/01/rdf-schema#domain">rdfs:domain</a></li><li><a href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy">rdfs:isDefinedBy</a></li><li><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></li><li><a href="http://www.w3.org/2000/01/rdf-schema#range">rdfs:range</a></li><li><a href="http://www.w3.org/2000/01/rdf-schema#seeAlso">rdfs:seeAlso</a></li><li><a href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf">rdfs:subPropertyOf</a></li></ul></li></ul></li></ul></td></tr></table></div><div id="serialisations"><h2 id="Serialisations">Serialisations</h2><div><h4>stOTTR</h4><pre>plmtpl:RDLObjectProperty[
+    ! owl:ObjectProperty ?RDLOP,
+    ? List&lt;owl:ObjectProperty&gt; ?superprop,
+    !? xsd:string ?label,
+    !? xsd:string ?description,
+    ? List&lt;rdfs:Resource&gt; ?seeAlso,
+    ? ottr:IRI ?definedBy,
+    ? owl:Class ?domain,
+    ? owl:Class ?range,
+    ? NEList&lt;ottr:IRI&gt; ?propertyType,
+    ? owl:ObjectProperty ?inverse
+] :: {
+    ottr:Triple(?RDLOP, owl:inverseOf, ?inverse),
+    ottr:Triple(?RDLOP, rdfs:domain, ?domain),
+    ottr:Triple(?RDLOP, rdfs:range, ?range),
+    cross | o-owl-ax:SubPropertyOf(?RDLOP, ++?superprop),
+    o-owl-dec:ObjectProperty(?RDLOP, ?label, ?description, ?seeAlso, ?definedBy),
+    cross | o-rdf:Type(?RDLOP, ++?propertyType)
+} .</pre><h4>RDF/wOTTR</h4><pre>
+plmtpl:RDLObjectProperty
+        rdf:type         ottr:Template ;
+        ottr:parameters  ( [ ottr:modifier  ottr:nonBlank ;
+                             ottr:name      &quot;RDLOP&quot; ;
+                             ottr:type      owl:ObjectProperty ;
+                             ottr:variable  _:b0
+                           ]
+                           [ ottr:modifier  ottr:optional ;
+                             ottr:name      &quot;superprop&quot; ;
+                             ottr:type      ( rdf:List owl:ObjectProperty ) ;
+                             ottr:variable  _:b1
+                           ]
+                           [ ottr:modifier  ottr:nonBlank , ottr:optional ;
+                             ottr:name      &quot;label&quot; ;
+                             ottr:type      xsd:string ;
+                             ottr:variable  _:b2
+                           ]
+                           [ ottr:modifier  ottr:nonBlank , ottr:optional ;
+                             ottr:name      &quot;description&quot; ;
+                             ottr:type      xsd:string ;
+                             ottr:variable  _:b3
+                           ]
+                           [ ottr:modifier  ottr:optional ;
+                             ottr:name      &quot;seeAlso&quot; ;
+                             ottr:type      ( rdf:List rdfs:Resource ) ;
+                             ottr:variable  _:b4
+                           ]
+                           [ ottr:modifier  ottr:optional ;
+                             ottr:name      &quot;definedBy&quot; ;
+                             ottr:type      ottr:IRI ;
+                             ottr:variable  _:b5
+                           ]
+                           [ ottr:modifier  ottr:optional ;
+                             ottr:name      &quot;domain&quot; ;
+                             ottr:type      owl:Class ;
+                             ottr:variable  _:b6
+                           ]
+                           [ ottr:modifier  ottr:optional ;
+                             ottr:name      &quot;range&quot; ;
+                             ottr:type      owl:Class ;
+                             ottr:variable  _:b7
+                           ]
+                           [ ottr:modifier  ottr:optional ;
+                             ottr:name      &quot;propertyType&quot; ;
+                             ottr:type      ( ottr:NEList ottr:IRI ) ;
+                             ottr:variable  _:b8
+                           ]
+                           [ ottr:modifier  ottr:optional ;
+                             ottr:name      &quot;inverse&quot; ;
+                             ottr:type      owl:ObjectProperty ;
+                             ottr:variable  _:b9
+                           ]
+                         ) ;
+        ottr:pattern     [ ottr:of      o-owl-dec:ObjectProperty ;
+                           ottr:values  ( _:b0
+                                          _:b2
+                                          _:b3
+                                          _:b4
+                                          _:b5
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:arguments  ( [ ottr:value  _:b0 ]
+                                             [ ottr:modifier  ottr:listExpand ;
+                                               ottr:value     _:b1
+                                             ]
+                                           ) ;
+                           ottr:modifier   ottr:cross ;
+                           ottr:of         o-owl-ax:SubPropertyOf
+                         ] ;
+        ottr:pattern     [ ottr:arguments  ( [ ottr:value  _:b0 ]
+                                             [ ottr:modifier  ottr:listExpand ;
+                                               ottr:value     _:b8
+                                             ]
+                                           ) ;
+                           ottr:modifier   ottr:cross ;
+                           ottr:of         o-rdf:Type
+                         ] ;
+        ottr:pattern     [ ottr:of      ottr:Triple ;
+                           ottr:values  ( _:b0
+                                          owl:inverseOf
+                                          _:b9
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:of      ottr:Triple ;
+                           ottr:values  ( _:b0
+                                          rdfs:domain
+                                          _:b6
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:of      ottr:Triple ;
+                           ottr:values  ( _:b0
+                                          rdfs:range
+                                          _:b7
+                                        )
+                         ] .</pre></div></div><h2 id="Prefixes">Prefixes</h2><div id="prefixes"><p class="info">&#128712; Prefixes are removed from all listings on this page for readability, but are listed here in RDF Turtle format.</p><pre>@prefix ottr:       &lt;http://ns.ottr.xyz/0.4/&gt;.
+@prefix plmtpl:     &lt;http://rds.posccaesar.org/ontology/plm/tpl/0.1/&gt;.
+@prefix ax:         &lt;http://tpl.ottr.xyz/owl/axiom/0.1/&gt;.
+@prefix o-owl-ax:   &lt;http://tpl.ottr.xyz/owl/axiom/0.1/&gt;.
+@prefix o-owl-dec:  &lt;http://tpl.ottr.xyz/owl/declaration/0.1/&gt;.
+@prefix o-rdf:      &lt;http://tpl.ottr.xyz/rdf/0.1/&gt;.
+@prefix rdf:        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
+@prefix rdfs:       &lt;http://www.w3.org/2000/01/rdf-schema#&gt;.
+@prefix xsd:        &lt;http://www.w3.org/2001/XMLSchema#&gt;.
+@prefix owl:        &lt;http://www.w3.org/2002/07/owl#&gt;.</pre></div></div><div class="footer"><p>This is a generated documentation page for an OTTR template library. For more information about Reasonable Ontology Templates (OTTR), visit <a href="http://ottr.xyz" target="_blank">ottr.xyz</a>.</p><p>Generated: 2024/03/11 05:50:10 Z</p></div><script>var treeviewCounter=0;for(var treeview of document.getElementsByClassName("treeview")){if(treeview.classList.contains('toggle-all')){treeviewCounter+=1;treeview.setAttribute("id","treeview"+treeviewCounter)
+treeview.insertAdjacentHTML('beforebegin','<p class="treeviewbuttons"><span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 1)">Expand all</span> '
++'<span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 0)">Contract all</span></p>');}
+if(treeview.classList.contains('click-first')){treeview.firstChild.firstChild.click();}
+if(treeview.classList.contains('expand-all')){treeViewToggleAll('treeview'+treeviewCounter,1);}}
+function treeViewToggleAll(elementid,open){var treeview=document.getElementById(elementid);for(var list of treeview.querySelectorAll("details")){if(open){list.setAttribute("open","open");}else{list.removeAttribute("open");}}}</script></body></html>

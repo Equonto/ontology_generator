@@ -45,3 +45,8 @@ def get_ontology_settings(location):
 
 def directory_exists(directory):
     return os.path.exists(directory)
+
+def append_file_to_file(file1, file2):
+    with open(file1, "r") as f1:
+        with open(file2, "a") as f2:
+            f2.write(f1.read())

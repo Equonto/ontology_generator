@@ -2,6 +2,6 @@
   {
     "ontology_shortname": "spo",
     "imports": ["core.owl", "AnnotationVocabulary.rdf"],
-    "value": "hasDirectActivityPart(?y, ?x), lis:participantIn(?z , ?x) -> lis:participantIn(?z , ?y)"
+    "value": "hasDirectActivityPart(?y, ?x), participantIn(?z , ?x) -> participantIn(?z , ?y)"
   }
 ]
