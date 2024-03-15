@@ -25,9 +25,9 @@
 @prefix ont: <http://data.grundfos.com/ontology/pump/ont/> .
 @prefix ido-tpl: <http://example.com/ido/> .
 @prefix lis: <http://rds.posccaesar.org/ontology/lis14/rdl/> .
-@prefix proc-cmto: <http://spec.equonto.com/ontology/maintenance-procedure/conditional-maintenance-task-ontology#> .
-@prefix proc-spo: <http://spec.equonto.com/ontology/maintenance-procedure/static-procedure-ontology#> .
-@prefix proc-tpl: <http://tpl.equonto.com/ontology/maintenance-procedure/> .
+@prefix proc-cmto: <http://spec.equonto.org/ontology/maintenance-procedure/conditional-maintenance-task-ontology#> .
+@prefix proc-spo: <http://spec.equonto.org/ontology/maintenance-procedure/static-procedure-ontology#> .
+@prefix proc-tpl: <http://tpl.equonto.org/ontology/maintenance-procedure/> .
 
 [] a ottr:InstanceMap ;
     ottr:source [ a ottr:H2Source ] ;

@@ -1,7 +1,6 @@
 from FileIo import *
 from RunLutra import run_lutra_process, run_docttr
 from RunWidoco import run_widoco
-from RdfLibUtilities import convert_ontology_filetypes
 from AddSwrl import create_swrl
 
 class CreateOntology:

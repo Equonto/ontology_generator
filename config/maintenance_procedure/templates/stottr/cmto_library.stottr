@@ -46,9 +46,9 @@
 @prefix dcterms:     <http://purl.org/dc/terms/> .
 @prefix ido-tpl:      <http://example.com/ido/> .
 @prefix lis:          <http://rds.posccaesar.org/ontology/lis14/rdl/> .
-@prefix proc-cmto: <http://spec.equonto.com/ontology/maintenance-procedure/conditional-maintenance-task-ontology#> .
-@prefix proc-spo: <http://spec.equonto.com/ontology/maintenance-procedure/static-procedure-ontology#> .
-@prefix proc-tpl: <http://tpl.equonto.com/ontology/maintenance-procedure/> .
+@prefix proc-cmto: <http://spec.equonto.org/ontology/maintenance-procedure/conditional-maintenance-task-ontology#> .
+@prefix proc-spo: <http://spec.equonto.org/ontology/maintenance-procedure/static-procedure-ontology#> .
+@prefix proc-tpl: <http://tpl.equonto.org/ontology/maintenance-procedure/> .
 @prefix iof-av: <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/> .
 
 proc-tpl:PROC_CMTO_ClassAxioms[]
