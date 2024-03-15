@@ -47,7 +47,7 @@
 @prefix lis:          <http://rds.posccaesar.org/ontology/lis14/rdl/> .
 @prefix proc-cmto: <http://spec.equonto.org/ontology/maintenance-procedure/conditional-maintenance-task-ontology#> .
 @prefix proc-spo: <http://spec.equonto.org/ontology/maintenance-procedure/static-procedure-ontology#> .
-@prefix proc-tpl: <http://tpl.equonto.org/ontology/maintenance-procedure/> .
+@prefix proc-tpl: <http://spec.equonto.org/template/maintenance-procedure/> .
 @prefix iof-av: <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/> .
 
 ## axioms - hard coded - TODO: can I make this "dry"
@@ -183,7 +183,7 @@ proc-tpl:PROC_SPO_ClassAxioms_MaintenanceTask[]
  ) :: {
     o-owl-re:ObjectMaxCardinality(?blank10014, "1"^^xsd:nonNegativeInteger, proc-spo:directlyBefore, proc-spo:MaintenanceTask),
     o-owl-re:ObjectMaxCardinality(?blank10015, "1"^^xsd:nonNegativeInteger, proc-spo:directActivityPartOf, proc-spo:MaintenanceTask),
-    o-owl-re:ObjectMaxCardinality(?blank10016, "1"^^xsd:nonNegativeInteger, proc-spo:directlyActivityPartOf, proc-spo:MaintenanceProcedureProcess),
+    o-owl-re:ObjectMaxCardinality(?blank10016, "1"^^xsd:nonNegativeInteger, proc-spo:directActivityPartOf, proc-spo:MaintenanceProcedureProcess),
     o-owl-re:ObjectAllValuesFrom(?blank10017, proc-spo:locallyEquivalentTo, proc-spo:MaintenanceTask),
     o-owl-re:ObjectSomeValuesFrom(?blank10018, proc-spo:representedBy, proc-spo:MaintenanceTaskDescription),
     o-owl-ax:EquivObjectIntersectionOf(proc-spo:MaintenanceTask, (proc-spo:MaintenanceProcess, ?blank10014, ?blank10015, ?blank10016, ?blank10017, ?blank10018))
