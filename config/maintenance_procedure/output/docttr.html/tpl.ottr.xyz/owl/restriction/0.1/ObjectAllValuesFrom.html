@@ -316,7 +316,7 @@ x:argument1  rdf:type      owl:Restriction ;
         owl:allValuesFrom  x:argument3 ;
         owl:onProperty     x:argument2 .
 
-x:argument3  rdf:type  owl:Class .</pre><h4>Interactive expansion</h4><p class="info">&#128712; Click the list to expand/contract one list element. Click &#x27;expand/contact all&#x27; to expand/contract all elements. Note that the interactive expansion is not correct for instances that are marked by list expanders.</p><div><div class="treeview toggle-all click-first"><details><summary><code>o-owl-re:ObjectAllValuesFrom(x:argument1, x:argument2, x:argument3)</code></summary><details><summary><code>o-owl-re:AllValuesFrom(x:argument1, x:argument2, x:argument3)</code></summary><details><summary><code>o-owl-ut:ValueRestriction(x:argument1, owl:allValuesFrom, x:argument2, x:argument3)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, owl:allValuesFrom, x:argument3)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, owl:onProperty, x:argument2)</code></span><details><summary><code>o-rdf:Type(x:argument1, owl:Restriction)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdf:type, owl:Restriction)</code></span></details></details></details><details><summary><code>o-rdf:Type(x:argument3, owl:Class)</code></summary><span class="leaf"><code>ottr:Triple(x:argument3, rdf:type, owl:Class)</code></span></details><details><summary><code>o-rdf:Type(x:argument2, owl:ObjectProperty)</code></summary><span class="leaf"><code>ottr:Triple(x:argument2, rdf:type, owl:ObjectProperty)</code></span></details></details></div></div></div><div id="dependencies"><h2 id="Dependencies">Dependencies</h2><h4>Dependency graph</h4> <p class="info">&#128712; The graph shows all the templates that this template depends on. The colour of the node indicates its namespace. Each node is linked to its documentation page.</p> <div><details open="open"><summary>Hierarchical horizontal layout (dot)</summary><div><svg width="720px" height="81px"
+x:argument3  rdf:type  owl:Class .</pre><h4>Interactive expansion</h4><p class="info">&#128712; Click the list to expand/contract one list element. Click &#x27;expand/contact all&#x27; to expand/contract all elements. Note that the interactive expansion is not correct for instances that are marked by list expanders.</p><div><div class="treeview toggle-all click-first"><details><summary><code>o-owl-re:ObjectAllValuesFrom(x:argument1, x:argument2, x:argument3)</code></summary><details><summary><code>o-owl-re:AllValuesFrom(x:argument1, x:argument2, x:argument3)</code></summary><details><summary><code>o-owl-ut:ValueRestriction(x:argument1, owl:allValuesFrom, x:argument2, x:argument3)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, owl:allValuesFrom, x:argument3)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, owl:onProperty, x:argument2)</code></span><details><summary><code>o-rdf:Type(x:argument1, owl:Restriction)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdf:type, owl:Restriction)</code></span></details></details></details><details><summary><code>o-rdf:Type(x:argument2, owl:ObjectProperty)</code></summary><span class="leaf"><code>ottr:Triple(x:argument2, rdf:type, owl:ObjectProperty)</code></span></details><details><summary><code>o-rdf:Type(x:argument3, owl:Class)</code></summary><span class="leaf"><code>ottr:Triple(x:argument3, rdf:type, owl:Class)</code></span></details></details></div></div></div><div id="dependencies"><h2 id="Dependencies">Dependencies</h2><h4>Dependency graph</h4> <p class="info">&#128712; The graph shows all the templates that this template depends on. The colour of the node indicates its namespace. Each node is linked to its documentation page.</p> <div><details open="open"><summary>Hierarchical horizontal layout (dot)</summary><div><svg width="720px" height="81px"
  viewBox="0.00 0.00 720.00 81.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 77.0)">
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-77 716,-77 716,4 -4,4"/>
@@ -845,13 +845,13 @@ rstr:ObjectAllValuesFrom
                            ]
                          ) ;
         ottr:pattern     [ ottr:of      o-rdf:Type ;
-                           ottr:values  ( _:b1
-                                          owl:ObjectProperty
+                           ottr:values  ( _:b2
+                                          owl:Class
                                         )
                          ] ;
         ottr:pattern     [ ottr:of      o-rdf:Type ;
-                           ottr:values  ( _:b2
-                                          owl:Class
+                           ottr:values  ( _:b1
+                                          owl:ObjectProperty
                                         )
                          ] ;
         ottr:pattern     [ ottr:of      rstr:AllValuesFrom ;
@@ -864,7 +864,7 @@ rstr:ObjectAllValuesFrom
 @prefix rstr:       &lt;http://tpl.ottr.xyz/owl/restriction/0.1/&gt;.
 @prefix o-rdf:      &lt;http://tpl.ottr.xyz/rdf/0.1/&gt;.
 @prefix rdf:        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
-@prefix owl:        &lt;http://www.w3.org/2002/07/owl#&gt;.</pre></div></div><div class="footer"><p>This is a generated documentation page for an OTTR template library. For more information about Reasonable Ontology Templates (OTTR), visit <a href="http://ottr.xyz" target="_blank">ottr.xyz</a>.</p><p>Generated: 2024/03/15 04:09:46 Z</p></div><script>var treeviewCounter=0;for(var treeview of document.getElementsByClassName("treeview")){if(treeview.classList.contains('toggle-all')){treeviewCounter+=1;treeview.setAttribute("id","treeview"+treeviewCounter)
+@prefix owl:        &lt;http://www.w3.org/2002/07/owl#&gt;.</pre></div></div><div class="footer"><p>This is a generated documentation page for an OTTR template library. For more information about Reasonable Ontology Templates (OTTR), visit <a href="http://ottr.xyz" target="_blank">ottr.xyz</a>.</p><p>Generated: 2024/03/15 04:26:29 Z</p></div><script>var treeviewCounter=0;for(var treeview of document.getElementsByClassName("treeview")){if(treeview.classList.contains('toggle-all')){treeviewCounter+=1;treeview.setAttribute("id","treeview"+treeviewCounter)
 treeview.insertAdjacentHTML('beforebegin','<p class="treeviewbuttons"><span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 1)">Expand all</span> '
 +'<span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 0)">Contract all</span></p>');}
 if(treeview.classList.contains('click-first')){treeview.firstChild.firstChild.click();}

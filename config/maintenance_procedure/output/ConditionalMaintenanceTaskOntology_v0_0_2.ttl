@@ -179,24 +179,24 @@ proc-cmto:CorrectiveMaintenanceTask
         iof-av:subjectMatterExpertExplanation  "maintenance carried out after fault recognition and intended to restore an item into a state in which it can perform a required function (EN13306)" ;
         iof-av:isPrimitive  false .
 
-proc-cmto:resultsIn  rdf:type  owl:ObjectProperty ;
-        rdfs:subPropertyOf  lis:before .
+proc-cmto:resultsIn  rdfs:subPropertyOf  lis:before ;
+        rdf:type            owl:ObjectProperty .
 
-proc-cmto:triggers  rdf:type  owl:ObjectProperty ;
-        rdfs:subPropertyOf  proc-spo:directlyBefore .
+proc-cmto:triggers  rdfs:subPropertyOf  proc-spo:directlyBefore ;
+        rdf:type            owl:ObjectProperty .
 
-proc-cmto:addresses  rdf:type  owl:ObjectProperty ;
-        rdfs:subPropertyOf  lis:occursRelativeTo ;
+proc-cmto:addresses  rdfs:subPropertyOf  lis:occursRelativeTo ;
+        rdf:type            owl:ObjectProperty ;
         owl:inverseOf       proc-cmto:addressedBy .
 
 proc-cmto:addressedBy
-        rdf:type            owl:ObjectProperty ;
         rdfs:subPropertyOf  lis:occursRelativeTo ;
+        rdf:type            owl:ObjectProperty ;
         owl:inverseOf       proc-cmto:addresses .
 
 proc-cmto:functionalFailureRealisedIn
-        rdf:type                owl:ObjectProperty ;
         rdfs:subPropertyOf      lis:realizedIn ;
+        rdf:type                owl:ObjectProperty ;
         owl:propertyChainAxiom  _:b10 .
 
 _:b11   rdf:rest   rdf:nil ;

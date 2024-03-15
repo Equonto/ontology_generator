@@ -1027,7 +1027,7 @@ x:argument1  rdf:type       x:argument9-1 , x:argument9-2 , owl:ObjectProperty ;
         rdfs:seeAlso        []  ;
         rdfs:seeAlso        []  ;
         rdfs:subPropertyOf  x:argument2-1 , x:argument2-2 ;
-        owl:inverseOf       x:argument10 .</pre><h4>Interactive expansion</h4><p class="info">&#128712; Click the list to expand/contract one list element. Click &#x27;expand/contact all&#x27; to expand/contract all elements. Note that the interactive expansion is not correct for instances that are marked by list expanders.</p><div><div class="treeview toggle-all click-first"><details><summary><code>plmtpl:RDLObjectProperty(x:argument1, (x:argument2-1, x:argument2-2), _:argument3, _:argument4, (_:argument5-1, _:argument5-2), x:argument6, x:argument7, x:argument8, (x:argument9-1, x:argument9-2), x:argument10)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:isDefinedBy, x:argument6)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:domain, x:argument7)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdf:type, owl:ObjectProperty)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:comment, _:argument4)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:range, x:argument8)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, owl:inverseOf, x:argument10)</code></span><span class="leaf"><code>cross | ottr:Triple(x:argument1, rdfs:seeAlso, ++(_:argument5-1, _:argument5-2))</code></span><details><summary><code>cross | o-owl-ax:SubPropertyOf(x:argument1, ++(x:argument2-1, x:argument2-2))</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:subPropertyOf, (x:argument2-1, x:argument2-2))</code></span></details><details><summary><code>cross | o-rdf:Type(x:argument1, ++(x:argument9-1, x:argument9-2))</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdf:type, (x:argument9-1, x:argument9-2))</code></span></details><details><summary><code>o-rdfs:Label(x:argument1, _:argument3)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:label, _:argument3)</code></span></details></details></div></div></div><div id="dependencies"><h2 id="Dependencies">Dependencies</h2><h4>Dependency graph</h4> <p class="info">&#128712; The graph shows all the templates that this template depends on. The colour of the node indicates its namespace. Each node is linked to its documentation page.</p> <div><details open="open"><summary>Hierarchical horizontal layout (dot)</summary><div><svg width="432px" height="151px"
+        owl:inverseOf       x:argument10 .</pre><h4>Interactive expansion</h4><p class="info">&#128712; Click the list to expand/contract one list element. Click &#x27;expand/contact all&#x27; to expand/contract all elements. Note that the interactive expansion is not correct for instances that are marked by list expanders.</p><div><div class="treeview toggle-all click-first"><details><summary><code>plmtpl:RDLObjectProperty(x:argument1, (x:argument2-1, x:argument2-2), _:argument3, _:argument4, (_:argument5-1, _:argument5-2), x:argument6, x:argument7, x:argument8, (x:argument9-1, x:argument9-2), x:argument10)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:isDefinedBy, x:argument6)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:domain, x:argument7)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:comment, _:argument4)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdf:type, owl:ObjectProperty)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:range, x:argument8)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, owl:inverseOf, x:argument10)</code></span><span class="leaf"><code>cross | ottr:Triple(x:argument1, rdfs:seeAlso, ++(_:argument5-1, _:argument5-2))</code></span><details><summary><code>cross | o-owl-ax:SubPropertyOf(x:argument1, ++(x:argument2-1, x:argument2-2))</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:subPropertyOf, (x:argument2-1, x:argument2-2))</code></span></details><details><summary><code>cross | o-rdf:Type(x:argument1, ++(x:argument9-1, x:argument9-2))</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdf:type, (x:argument9-1, x:argument9-2))</code></span></details><details><summary><code>o-rdfs:Label(x:argument1, _:argument3)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdfs:label, _:argument3)</code></span></details></details></div></div></div><div id="dependencies"><h2 id="Dependencies">Dependencies</h2><h4>Dependency graph</h4> <p class="info">&#128712; The graph shows all the templates that this template depends on. The colour of the node indicates its namespace. Each node is linked to its documentation page.</p> <div><details open="open"><summary>Hierarchical horizontal layout (dot)</summary><div><svg width="432px" height="151px"
  viewBox="0.00 0.00 432.00 150.96" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 146.96)">
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-146.96 428,-146.96 428,4 -4,4"/>
@@ -1613,14 +1613,14 @@ x:argument1  rdf:type       x:argument9-1 , x:argument9-2 , owl:ObjectProperty ;
 } .</pre><h4>RDF/wOTTR</h4><pre>
 plmtpl:RDLObjectProperty
         rdf:type         ottr:Template ;
-        ottr:annotation  [ ottr:of      o-docttr:Signature ;
-                           ottr:values  ( plmtpl:RDLObjectProperty &quot;RDL Object Property&quot; &quot;Declare an RDL object property, extending o-owl-dec:ObjectProperty. This template aims to cover the most frequently used devices: superproperties, domain/range, property types like &#x27;functional&#x27; and &#x27;transitive&#x27;, and an inverse relation.&quot; ottr:none ( &quot;The OWL types applicable to object properties are owl:FunctionalProperty , owl:InverseFunctionalProperty , owl:SymmetricProperty , owl:AsymmetricProperty , owl:TransitiveProperty , owl:ReflexiveProperty , and owl:IrreflexiveProperty .&quot; ) ottr:none ottr:none )
+        ottr:annotation  [ ottr:of      o-docttr:Provenance ;
+                           ottr:values  ( plmtpl:RDLObjectProperty &quot;2021-09-03T19:50:58Z&quot;^^xsd:dateTime ottr:none ( &lt;https://orcid.org/0000-0002-7167-732&gt; ) ottr:none )
                          ] ;
         ottr:annotation  [ ottr:of      o-docttr:Version ;
                            ottr:values  ( plmtpl:RDLObjectProperty ottr:draft &quot;0.1.1&quot; ottr:none ottr:none )
                          ] ;
-        ottr:annotation  [ ottr:of      o-docttr:Provenance ;
-                           ottr:values  ( plmtpl:RDLObjectProperty &quot;2021-09-03T19:50:58Z&quot;^^xsd:dateTime ottr:none ( &lt;https://orcid.org/0000-0002-7167-732&gt; ) ottr:none )
+        ottr:annotation  [ ottr:of      o-docttr:Signature ;
+                           ottr:values  ( plmtpl:RDLObjectProperty &quot;RDL Object Property&quot; &quot;Declare an RDL object property, extending o-owl-dec:ObjectProperty. This template aims to cover the most frequently used devices: superproperties, domain/range, property types like &#x27;functional&#x27; and &#x27;transitive&#x27;, and an inverse relation.&quot; ottr:none ( &quot;The OWL types applicable to object properties are owl:FunctionalProperty , owl:InverseFunctionalProperty , owl:SymmetricProperty , owl:AsymmetricProperty , owl:TransitiveProperty , owl:ReflexiveProperty , and owl:IrreflexiveProperty .&quot; ) ottr:none ottr:none )
                          ] ;
         ottr:parameters  ( [ ottr:modifier  ottr:nonBlank ;
                              ottr:name      &quot;blank521&quot; ;
@@ -1675,6 +1675,54 @@ plmtpl:RDLObjectProperty
                          ) ;
         ottr:pattern     [ ottr:of      ottr:Triple ;
                            ottr:values  ( _:b0
+                                          rdfs:domain
+                                          _:b6
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:arguments  ( [ ottr:value  _:b0 ]
+                                             [ ottr:modifier  ottr:listExpand ;
+                                               ottr:value     _:b1
+                                             ]
+                                           ) ;
+                           ottr:modifier   ottr:cross ;
+                           ottr:of         o-owl-ax:SubPropertyOf
+                         ] ;
+        ottr:pattern     [ ottr:of      ottr:Triple ;
+                           ottr:values  ( _:b0
+                                          rdfs:range
+                                          _:b7
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:arguments  ( [ ottr:value  _:b0 ]
+                                             [ ottr:modifier  ottr:listExpand ;
+                                               ottr:value     _:b8
+                                             ]
+                                           ) ;
+                           ottr:modifier   ottr:cross ;
+                           ottr:of         o-rdf:Type
+                         ] ;
+        ottr:pattern     [ ottr:arguments  ( [ ottr:value  _:b0 ]
+                                             [ ottr:value  rdfs:seeAlso ]
+                                             [ ottr:modifier  ottr:listExpand ;
+                                               ottr:value     _:b4
+                                             ]
+                                           ) ;
+                           ottr:modifier   ottr:cross ;
+                           ottr:of         ottr:Triple
+                         ] ;
+        ottr:pattern     [ ottr:of      o-rdfs:Label ;
+                           ottr:values  ( _:b0
+                                          _:b2
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:of      ottr:Triple ;
+                           ottr:values  ( _:b0
+                                          rdfs:comment
+                                          _:b3
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:of      ottr:Triple ;
+                           ottr:values  ( _:b0
                                           owl:inverseOf
                                           _:b9
                                         )
@@ -1687,56 +1735,8 @@ plmtpl:RDLObjectProperty
                          ] ;
         ottr:pattern     [ ottr:of      ottr:Triple ;
                            ottr:values  ( _:b0
-                                          rdfs:domain
-                                          _:b6
-                                        )
-                         ] ;
-        ottr:pattern     [ ottr:of      ottr:Triple ;
-                           ottr:values  ( _:b0
-                                          rdfs:comment
-                                          _:b3
-                                        )
-                         ] ;
-        ottr:pattern     [ ottr:arguments  ( [ ottr:value  _:b0 ]
-                                             [ ottr:modifier  ottr:listExpand ;
-                                               ottr:value     _:b8
-                                             ]
-                                           ) ;
-                           ottr:modifier   ottr:cross ;
-                           ottr:of         o-rdf:Type
-                         ] ;
-        ottr:pattern     [ ottr:of      ottr:Triple ;
-                           ottr:values  ( _:b0
-                                          rdfs:range
-                                          _:b7
-                                        )
-                         ] ;
-        ottr:pattern     [ ottr:of      o-rdfs:Label ;
-                           ottr:values  ( _:b0
-                                          _:b2
-                                        )
-                         ] ;
-        ottr:pattern     [ ottr:arguments  ( [ ottr:value  _:b0 ]
-                                             [ ottr:value  rdfs:seeAlso ]
-                                             [ ottr:modifier  ottr:listExpand ;
-                                               ottr:value     _:b4
-                                             ]
-                                           ) ;
-                           ottr:modifier   ottr:cross ;
-                           ottr:of         ottr:Triple
-                         ] ;
-        ottr:pattern     [ ottr:of      ottr:Triple ;
-                           ottr:values  ( _:b0
                                           rdf:type owl:ObjectProperty
                                         )
-                         ] ;
-        ottr:pattern     [ ottr:arguments  ( [ ottr:value  _:b0 ]
-                                             [ ottr:modifier  ottr:listExpand ;
-                                               ottr:value     _:b1
-                                             ]
-                                           ) ;
-                           ottr:modifier   ottr:cross ;
-                           ottr:of         o-owl-ax:SubPropertyOf
                          ] .</pre></div></div><h2 id="Prefixes">Prefixes</h2><div id="prefixes"><p class="info">&#128712; Prefixes are removed from all listings on this page for readability, but are listed here in RDF Turtle format.</p><pre>@prefix ottr:       &lt;http://ns.ottr.xyz/0.4/&gt;.
 @prefix plmtpl:     &lt;http://rds.posccaesar.org/ontology/plm/tpl/0.1/&gt;.
 @prefix ax:         &lt;http://tpl.ottr.xyz/owl/axiom/0.1/&gt;.
@@ -1747,7 +1747,7 @@ plmtpl:RDLObjectProperty
 @prefix rdf:        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
 @prefix rdfs:       &lt;http://www.w3.org/2000/01/rdf-schema#&gt;.
 @prefix xsd:        &lt;http://www.w3.org/2001/XMLSchema#&gt;.
-@prefix owl:        &lt;http://www.w3.org/2002/07/owl#&gt;.</pre></div></div><div class="footer"><p>This is a generated documentation page for an OTTR template library. For more information about Reasonable Ontology Templates (OTTR), visit <a href="http://ottr.xyz" target="_blank">ottr.xyz</a>.</p><p>Generated: 2024/03/15 04:09:26 Z</p></div><script>var treeviewCounter=0;for(var treeview of document.getElementsByClassName("treeview")){if(treeview.classList.contains('toggle-all')){treeviewCounter+=1;treeview.setAttribute("id","treeview"+treeviewCounter)
+@prefix owl:        &lt;http://www.w3.org/2002/07/owl#&gt;.</pre></div></div><div class="footer"><p>This is a generated documentation page for an OTTR template library. For more information about Reasonable Ontology Templates (OTTR), visit <a href="http://ottr.xyz" target="_blank">ottr.xyz</a>.</p><p>Generated: 2024/03/15 04:26:16 Z</p></div><script>var treeviewCounter=0;for(var treeview of document.getElementsByClassName("treeview")){if(treeview.classList.contains('toggle-all')){treeviewCounter+=1;treeview.setAttribute("id","treeview"+treeviewCounter)
 treeview.insertAdjacentHTML('beforebegin','<p class="treeviewbuttons"><span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 1)">Expand all</span> '
 +'<span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 0)">Contract all</span></p>');}
 if(treeview.classList.contains('click-first')){treeview.firstChild.firstChild.click();}
