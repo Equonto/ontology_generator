@@ -997,20 +997,8 @@ proc-tpl:IOF_EntityAnnotations
                          ) ;
         ottr:pattern     [ ottr:of      ottr:Triple ;
                            ottr:values  ( _:b0
-                                          iof-av:semiFormalNaturalLanguageAxioms
-                                          _:b2
-                                        )
-                         ] ;
-        ottr:pattern     [ ottr:of      ottr:Triple ;
-                           ottr:values  ( _:b0
-                                          iof-av:subjectMatterExpertExplanation
-                                          _:b6
-                                        )
-                         ] ;
-        ottr:pattern     [ ottr:of      ottr:Triple ;
-                           ottr:values  ( _:b0
-                                          iof-av:example
-                                          _:b7
+                                          iof-av:adaptedFrom
+                                          _:b8
                                         )
                          ] ;
         ottr:pattern     [ ottr:of      ottr:Triple ;
@@ -1021,8 +1009,14 @@ proc-tpl:IOF_EntityAnnotations
                          ] ;
         ottr:pattern     [ ottr:of      ottr:Triple ;
                            ottr:values  ( _:b0
-                                          rdfs:comment
-                                          _:b2
+                                          iof-av:maturity
+                                          _:b4
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:of      ottr:Triple ;
+                           ottr:values  ( _:b0
+                                          iof-av:example
+                                          _:b7
                                         )
                          ] ;
         ottr:pattern     [ ottr:of      ottr:Triple ;
@@ -1033,14 +1027,20 @@ proc-tpl:IOF_EntityAnnotations
                          ] ;
         ottr:pattern     [ ottr:of      ottr:Triple ;
                            ottr:values  ( _:b0
-                                          iof-av:adaptedFrom
-                                          _:b8
+                                          iof-av:subjectMatterExpertExplanation
+                                          _:b6
                                         )
                          ] ;
         ottr:pattern     [ ottr:of      ottr:Triple ;
                            ottr:values  ( _:b0
-                                          iof-av:maturity
-                                          _:b4
+                                          iof-av:semiFormalNaturalLanguageAxioms
+                                          _:b2
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:of      ottr:Triple ;
+                           ottr:values  ( _:b0
+                                          rdfs:comment
+                                          _:b2
                                         )
                          ] ;
         ottr:pattern     [ ottr:of      ottr:Triple ;
@@ -1054,7 +1054,7 @@ proc-tpl:IOF_EntityAnnotations
 @prefix rdf:        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
 @prefix rdfs:       &lt;http://www.w3.org/2000/01/rdf-schema#&gt;.
 @prefix xsd:        &lt;http://www.w3.org/2001/XMLSchema#&gt;.
-@prefix iof-av:     &lt;https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/&gt;.</pre></div></div><div class="footer"><p>This is a generated documentation page for an OTTR template library. For more information about Reasonable Ontology Templates (OTTR), visit <a href="http://ottr.xyz" target="_blank">ottr.xyz</a>.</p><p>Generated: 2024/03/15 04:26:02 Z</p></div><script>var treeviewCounter=0;for(var treeview of document.getElementsByClassName("treeview")){if(treeview.classList.contains('toggle-all')){treeviewCounter+=1;treeview.setAttribute("id","treeview"+treeviewCounter)
+@prefix iof-av:     &lt;https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/&gt;.</pre></div></div><div class="footer"><p>This is a generated documentation page for an OTTR template library. For more information about Reasonable Ontology Templates (OTTR), visit <a href="http://ottr.xyz" target="_blank">ottr.xyz</a>.</p><p>Generated: 2024/03/15 05:46:42 Z</p></div><script>var treeviewCounter=0;for(var treeview of document.getElementsByClassName("treeview")){if(treeview.classList.contains('toggle-all')){treeviewCounter+=1;treeview.setAttribute("id","treeview"+treeviewCounter)
 treeview.insertAdjacentHTML('beforebegin','<p class="treeviewbuttons"><span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 1)">Expand all</span> '
 +'<span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 0)">Contract all</span></p>');}
 if(treeview.classList.contains('click-first')){treeview.firstChild.firstChild.click();}
