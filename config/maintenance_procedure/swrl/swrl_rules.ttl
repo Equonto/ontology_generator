@@ -17,6 +17,7 @@
 
 <z> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
+
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment ""^^xsd:string ;
    rdfs:label "Rule 3"^^xsd:string ;
@@ -24,8 +25,8 @@
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> proc-spo:hasDirectActivityPart ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> <a> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <b>
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <b> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <a>
                                                      ] ;
                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
@@ -35,19 +36,19 @@
                                                       rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                                  rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
                                                                              <http://www.w3.org/2003/11/swrl#classPredicate> proc-spo:HazardInMaintenanceProcess ;
-                                                                             <http://www.w3.org/2003/11/swrl#argument1> <b>
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <c>
                                                                            ] ;
                                                                  rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                                             rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
                                                                                         <http://www.w3.org/2003/11/swrl#propertyPredicate> lis:realizedIn ;
-                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <b> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> <c> ;
                                                                                         <http://www.w3.org/2003/11/swrl#argument2> <p>
                                                                                       ] ;
                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
                                                                                                    <http://www.w3.org/2003/11/swrl#propertyPredicate> lis:occursRelativeTo ;
                                                                                                    <http://www.w3.org/2003/11/swrl#argument1> <p> ;
-                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <c>
+                                                                                                   <http://www.w3.org/2003/11/swrl#argument2> <a>
                                                                                                  ] ;
                                                                                        rdf:rest rdf:nil
                                                                                      ]
@@ -59,7 +60,7 @@
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> lis:occursRelativeTo ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> <p> ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> <a>
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <b>
                                                      ] ;
                                            rdf:rest rdf:nil
                                          ]
