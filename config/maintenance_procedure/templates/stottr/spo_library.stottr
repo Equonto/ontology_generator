@@ -259,7 +259,8 @@ proc-tpl:PROC_SPO_ClassAxioms_MaintenanceTaskDescription[]
     none # contributors
  ) :: {
     o-owl-re:ObjectSomeValuesFrom(?blank10007, lis:isAbout, proc-spo:MaintenanceTask),
-    o-owl-ax:EquivObjectIntersectionOf(proc-spo:MaintenanceTaskDescription, (lis:InformationObject, ?blank10007))
+    o-owl-re:ObjectSomeValuesFrom(?blank100030, lis:concretizedBy, proc-spo:MediaObject),
+    o-owl-ax:EquivObjectIntersectionOf(proc-spo:MaintenanceTaskDescription, (lis:InformationObject, ?blank10007, ?blank100030))
 } .
 
 proc-tpl:PROC_SPO_ClassAxioms_QualifiedPerson[] 

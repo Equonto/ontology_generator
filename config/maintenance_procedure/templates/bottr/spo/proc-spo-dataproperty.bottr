@@ -30,13 +30,13 @@ from CSVREAD('data/data-properties/spo_dataproperties.csv')
 """ ;
 ottr:template plmtpl:RDLDatatypeProperty ;
 ottr:argumentMaps (
-      [ ottr:type owl:ObjectProperty ]
-      [ ottr:type ( rdf:List owl:ObjectProperty ) ]
+      [ ottr:type owl:DatatypeProperty ]
+      [ ottr:type ( rdf:List owl:DatatypeProperty ) ]
       [ ottr:type xsd:string ]
       [ ottr:type xsd:string ]
       [ ottr:type ( rdf:List rdfs:Resource ) ]
       [ ottr:type ottr:IRI ]
       [ ottr:type owl:Class ]
-      [ ottr:type owl:Class ]
-      [ ottr:type ( rdf:List ottr:IRI ) ]
+      [ ottr:type rdfs:Datatype ]
+      [ ottr:type ottr:IRI ]
 ) .

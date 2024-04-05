@@ -1,5 +1,5 @@
 dataprop,superprop,label,description,seeAlso,definedBy,domain,range,propertyType
 proc-spo:documentIdentifier,owl:topDataProperty,documentIdentifier,,,,,,
-proc-spo:hasVersion,owl:topDataProperty,hasVersion,,,,,,
-proc-spo:hasValue,owl:topDataProperty,hasValue,,,,lis:InformationObject,,
-proc-spo:isAuxilliaryMedia,owl:topDataProperty,isAuxilliaryMedia,,,,,xsd:boolean,
+proc-spo:hasVersion,owl:topDataProperty,hasVersion,,,,,,owl:FunctionalDataProperty
+proc-spo:hasValue,owl:topDataProperty,hasValue,,,,,,owl:FunctionalDataProperty
+proc-spo:hasMediaLocation,owl:topDataProperty,hasMediaLocation,,,,lis:PhysicalObject,,
