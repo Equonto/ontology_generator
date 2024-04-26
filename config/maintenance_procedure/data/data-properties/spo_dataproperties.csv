@@ -1,5 +1,6 @@
 dataprop,superprop,label,description,seeAlso,definedBy,domain,range,propertyType
 proc-spo:documentIdentifier,owl:topDataProperty,documentIdentifier,,,,,,
 proc-spo:hasVersion,owl:topDataProperty,hasVersion,,,,,,owl:FunctionalDataProperty
-proc-spo:hasValue,owl:topDataProperty,hasValue,,,,,,owl:FunctionalDataProperty
+proc-spo:hasTextValue,owl:topDataProperty,hasTextValue,,,,,,owl:FunctionalDataProperty
 proc-spo:hasMediaLocation,owl:topDataProperty,hasMediaLocation,,,,lis:PhysicalObject,,
+proc-spo:isInstructional,owl:topDataProperty,isInstructional,,,,proc-spo:MaintenanceTaskDescription,xsd:boolean,owl:FunctionalDataProperty

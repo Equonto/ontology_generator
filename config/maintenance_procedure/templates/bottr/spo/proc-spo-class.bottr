@@ -25,7 +25,7 @@
 [] a ottr:InstanceMap ;
     ottr:source [ a ottr:H2Source ] ;
     ottr:query """
-select class,superclass,label,description,isPrimitive,maturity,logicAxiom,subjectMatterExpertExplanation,example,adaptedFrom
+select class,superclass,label,description,isPrimitive,maturity,logicAxiom,subjectMatterExpertExplanation,example,adaptedFrom,disjointWith
 from CSVREAD('data/classes/spo_class.csv')
 """ ;
 ottr:template proc-tpl:PROC_Class ;
@@ -40,4 +40,5 @@ ottr:argumentMaps (
       [ ottr:type xsd:string ]
       [ ottr:type xsd:string ]
       [ ottr:type xsd:string ]
+      [ ottr:type ( rdf:List owl:Class ) ]
 ) .

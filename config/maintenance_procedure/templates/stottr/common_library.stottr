@@ -4,6 +4,7 @@
 @prefix o-owl-ax:     <http://tpl.ottr.xyz/owl/axiom/0.1/> .
 @prefix o-owl-dec:    <http://tpl.ottr.xyz/owl/declaration/0.1/> .
 @prefix o-owl-re:     <http://tpl.ottr.xyz/owl/restriction/0.1/> .
+@prefix o-owl-ma:     <http://tpl.ottr.xyz/owl/macro/0.1/> .
 @prefix o-rdf:        <http://tpl.ottr.xyz/rdf/0.1/> .
 @prefix o-rdfs:       <http://tpl.ottr.xyz/rdfs/0.2/> .
 @prefix ottr:         <http://ns.ottr.xyz/0.4/> .
@@ -120,7 +121,8 @@ proc-tpl:PROC_Class[
     !? xsd:string ?logicAxiom,
     !? xsd:string ?subjectMatterExpertExplanation,
     !? xsd:string ?example,
-    !? xsd:string ?adaptedFrom
+    !? xsd:string ?adaptedFrom,
+    !? NEList<owl:Class> ?disjointWith
 ] 
 @@o-docttr:Signature(proc-tpl:PROC_Class, # resource
     none, # label
@@ -144,6 +146,7 @@ proc-tpl:PROC_Class[
 ):: {
     o-rdf:Type(?class, owl:Class),
     cross | ottr:Triple(?class, rdfs:subClassOf, ++?superclass),
+    #o-owl-ax:DisjointClasses(?disjointWith), # TODO: figure out disjoint classes
     proc-tpl:IOF_EntityAnnotations(?class, ?label, ?description, ?isPrimitive, ?maturity, ?logicAxiom, ?subjectMatterExpertExplanation, ?example, ?adaptedFrom)
 } .
 
