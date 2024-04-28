@@ -11,4 +11,7 @@ proc-spo:hasRequirement,lis:hasParticipant,,,,,,,,proc-spo:requirementOf
 proc-spo:requirementOf,lis:participantIn,,,,,,,,proc-spo:hasRequirement
 proc-spo:reasoningSupport,,,,,,,,,
 proc-spo:locallyEquivalentTo,proc-spo:reasoningSupport,,,,,proc-spo:MaintenanceTask,proc-spo:MaintenanceTask,owl:SymmetricProperty,
-proc-spo:hasPrimaryParticipant,lis:hasParticipant,,,,,,,,
+proc-spo:hasPatient,lis:hasParticipant,,,,,,,,proc-spo:patientOf
+proc-spo:hasAgent,lis:hasParticipant,,,,,,,,proc-spo:agentOf
+proc-spo:patientOf,lis:participantIn,,,,,,,,proc-spo:hasPatient
+proc-spo:agentOf,lis:participantIn,,,,,,,,proc-spo:hasAgent
