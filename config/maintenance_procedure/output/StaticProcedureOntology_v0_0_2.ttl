@@ -37,14 +37,14 @@ proc-spo:hasTextValue
         rdfs:subPropertyOf  owl:topDataProperty .
 
 proc-spo:hasMediaLocation
-        rdf:type            owl:DatatypeProperty ;
         rdfs:domain         lis:PhysicalObject ;
+        rdf:type            owl:DatatypeProperty ;
         rdfs:label          "hasMediaLocation" ;
         rdfs:subPropertyOf  owl:topDataProperty .
 
 proc-spo:isInstructional
-        rdf:type            owl:DatatypeProperty ;
         rdfs:domain         proc-spo:MaintenanceTaskDescription ;
+        rdf:type            owl:DatatypeProperty ;
         rdf:type            owl:FunctionalDataProperty ;
         rdfs:range          xsd:boolean ;
         rdfs:label          "isInstructional" ;
@@ -55,10 +55,10 @@ _:b0    owl:intersectionOf  _:b1 .
 _:b1    rdf:rest   _:b2 ;
         rdf:first  lis:InformationObject .
 
-_:b3    rdf:rest   rdf:nil ;
+_:b2    rdf:rest   _:b3 ;
         rdf:first  _:b4 .
 
-_:b2    rdf:rest   _:b3 ;
+_:b3    rdf:rest   rdf:nil ;
         rdf:first  _:b5 .
 
 _:b0    rdf:type  owl:Class ;
@@ -68,7 +68,7 @@ proc-spo:MaintenanceTaskDescription
         rdf:type             owl:Class ;
         owl:equivalentClass  _:b0 .
 
-_:b5    rdf:type            owl:Restriction ;
+_:b4    rdf:type            owl:Restriction ;
         owl:someValuesFrom  proc-spo:MaintenanceTask ;
         owl:onProperty      lis:isAbout .
 
@@ -77,7 +77,7 @@ lis:isAbout  rdf:type  owl:ObjectProperty .
 proc-spo:MaintenanceTask
         rdf:type  owl:Class .
 
-_:b4    rdf:type            owl:Restriction ;
+_:b5    rdf:type            owl:Restriction ;
         owl:someValuesFrom  proc-spo:MediaObject ;
         owl:onProperty      lis:concretizedBy .
 
@@ -96,11 +96,11 @@ proc-spo:MaintainableItemRole
 
 _:b7    owl:intersectionOf  _:b8 .
 
-_:b8    rdf:rest   _:b9 ;
-        rdf:first  lis:PhysicalObject .
-
 _:b9    rdf:rest   rdf:nil ;
         rdf:first  _:b6 .
+
+_:b8    rdf:rest   _:b9 ;
+        rdf:first  lis:PhysicalObject .
 
 _:b7    rdf:type  owl:Class ;
         rdf:type  owl:Class .
@@ -111,11 +111,11 @@ proc-spo:MaintainableItem
 
 _:b10   owl:intersectionOf  _:b11 .
 
-_:b11   rdf:rest   _:b12 ;
-        rdf:first  proc-spo:MaintenanceTaskDescription .
-
 _:b12   rdf:rest   rdf:nil ;
         rdf:first  _:b13 .
+
+_:b11   rdf:rest   _:b12 ;
+        rdf:first  proc-spo:MaintenanceTaskDescription .
 
 _:b10   rdf:type  owl:Class ;
         rdf:type  owl:Class .
@@ -133,14 +133,14 @@ _:b13   rdf:type        owl:Restriction ;
 
 _:b14   owl:intersectionOf  _:b15 .
 
-_:b16   rdf:rest   _:b17 ;
-        rdf:first  _:b18 .
+_:b16   rdf:rest   rdf:nil ;
+        rdf:first  _:b17 .
 
-_:b15   rdf:rest   _:b16 ;
-        rdf:first  proc-spo:MaintenanceProcess .
-
-_:b17   rdf:rest   rdf:nil ;
+_:b18   rdf:rest   _:b16 ;
         rdf:first  _:b19 .
+
+_:b15   rdf:rest   _:b18 ;
+        rdf:first  proc-spo:MaintenanceProcess .
 
 _:b14   rdf:type  owl:Class ;
         rdf:type  owl:Class .
@@ -149,7 +149,7 @@ proc-spo:MaintenanceProcedureProcess
         rdf:type             owl:Class ;
         owl:equivalentClass  _:b14 .
 
-_:b18   rdf:type            owl:Restriction ;
+_:b19   rdf:type            owl:Restriction ;
         owl:someValuesFrom  proc-spo:MaintenanceTask ;
         owl:onProperty      lis:hasActivityPart .
 
@@ -158,7 +158,7 @@ lis:hasActivityPart  rdf:type  owl:ObjectProperty .
 proc-spo:MaintenanceTask
         rdf:type  owl:Class .
 
-_:b19   rdf:type            owl:Restriction ;
+_:b17   rdf:type            owl:Restriction ;
         owl:someValuesFrom  proc-spo:MaintenanceProcedureDocument ;
         owl:onProperty      lis:representedBy .
 
@@ -169,11 +169,11 @@ proc-spo:MaintenanceProcedureDocument
 
 _:b20   owl:intersectionOf  _:b21 .
 
-_:b22   rdf:rest   rdf:nil ;
-        rdf:first  _:b23 .
-
 _:b21   rdf:rest   _:b22 ;
         rdf:first  lis:InformationObject .
+
+_:b22   rdf:rest   rdf:nil ;
+        rdf:first  _:b23 .
 
 _:b20   rdf:type  owl:Class ;
         rdf:type  owl:Class .
@@ -193,22 +193,22 @@ proc-spo:MaintenanceProcedureProcess
 
 _:b24   owl:intersectionOf  _:b25 .
 
-_:b25   rdf:rest   _:b26 ;
-        rdf:first  proc-spo:MaintenanceProcess .
-
-_:b27   rdf:rest   rdf:nil ;
+_:b26   rdf:rest   _:b27 ;
         rdf:first  _:b28 .
 
-_:b29   rdf:rest   _:b27 ;
+_:b29   rdf:rest   _:b26 ;
         rdf:first  _:b30 .
 
 _:b31   rdf:rest   _:b29 ;
         rdf:first  _:b32 .
 
-_:b26   rdf:rest   _:b33 ;
+_:b27   rdf:rest   _:b33 ;
         rdf:first  _:b34 .
 
-_:b33   rdf:rest   _:b31 ;
+_:b25   rdf:rest   _:b31 ;
+        rdf:first  proc-spo:MaintenanceProcess .
+
+_:b33   rdf:rest   rdf:nil ;
         rdf:first  _:b35 .
 
 _:b24   rdf:type  owl:Class ;
@@ -218,17 +218,17 @@ proc-spo:MaintenanceTask
         rdf:type             owl:Class ;
         owl:equivalentClass  _:b24 .
 
-_:b30   rdf:type           owl:Restriction ;
+_:b34   rdf:type           owl:Restriction ;
         owl:allValuesFrom  proc-spo:MaintenanceTask ;
         owl:onProperty     proc-spo:locallyEquivalentTo .
-
-proc-spo:locallyEquivalentTo
-        rdf:type  owl:ObjectProperty .
 
 proc-spo:MaintenanceTask
         rdf:type  owl:Class .
 
-_:b35   owl:onClass  proc-spo:MaintenanceTask .
+proc-spo:locallyEquivalentTo
+        rdf:type  owl:ObjectProperty .
+
+_:b30   owl:onClass  proc-spo:MaintenanceTask .
 
 proc-spo:directActivityPartOf
         rdf:type  owl:ObjectProperty .
@@ -236,11 +236,11 @@ proc-spo:directActivityPartOf
 proc-spo:MaintenanceTask
         rdf:type  owl:Class .
 
-_:b35   owl:onProperty               proc-spo:directActivityPartOf ;
+_:b30   owl:onProperty               proc-spo:directActivityPartOf ;
         rdf:type                     owl:Restriction ;
         owl:maxQualifiedCardinality  "1"^^xsd:nonNegativeInteger .
 
-_:b34   owl:onClass  proc-spo:MaintenanceTask .
+_:b32   owl:onClass  proc-spo:MaintenanceTask .
 
 proc-spo:directlyBefore
         rdf:type  owl:ObjectProperty .
@@ -248,11 +248,11 @@ proc-spo:directlyBefore
 proc-spo:MaintenanceTask
         rdf:type  owl:Class .
 
-_:b34   owl:onProperty               proc-spo:directlyBefore ;
+_:b32   owl:onProperty               proc-spo:directlyBefore ;
         rdf:type                     owl:Restriction ;
         owl:maxQualifiedCardinality  "1"^^xsd:nonNegativeInteger .
 
-_:b28   rdf:type            owl:Restriction ;
+_:b35   rdf:type            owl:Restriction ;
         owl:someValuesFrom  proc-spo:MaintenanceTaskDescription ;
         owl:onProperty      proc-spo:representedBy .
 
@@ -262,7 +262,7 @@ proc-spo:representedBy
 proc-spo:MaintenanceTaskDescription
         rdf:type  owl:Class .
 
-_:b32   owl:onClass  proc-spo:MaintenanceProcedureProcess .
+_:b28   owl:onClass  proc-spo:MaintenanceProcedureProcess .
 
 proc-spo:directActivityPartOf
         rdf:type  owl:ObjectProperty .
@@ -270,7 +270,7 @@ proc-spo:directActivityPartOf
 proc-spo:MaintenanceProcedureProcess
         rdf:type  owl:Class .
 
-_:b32   owl:onProperty               proc-spo:directActivityPartOf ;
+_:b28   owl:onProperty               proc-spo:directActivityPartOf ;
         rdf:type                     owl:Restriction ;
         owl:maxQualifiedCardinality  "1"^^xsd:nonNegativeInteger .
 
@@ -335,11 +335,11 @@ lis:Activity  rdf:type  owl:Class .
 
 _:b46   owl:intersectionOf  _:b47 .
 
-_:b48   rdf:rest   rdf:nil ;
-        rdf:first  _:b49 .
-
 _:b47   rdf:rest   _:b48 ;
         rdf:first  proc-spo:MaintenanceTaskDescription .
+
+_:b48   rdf:rest   rdf:nil ;
+        rdf:first  _:b49 .
 
 _:b46   rdf:type  owl:Class ;
         rdf:type  owl:Class .
@@ -359,9 +359,9 @@ _:b50   rdf:type           owl:Restriction ;
         owl:allValuesFrom  _:b51 ;
         owl:onProperty     lis:roleOf .
 
-lis:roleOf  rdf:type  owl:ObjectProperty .
-
 _:b51   rdf:type  owl:Class .
+
+lis:roleOf  rdf:type  owl:ObjectProperty .
 
 _:b52   rdf:type            owl:Restriction ;
         owl:someValuesFrom  lis:Activity ;
@@ -374,11 +374,11 @@ lis:Activity  rdf:type  owl:Class .
 
 _:b51   owl:intersectionOf  _:b53 .
 
-_:b54   rdf:rest   rdf:nil ;
-        rdf:first  _:b52 .
-
 _:b53   rdf:rest   _:b54 ;
         rdf:first  lis:Object .
+
+_:b54   rdf:rest   rdf:nil ;
+        rdf:first  _:b52 .
 
 _:b51   rdf:type  owl:Class .
 

@@ -1,0 +1,835 @@
+<!DOCTYPE html><html><head lang="en"><meta charset="UTF-8"><style>@import url("https://ottr.xyz/inc/style.css");body{padding-bottom:50px}div{max-width:1200px}p,li,pre,svg{max-width:100%}code,p code,li code{background-color:transparent}table,tr,td{border:0;font-size:100%;vertical-align:top}th{border:0;border-bottom:1px solid #ccc}summary{font-family:arial,sans-serif;font-size:100%}b.heading{color:#333;font-family:arial,sans-serif;font-size:100%;margin-bottom:3px;margin-top:3px}.info{color:#888;font-size:9pt;max-width:800px;padding:1px}span.colourbox{border:1px #ccc solid;display:inline-block;height:12px;margin:0 10px;width:12px}.error{color:red}.button{cursor:pointer}img.logo{float:right;margin:20px}details>details{margin-left:25px}details span.leaf{display:list-item;list-style-type:circle;margin-left:40px}details ul{margin-bottom:0;margin-top:0}p.treeviewbuttons{color:#555;font-family:arial,sans-serif;font-size:10pt}p.treeviewbuttons .button{margin-right:5px}div#ToC{background-color:rgba(255,255,255,0.7);font-family:arial,sans-serif;font-size:80%;padding:10px;position:fixed;right:0;top:0}div#ToC ul{margin:0;margin-top:3px;padding-left:10px}div#ToC ul li{font-family:arial,sans-serif}div#metadata dt.deprecated,div#metadata dt.inv-hasPreviousVersion{border-left:10px solid red;padding-left:5px}</style><title>Template: o-owl-re:DataHasValue</title></head><body><span id="top"></span><div id="ToC"><b>Contents</b><ul><li><a href="#top">top</a></li><li><a href="#Parameters">Parameters</a></li><li><a href="#Pattern">Pattern</a></li><li><a href="#Dependencies">Dependencies</a></li><li><a href="#Metrics">Metrics</a></li><li><a href="#Serialisations">Serialisations</a></li><li><a href="#Prefixes">Prefixes</a></li></ul></div><h1>Template: <code>o-owl-re:DataHasValue</code></h1><div><div><p>URI: <code><a href="http://tpl.ottr.xyz/owl/restriction/0.1/DataHasValue">http://tpl.ottr.xyz/owl/restriction/0.1/DataHasValue</a></code></p></div><div id="metadata"></div><div id="parameters"><h2 id="Parameters">Parameters</h2><p class="info">&#128712; The parameters defined by the signature are listed here. Unfortunately parameter names are not informative; fixing it is a planned future feature. An optional parameter will accept the value ottr:none as an argument. A parameter which allows blanks will accept a blank node as argument value. </p><table><tr><th>Index</th><th>Name</th><th>Type</th><th>Optional</th><th>Blanks allowed</th><th>Default value</th></tr><tr><td>1</td><td>blank328</td><td>ottr:IRI</td><td>no</td><td>yes</td><td>no</td></tr><tr><td>2</td><td>blank329</td><td>owl:DatatypeProperty</td><td>no</td><td>yes</td><td>no</td></tr><tr><td>3</td><td>blank330</td><td>rdfs:Literal</td><td>no</td><td>yes</td><td>no</td></tr></table></div><div id="pattern"><h2 id="Pattern">Pattern</h2><h4>stOTTR</h4><p class="info">&#128712; stOTTR serialisation of the template without annotation instances.</p><pre>o-owl-re:DataHasValue[
+    ottr:IRI ?blank328,
+    owl:DatatypeProperty ?blank329,
+    rdfs:Literal ?blank330
+] :: {
+    o-owl-re:HasValue(?blank328, ?blank329, ?blank330),
+    o-rdf:Type(?blank329, owl:DatatypeProperty)
+} .</pre><p class="info">&#128712; The pattern of the template is illustrated by expanding a generated instance. Below the generated instance is shown in different serialisations, and its expansion is presented in different formats.</p><h4>Generated instance</h4><b class="heading">stOTTR</b><pre>o-owl-re:DataHasValue(x:argument1, x:argument2, _:argument3)</pre><b class="heading">RDF/wOTTR</b><pre>
+[ ottr:of      o-owl-re:DataHasValue ;
+  ottr:values  ( x:argument1 x:argument2
+                 [] 
+               )
+] .</pre><h4>Visualisation of expanded RDF graph</h4><p class="info">&#128712; Each resource node is linked to its IRI. Type relationships are not visualised, rather each node contains its type.</p><div><details open="open"><summary>Hierarchical horizontal layout (dot)</summary><div><svg width="375px" height="91px"
+ viewBox="0.00 0.00 375.00 91.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 87.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-87 371,-87 371,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;owl:Restriction&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="104,-63 0,-63 0,-27 104,-27 104,-63"/>
+<text text-anchor="start" x="8" y="-48.8" font-family="Arial" font-style="italic" font-size="14.00">owl:Restriction</text>
+<text text-anchor="start" x="11" y="-34.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node2" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="305,-83 283,-83 283,-61 305,-61 305,-83"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M104.19,-50.76C156.84,-56.68 236.18,-65.61 272.96,-69.75"/>
+<polygon fill="black" stroke="black" points="272.61,-73.23 282.93,-70.87 273.39,-66.27 272.61,-73.23"/>
+<text text-anchor="start" x="122.5" y="-64.8" font-family="Arial" font-size="14.00">owl:hasValue</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument2" xlink:title="&lt;i&gt;owl:DatatypeProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="367,-36 221,-36 221,0 367,0 367,-36"/>
+<text text-anchor="start" x="229" y="-21.8" font-family="Arial" font-style="italic" font-size="14.00">owl:DatatypeProperty</text>
+<text text-anchor="start" x="253" y="-7.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M104.09,-28.64C108.43,-27.62 112.77,-26.71 117,-26 147.22,-20.91 180.74,-18.57 210.35,-17.62"/>
+<polygon fill="black" stroke="black" points="210.75,-21.11 220.65,-17.34 210.56,-14.12 210.75,-21.11"/>
+<text text-anchor="start" x="117" y="-29.8" font-family="Arial" font-size="14.00">owl:onProperty</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Hierarchical vertical layout (dot)</summary><div><svg width="202px" height="121px"
+ viewBox="0.00 0.00 202.00 121.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 117.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-117 198,-117 198,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;owl:Restriction&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="118,-113 14,-113 14,-77 118,-77 118,-113"/>
+<text text-anchor="start" x="22" y="-98.8" font-family="Arial" font-style="italic" font-size="14.00">owl:Restriction</text>
+<text text-anchor="start" x="25" y="-84.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node2" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="22,-29 0,-29 0,-7 22,-7 22,-29"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M18.2,-76.82C13.38,-73.28 9.12,-69.05 6,-64 1.41,-56.57 1.74,-47.12 3.59,-38.79"/>
+<polygon fill="black" stroke="black" points="6.98,-39.67 6.49,-29.09 0.28,-37.67 6.98,-39.67"/>
+<text text-anchor="start" x="6" y="-52.8" font-family="Arial" font-size="14.00">owl:hasValue</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument2" xlink:title="&lt;i&gt;owl:DatatypeProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="194,-36 48,-36 48,0 194,0 194,-36"/>
+<text text-anchor="start" x="56" y="-21.8" font-family="Arial" font-style="italic" font-size="14.00">owl:DatatypeProperty</text>
+<text text-anchor="start" x="80" y="-7.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M81.55,-76.9C85.1,-72.77 88.78,-68.3 92,-64 96.6,-57.86 101.25,-51.01 105.43,-44.54"/>
+<polygon fill="black" stroke="black" points="108.41,-46.37 110.81,-36.05 102.5,-42.63 108.41,-46.37"/>
+<text text-anchor="start" x="102" y="-52.8" font-family="Arial" font-size="14.00">owl:onProperty</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Spring model layout (neato)</summary><div><svg width="181px" height="118px"
+ viewBox="0.00 0.00 180.93 118.05" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 114.05)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-114.05 176.93,-114.05 176.93,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;owl:Restriction&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="140.46,-80 36.46,-80 36.46,-44 140.46,-44 140.46,-80"/>
+<text text-anchor="start" x="44.46" y="-65.8" font-family="Arial" font-style="italic" font-size="14.00">owl:Restriction</text>
+<text text-anchor="start" x="47.46" y="-51.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node2" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="127.78,-110.05 105.78,-110.05 105.78,-88.05 127.78,-88.05 127.78,-110.05"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M102.28,-80.09C102.41,-80.26 102.54,-80.42 102.66,-80.59"/>
+<polygon fill="black" stroke="black" points="99.36,-82.03 108.21,-87.85 104.92,-77.78 99.36,-82.03"/>
+<text text-anchor="start" x="22.64" y="-84.36" font-family="Arial" font-size="14.00">owl:hasValue</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument2" xlink:title="&lt;i&gt;owl:DatatypeProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="146,-36 0,-36 0,0 146,0 146,-36"/>
+<text text-anchor="start" x="8" y="-21.8" font-family="Arial" font-style="italic" font-size="14.00">owl:DatatypeProperty</text>
+<text text-anchor="start" x="32" y="-7.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M82.08,-43.85C82.02,-43.69 81.97,-43.53 81.91,-43.37"/>
+<polygon fill="black" stroke="black" points="85.98,-44.39 79.36,-36.11 79.37,-46.71 85.98,-44.39"/>
+<text text-anchor="start" x="81.93" y="-32.23" font-family="Arial" font-size="14.00">owl:onProperty</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Spring model layout (fdp)</summary><div><svg width="182px" height="142px"
+ viewBox="0.00 0.00 182.23 142.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(19.23 138.0)">
+<polygon fill="white" stroke="transparent" points="-19.23,4 -19.23,-138 163,-138 163,4 -19.23,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;owl:Restriction&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="130.82,-103.52 26.82,-103.52 26.82,-67.52 130.82,-67.52 130.82,-103.52"/>
+<text text-anchor="start" x="34.82" y="-89.32" font-family="Arial" font-style="italic" font-size="14.00">owl:Restriction</text>
+<text text-anchor="start" x="37.82" y="-75.32" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node2" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="158.6,-133.52 136.6,-133.52 136.6,-111.52 158.6,-111.52 158.6,-133.52"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M112.4,-103.59C117.59,-106.38 122.79,-109.18 127.55,-111.74"/>
+<polygon fill="black" stroke="black" points="126.08,-114.92 136.55,-116.58 129.4,-108.76 126.08,-114.92"/>
+<text text-anchor="start" x="44.37" y="-113.83" font-family="Arial" font-size="14.00">owl:hasValue</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument2" xlink:title="&lt;i&gt;owl:DatatypeProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="145.68,-36.28 -0.32,-36.28 -0.32,-0.28 145.68,-0.28 145.68,-36.28"/>
+<text text-anchor="start" x="7.68" y="-22.08" font-family="Arial" font-style="italic" font-size="14.00">owl:DatatypeProperty</text>
+<text text-anchor="start" x="31.68" y="-8.08" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M77.18,-67.5C76.58,-61.02 75.9,-53.54 75.25,-46.41"/>
+<polygon fill="black" stroke="black" points="78.73,-45.99 74.33,-36.35 71.76,-46.63 78.73,-45.99"/>
+<text text-anchor="start" x="-15.23" y="-55.94" font-family="Arial" font-size="14.00">owl:onProperty</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Radial layout (twopi)</summary><div><svg width="172px" height="125px"
+ viewBox="0.00 0.00 172.00 125.01" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 121.01)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-121.01 168,-121.01 168,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;owl:Restriction&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="143,-80 39,-80 39,-44 143,-44 143,-80"/>
+<text text-anchor="start" x="47" y="-65.8" font-family="Arial" font-style="italic" font-size="14.00">owl:Restriction</text>
+<text text-anchor="start" x="50" y="-51.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node2" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="102,-117.01 80,-117.01 80,-95.01 102,-95.01 102,-117.01"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M91,-80.16C91,-81.73 91,-83.32 91,-84.91"/>
+<polygon fill="black" stroke="black" points="87.5,-84.95 91,-94.95 94.5,-84.95 87.5,-84.95"/>
+<text text-anchor="start" x="11" y="-88.64" font-family="Arial" font-size="14.00">owl:hasValue</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument2" xlink:title="&lt;i&gt;owl:DatatypeProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="164,-36 18,-36 18,0 164,0 164,-36"/>
+<text text-anchor="start" x="26" y="-21.8" font-family="Arial" font-style="italic" font-size="14.00">owl:DatatypeProperty</text>
+<text text-anchor="start" x="50" y="-7.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M91,-43.85C91,-43.69 91,-43.53 91,-43.37"/>
+<polygon fill="black" stroke="black" points="94.5,-46.11 91,-36.11 87.5,-46.11 94.5,-46.11"/>
+<text text-anchor="start" x="0" y="-32.23" font-family="Arial" font-size="14.00">owl:onProperty</text>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Circular layout (circo)</summary><div><svg width="358px" height="44px"
+ viewBox="0.00 0.00 358.03 44.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 40.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-40 354.03,-40 354.03,4 -4,4"/>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt; -->
+<g id="node1" class="node">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node1"><a xlink:href="http://example.ottr.xyz/argument/argument1" xlink:title="&lt;i&gt;owl:Restriction&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument1&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="258.01,-36 154.01,-36 154.01,0 258.01,0 258.01,-36"/>
+<text text-anchor="start" x="162.01" y="-21.8" font-family="Arial" font-style="italic" font-size="14.00">owl:Restriction</text>
+<text text-anchor="start" x="165.01" y="-7.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument1</text>
+</a>
+</g>
+</g>
+<!-- argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="node2" class="node">
+<title>argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<polygon fill="#e5e5e5" stroke="red" stroke-width="2" points="350.03,-29 328.03,-29 328.03,-7 350.03,-7 350.03,-29"/>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt; -->
+<g id="edge2" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;argument3 : LUB&lt;rdfs:Resource&gt;</title>
+<path fill="none" stroke="black" d="M258.2,-18C278.82,-18 301.36,-18 317.39,-18"/>
+<polygon fill="black" stroke="black" points="317.79,-21.5 327.79,-18 317.79,-14.5 317.79,-21.5"/>
+<text text-anchor="start" x="252.85" y="-6.8" font-family="Arial" font-size="14.00">owl:hasValue</text>
+</g>
+<!-- http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="node3" class="node">
+<title>http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<g id="a_node3"><a xlink:href="http://example.ottr.xyz/argument/argument2" xlink:title="&lt;i&gt;owl:DatatypeProperty&lt;/i&gt;&lt;br/&gt;&lt;b&gt;&lt;font color=&quot;red&quot;&gt;x:argument2&lt;/font&gt;&lt;/b&gt;">
+<polygon fill="lightskyblue" stroke="red" stroke-width="2" points="146,-36 0,-36 0,0 146,0 146,-36"/>
+<text text-anchor="start" x="8" y="-21.8" font-family="Arial" font-style="italic" font-size="14.00">owl:DatatypeProperty</text>
+<text text-anchor="start" x="32" y="-7.8" font-family="Arial" font-weight="bold" font-size="14.00" fill="red">x:argument2</text>
+</a>
+</g>
+</g>
+<!-- http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt; -->
+<g id="edge1" class="edge">
+<title>http://example.ottr.xyz/argument/argument1 : LUB&lt;ottr:IRI&gt;&#45;&gt;http://example.ottr.xyz/argument/argument2 : LUB&lt;ottr:IRI&gt;</title>
+<path fill="none" stroke="black" d="M153.82,-18C153.67,-18 153.52,-18 153.36,-18"/>
+<polygon fill="black" stroke="black" points="156.33,-14.5 146.33,-18 156.33,-21.5 156.33,-14.5"/>
+<text text-anchor="start" x="85.17" y="-6.8" font-family="Arial" font-size="14.00">owl:onProperty</text>
+</g>
+</g>
+</svg>
+</div></details></div><h4>Expanded RDF graph</h4><pre>
+x:argument2  rdf:type  owl:DatatypeProperty .
+
+x:argument1  rdf:type   owl:Restriction ;
+        owl:hasValue    []  ;
+        owl:onProperty  x:argument2 .</pre><h4>Interactive expansion</h4><p class="info">&#128712; Click the list to expand/contract one list element. Click &#x27;expand/contact all&#x27; to expand/contract all elements. Note that the interactive expansion is not correct for instances that are marked by list expanders.</p><div><div class="treeview toggle-all click-first"><details><summary><code>o-owl-re:DataHasValue(x:argument1, x:argument2, _:argument3)</code></summary><details><summary><code>o-owl-re:HasValue(x:argument1, x:argument2, _:argument3)</code></summary><details><summary><code>o-owl-ut:ValueRestriction(x:argument1, owl:hasValue, x:argument2, _:argument3)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, owl:hasValue, _:argument3)</code></span><span class="leaf"><code>ottr:Triple(x:argument1, owl:onProperty, x:argument2)</code></span><details><summary><code>o-rdf:Type(x:argument1, owl:Restriction)</code></summary><span class="leaf"><code>ottr:Triple(x:argument1, rdf:type, owl:Restriction)</code></span></details></details></details><details><summary><code>o-rdf:Type(x:argument2, owl:DatatypeProperty)</code></summary><span class="leaf"><code>ottr:Triple(x:argument2, rdf:type, owl:DatatypeProperty)</code></span></details></details></div></div></div><div id="dependencies"><h2 id="Dependencies">Dependencies</h2><h4>Dependency graph</h4> <p class="info">&#128712; The graph shows all the templates that this template depends on. The colour of the node indicates its namespace. Each node is linked to its documentation page.</p> <div><details open="open"><summary>Hierarchical horizontal layout (dot)</summary><div><svg width="707px" height="81px"
+ viewBox="0.00 0.00 707.00 81.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 77.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-77 703,-77 703,4 -4,4"/>
+<!-- o&#45;owl&#45;re:DataHasValue -->
+<g id="node1" class="node">
+<title>o&#45;owl&#45;re:DataHasValue</title>
+<g id="a_node1"><a xlink:href="DataHasValue.html" xlink:title="o&#45;owl&#45;re:DataHasValue">
+<polygon fill="#c2ff99" stroke="black" points="155,-48 0,-48 0,-25 155,-25 155,-48"/>
+<text text-anchor="middle" x="77.5" y="-32.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:DataHasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue -->
+<g id="node2" class="node">
+<title>o&#45;owl&#45;re:HasValue</title>
+<g id="a_node2"><a xlink:href="HasValue.html" xlink:title="o&#45;owl&#45;re:HasValue">
+<polygon fill="#c2ff99" stroke="black" points="307,-73 180,-73 180,-50 307,-50 307,-73"/>
+<text text-anchor="middle" x="243.5" y="-57.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:HasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue -->
+<g id="edge2" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue</title>
+<path fill="none" stroke="black" d="M154.26,-48.05C159.48,-48.84 164.73,-49.64 169.93,-50.44"/>
+<polygon fill="black" stroke="black" points="169.43,-53.9 179.84,-51.95 170.48,-46.98 169.43,-53.9"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node3" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node3"><a xlink:href="../../../rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="600,-23 523,-23 523,0 600,0 600,-23"/>
+<text text-anchor="middle" x="561.5" y="-7.8" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M155.14,-32.52C255.63,-27.31 428.93,-18.32 512.58,-13.99"/>
+<polygon fill="black" stroke="black" points="513,-17.47 522.81,-13.45 512.64,-10.48 513,-17.47"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;ut:ValueRestriction</title>
+<g id="a_node4"><a xlink:href="../../util/0.1/ValueRestriction.html" xlink:title="o&#45;owl&#45;ut:ValueRestriction">
+<polygon fill="#fad09f" stroke="black" points="498,-73 332,-73 332,-50 498,-50 498,-73"/>
+<text text-anchor="middle" x="415" y="-57.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;ut:ValueRestriction</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction -->
+<g id="edge3" class="edge">
+<title>o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction</title>
+<path fill="none" stroke="black" d="M307.13,-61.5C311.89,-61.5 316.75,-61.5 321.65,-61.5"/>
+<polygon fill="black" stroke="black" points="321.72,-65 331.72,-61.5 321.72,-58 321.72,-65"/>
+</g>
+<!-- ottr:Triple -->
+<g id="node5" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="699,-48 625,-48 625,-25 699,-25 699,-48"/>
+<text text-anchor="middle" x="662" y="-32.8" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M600.02,-21.02C604.86,-22.25 609.86,-23.52 614.83,-24.78"/>
+<polygon fill="black" stroke="black" points="614.33,-28.27 624.88,-27.33 616.05,-21.48 614.33,-28.27"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type -->
+<g id="edge5" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M449.51,-49.9C469.76,-42.9 495.76,-33.9 517.51,-26.38"/>
+<polygon fill="black" stroke="black" points="518.86,-29.61 527.17,-23.03 516.57,-23 518.86,-29.61"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M498.26,-53.11C537.02,-49.15 581.83,-44.58 614.6,-41.23"/>
+<polygon fill="black" stroke="black" points="615.2,-44.69 624.8,-40.19 614.49,-37.73 615.2,-44.69"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Hierarchical vertical layout (dot)</summary><div><svg width="230px" height="223px"
+ viewBox="0.00 0.00 229.50 223.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 219.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-219 225.5,-219 225.5,4 -4,4"/>
+<!-- o&#45;owl&#45;re:DataHasValue -->
+<g id="node1" class="node">
+<title>o&#45;owl&#45;re:DataHasValue</title>
+<g id="a_node1"><a xlink:href="DataHasValue.html" xlink:title="o&#45;owl&#45;re:DataHasValue">
+<polygon fill="#c2ff99" stroke="black" points="221.5,-215 66.5,-215 66.5,-192 221.5,-192 221.5,-215"/>
+<text text-anchor="middle" x="144" y="-199.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:DataHasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue -->
+<g id="node2" class="node">
+<title>o&#45;owl&#45;re:HasValue</title>
+<g id="a_node2"><a xlink:href="HasValue.html" xlink:title="o&#45;owl&#45;re:HasValue">
+<polygon fill="#c2ff99" stroke="black" points="156.5,-167 29.5,-167 29.5,-144 156.5,-144 156.5,-167"/>
+<text text-anchor="middle" x="93" y="-151.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:HasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue -->
+<g id="edge2" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue</title>
+<path fill="none" stroke="black" d="M132.17,-191.83C126.25,-186.49 118.93,-179.89 112.23,-173.84"/>
+<polygon fill="black" stroke="black" points="114.53,-171.21 104.76,-167.11 109.85,-176.41 114.53,-171.21"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node3" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node3"><a xlink:href="../../../rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="198.5,-71 121.5,-71 121.5,-48 198.5,-48 198.5,-71"/>
+<text text-anchor="middle" x="160" y="-55.8" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M153.37,-191.7C158.71,-185 165.1,-175.99 169,-167 177.68,-147.01 176.77,-140.68 179,-119 180.05,-108.83 181.49,-105.92 179,-96 177.63,-90.55 175.25,-85.01 172.62,-79.99"/>
+<polygon fill="black" stroke="black" points="175.52,-78.01 167.48,-71.12 169.46,-81.53 175.52,-78.01"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;ut:ValueRestriction</title>
+<g id="a_node4"><a xlink:href="../../util/0.1/ValueRestriction.html" xlink:title="o&#45;owl&#45;ut:ValueRestriction">
+<polygon fill="#fad09f" stroke="black" points="166,-119 0,-119 0,-96 166,-96 166,-119"/>
+<text text-anchor="middle" x="83" y="-103.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;ut:ValueRestriction</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction -->
+<g id="edge3" class="edge">
+<title>o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction</title>
+<path fill="none" stroke="black" d="M90.68,-143.83C89.72,-139.42 88.58,-134.15 87.46,-129.04"/>
+<polygon fill="black" stroke="black" points="90.85,-128.14 85.31,-119.11 84.01,-129.63 90.85,-128.14"/>
+</g>
+<!-- ottr:Triple -->
+<g id="node5" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="158,-23 84,-23 84,0 158,0 158,-23"/>
+<text text-anchor="middle" x="121" y="-7.8" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M150.95,-47.83C146.72,-42.84 141.55,-36.74 136.71,-31.03"/>
+<polygon fill="black" stroke="black" points="139.13,-28.48 130,-23.11 133.79,-33 139.13,-28.48"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type -->
+<g id="edge5" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M100.86,-95.83C110.58,-90.03 122.79,-82.73 133.59,-76.28"/>
+<polygon fill="black" stroke="black" points="135.45,-79.24 142.24,-71.11 131.86,-73.24 135.45,-79.24"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M87.36,-95.72C93.57,-80.35 105.09,-51.87 112.89,-32.55"/>
+<polygon fill="black" stroke="black" points="116.19,-33.74 116.69,-23.16 109.7,-31.12 116.19,-33.74"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Spring model layout (neato)</summary><div><svg width="310px" height="243px"
+ viewBox="0.00 0.00 309.57 243.14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 239.14)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-239.14 305.57,-239.14 305.57,4 -4,4"/>
+<!-- o&#45;owl&#45;re:DataHasValue -->
+<g id="node1" class="node">
+<title>o&#45;owl&#45;re:DataHasValue</title>
+<g id="a_node1"><a xlink:href="DataHasValue.html" xlink:title="o&#45;owl&#45;re:DataHasValue">
+<polygon fill="#c2ff99" stroke="black" points="155,-54 0,-54 0,-31 155,-31 155,-54"/>
+<text text-anchor="middle" x="77.5" y="-38.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:DataHasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue -->
+<g id="node2" class="node">
+<title>o&#45;owl&#45;re:HasValue</title>
+<g id="a_node2"><a xlink:href="HasValue.html" xlink:title="o&#45;owl&#45;re:HasValue">
+<polygon fill="#c2ff99" stroke="black" points="251.63,-23 124.63,-23 124.63,0 251.63,0 251.63,-23"/>
+<text text-anchor="middle" x="188.13" y="-7.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:HasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue -->
+<g id="edge2" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue</title>
+<path fill="none" stroke="black" d="M118.69,-30.96C124.74,-29.26 131.03,-27.5 137.24,-25.76"/>
+<polygon fill="black" stroke="black" points="138.21,-29.12 146.9,-23.05 136.32,-22.38 138.21,-29.12"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node3" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node3"><a xlink:href="../../../rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="146.51,-164.86 69.51,-164.86 69.51,-141.86 146.51,-141.86 146.51,-164.86"/>
+<text text-anchor="middle" x="108.01" y="-149.66" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M80.77,-54.37C85.84,-72.79 95.68,-108.55 102.04,-131.67"/>
+<polygon fill="black" stroke="black" points="98.74,-132.87 104.77,-141.58 105.49,-131.01 98.74,-132.87"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;ut:ValueRestriction</title>
+<g id="a_node4"><a xlink:href="../../util/0.1/ValueRestriction.html" xlink:title="o&#45;owl&#45;ut:ValueRestriction">
+<polygon fill="#fad09f" stroke="black" points="301.57,-133.73 135.57,-133.73 135.57,-110.73 301.57,-110.73 301.57,-133.73"/>
+<text text-anchor="middle" x="218.57" y="-118.53" font-family="Arial" font-size="14.00">o&#45;owl&#45;ut:ValueRestriction</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction -->
+<g id="edge3" class="edge">
+<title>o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction</title>
+<path fill="none" stroke="black" d="M191.38,-23.35C196.44,-41.75 206.26,-77.46 212.61,-100.56"/>
+<polygon fill="black" stroke="black" points="209.31,-101.75 215.34,-110.46 216.06,-99.89 209.31,-101.75"/>
+</g>
+<!-- ottr:Triple -->
+<g id="node5" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="224.69,-235.14 150.69,-235.14 150.69,-212.14 224.69,-212.14 224.69,-235.14"/>
+<text text-anchor="middle" x="187.69" y="-219.94" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M121.17,-164.97C133.62,-175.96 152.52,-192.62 166.99,-205.39"/>
+<polygon fill="black" stroke="black" points="164.7,-208.03 174.51,-212.02 169.33,-202.78 164.7,-208.03"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type -->
+<g id="edge5" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M177.72,-133.73C170.94,-135.64 163.85,-137.64 156.9,-139.6"/>
+<polygon fill="black" stroke="black" points="155.54,-136.34 146.86,-142.42 157.44,-143.08 155.54,-136.34"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M215.03,-133.86C209.96,-150.51 200.55,-181.41 194.2,-202.25"/>
+<polygon fill="black" stroke="black" points="190.85,-201.25 191.28,-211.83 197.55,-203.28 190.85,-201.25"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Spring model layout (fdp)</summary><div><svg width="284px" height="201px"
+ viewBox="0.00 0.00 284.00 201.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 197.0)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-197 280,-197 280,4 -4,4"/>
+<!-- o&#45;owl&#45;re:DataHasValue -->
+<g id="node1" class="node">
+<title>o&#45;owl&#45;re:DataHasValue</title>
+<g id="a_node1"><a xlink:href="DataHasValue.html" xlink:title="o&#45;owl&#45;re:DataHasValue">
+<polygon fill="#c2ff99" stroke="black" points="155.03,-157.93 0.03,-157.93 0.03,-134.93 155.03,-134.93 155.03,-157.93"/>
+<text text-anchor="middle" x="77.53" y="-142.73" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:DataHasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue -->
+<g id="node2" class="node">
+<title>o&#45;owl&#45;re:HasValue</title>
+<g id="a_node2"><a xlink:href="HasValue.html" xlink:title="o&#45;owl&#45;re:HasValue">
+<polygon fill="#c2ff99" stroke="black" points="226.43,-193.23 99.43,-193.23 99.43,-170.23 226.43,-170.23 226.43,-193.23"/>
+<text text-anchor="middle" x="162.93" y="-178.03" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:HasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue -->
+<g id="edge2" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue</title>
+<path fill="none" stroke="black" d="M105.49,-157.99C111.83,-160.61 118.67,-163.43 125.34,-166.19"/>
+<polygon fill="black" stroke="black" points="124.33,-169.56 134.91,-170.15 127,-163.09 124.33,-169.56"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node3" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node3"><a xlink:href="../../../rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="156.31,-71.77 79.31,-71.77 79.31,-48.77 156.31,-48.77 156.31,-71.77"/>
+<text text-anchor="middle" x="117.81" y="-56.57" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M81.55,-134.72C85.99,-122.27 93.72,-101.94 104.7,-80.67"/>
+<polygon fill="black" stroke="black" points="107.79,-82.31 109.42,-71.84 101.62,-79.01 107.79,-82.31"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;ut:ValueRestriction</title>
+<g id="a_node4"><a xlink:href="../../util/0.1/ValueRestriction.html" xlink:title="o&#45;owl&#45;ut:ValueRestriction">
+<polygon fill="#fad09f" stroke="black" points="275.79,-102.78 109.79,-102.78 109.79,-79.78 275.79,-79.78 275.79,-102.78"/>
+<text text-anchor="middle" x="192.79" y="-87.58" font-family="Arial" font-size="14.00">o&#45;owl&#45;ut:ValueRestriction</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction -->
+<g id="edge3" class="edge">
+<title>o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction</title>
+<path fill="none" stroke="black" d="M166.84,-169.91C171.65,-155.33 179.91,-130.31 185.82,-112.41"/>
+<polygon fill="black" stroke="black" points="189.17,-113.41 188.98,-102.82 182.52,-111.22 189.17,-113.41"/>
+</g>
+<!-- ottr:Triple -->
+<g id="node5" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="218.92,-22.91 144.92,-22.91 144.92,0.09 218.92,0.09 218.92,-22.91"/>
+<text text-anchor="middle" x="181.92" y="-7.71" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M133.01,-48.69C140.56,-42.94 149.86,-35.85 158.32,-29.4"/>
+<polygon fill="black" stroke="black" points="160.56,-32.09 166.39,-23.25 156.32,-26.53 160.56,-32.09"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type -->
+<g id="edge5" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M164.87,-79.73C161.79,-78.46 158.62,-77.15 155.44,-75.83"/>
+<polygon fill="black" stroke="black" points="156.58,-72.52 146.01,-71.93 153.91,-78.99 156.58,-72.52"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M191.19,-79.49C189.53,-67.27 186.89,-47.9 184.85,-32.93"/>
+<polygon fill="black" stroke="black" points="188.31,-32.42 183.5,-22.98 181.38,-33.37 188.31,-32.42"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Radial layout (twopi)</summary><div><svg width="182px" height="155px"
+ viewBox="0.00 0.00 182.24 155.01" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 151.01)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-151.01 178.24,-151.01 178.24,4 -4,4"/>
+<!-- o&#45;owl&#45;re:DataHasValue -->
+<g id="node1" class="node">
+<title>o&#45;owl&#45;re:DataHasValue</title>
+<g id="a_node1"><a xlink:href="DataHasValue.html" xlink:title="o&#45;owl&#45;re:DataHasValue">
+<polygon fill="#c2ff99" stroke="black" points="161.73,-85.01 6.73,-85.01 6.73,-62.01 161.73,-62.01 161.73,-85.01"/>
+<text text-anchor="middle" x="84.23" y="-69.81" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:DataHasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue -->
+<g id="node2" class="node">
+<title>o&#45;owl&#45;re:HasValue</title>
+<g id="a_node2"><a xlink:href="HasValue.html" xlink:title="o&#45;owl&#45;re:HasValue">
+<polygon fill="#c2ff99" stroke="black" points="147.73,-116.01 20.73,-116.01 20.73,-93.01 147.73,-93.01 147.73,-116.01"/>
+<text text-anchor="middle" x="84.23" y="-100.81" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:HasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue -->
+<g id="edge2" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue</title>
+<path fill="none" stroke="black" d="M84.23,-85.05C84.23,-85.21 84.23,-85.36 84.23,-85.52"/>
+<polygon fill="black" stroke="black" points="80.73,-82.64 84.23,-92.64 87.73,-82.64 80.73,-82.64"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node3" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node3"><a xlink:href="../../../rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="122.73,-54 45.73,-54 45.73,-31 122.73,-31 122.73,-54"/>
+<text text-anchor="middle" x="84.23" y="-38.8" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M84.23,-61.96C84.23,-61.81 84.23,-61.65 84.23,-61.5"/>
+<polygon fill="black" stroke="black" points="87.73,-64.37 84.23,-54.37 80.73,-64.37 87.73,-64.37"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;ut:ValueRestriction</title>
+<g id="a_node4"><a xlink:href="../../util/0.1/ValueRestriction.html" xlink:title="o&#45;owl&#45;ut:ValueRestriction">
+<polygon fill="#fad09f" stroke="black" points="167.23,-147.01 1.23,-147.01 1.23,-124.01 167.23,-124.01 167.23,-147.01"/>
+<text text-anchor="middle" x="84.23" y="-131.81" font-family="Arial" font-size="14.00">o&#45;owl&#45;ut:ValueRestriction</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction -->
+<g id="edge3" class="edge">
+<title>o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction</title>
+<path fill="none" stroke="black" d="M84.23,-116.05C84.23,-116.21 84.23,-116.36 84.23,-116.52"/>
+<polygon fill="black" stroke="black" points="80.73,-113.65 84.23,-123.65 87.73,-113.65 80.73,-113.65"/>
+</g>
+<!-- ottr:Triple -->
+<g id="node5" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="121.23,-23 47.23,-23 47.23,0 121.23,0 121.23,-23"/>
+<text text-anchor="middle" x="84.23" y="-7.8" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M84.23,-30.96C84.23,-30.8 84.23,-30.65 84.23,-30.49"/>
+<polygon fill="black" stroke="black" points="87.73,-33.36 84.23,-23.36 80.73,-33.36 87.73,-33.36"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type -->
+<g id="edge5" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M144.17,-123.93C146.55,-122.53 148.82,-120.96 150.93,-119.21 172.12,-101.6 182.38,-80.13 164.93,-58.81 157.08,-49.21 145.29,-44.25 133.12,-41.88"/>
+<polygon fill="black" stroke="black" points="133.29,-38.37 122.9,-40.45 132.32,-45.3 133.29,-38.37"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M24.29,-123.93C21.9,-122.53 19.64,-120.96 17.53,-119.21 5.9,-109.55 6.71,-102.99 3.53,-88.21 0.78,-75.43 -2.15,-70.57 3.53,-58.81 13.15,-38.86 23.33,-38.85 42.53,-27.8 42.62,-27.75 42.71,-27.7 42.81,-27.64"/>
+<polygon fill="black" stroke="black" points="44.57,-30.67 51.9,-23.01 41.4,-24.43 44.57,-30.67"/>
+</g>
+</g>
+</svg>
+</div></details><details><summary>Circular layout (circo)</summary><div><svg width="284px" height="193px"
+ viewBox="0.00 0.00 283.89 193.33" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.0 1.0) rotate(0.0) translate(4.0 189.33)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-189.33 279.89,-189.33 279.89,4 -4,4"/>
+<!-- o&#45;owl&#45;re:DataHasValue -->
+<g id="node1" class="node">
+<title>o&#45;owl&#45;re:DataHasValue</title>
+<g id="a_node1"><a xlink:href="DataHasValue.html" xlink:title="o&#45;owl&#45;re:DataHasValue">
+<polygon fill="#c2ff99" stroke="black" points="255.92,-23 100.92,-23 100.92,0 255.92,0 255.92,-23"/>
+<text text-anchor="middle" x="178.42" y="-7.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:DataHasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue -->
+<g id="node2" class="node">
+<title>o&#45;owl&#45;re:HasValue</title>
+<g id="a_node2"><a xlink:href="HasValue.html" xlink:title="o&#45;owl&#45;re:HasValue">
+<polygon fill="#c2ff99" stroke="black" points="146.5,-54 19.5,-54 19.5,-31 146.5,-31 146.5,-54"/>
+<text text-anchor="middle" x="83" y="-38.8" font-family="Arial" font-size="14.00">o&#45;owl&#45;re:HasValue</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue -->
+<g id="edge2" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;owl&#45;re:HasValue</title>
+<path fill="none" stroke="black" d="M142.89,-23.04C138.17,-24.58 133.28,-26.17 128.42,-27.74"/>
+<polygon fill="black" stroke="black" points="126.99,-24.53 118.56,-30.95 129.15,-31.19 126.99,-24.53"/>
+</g>
+<!-- o&#45;rdf:Type -->
+<g id="node3" class="node">
+<title>o&#45;rdf:Type</title>
+<g id="a_node3"><a xlink:href="../../../rdf/0.1/Type.html" xlink:title="o&#45;rdf:Type">
+<polygon fill="#eec3ff" stroke="black" points="275.89,-104.17 198.89,-104.17 198.89,-81.17 275.89,-81.17 275.89,-104.17"/>
+<text text-anchor="middle" x="237.39" y="-88.97" font-family="Arial" font-size="14.00">o&#45;rdf:Type</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type -->
+<g id="edge1" class="edge">
+<title>o&#45;owl&#45;re:DataHasValue&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M186.87,-23.13C196.24,-36.03 211.52,-57.07 222.83,-72.63"/>
+<polygon fill="black" stroke="black" points="220.25,-75.03 228.96,-81.06 225.91,-70.91 220.25,-75.03"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction -->
+<g id="node4" class="node">
+<title>o&#45;owl&#45;ut:ValueRestriction</title>
+<g id="a_node4"><a xlink:href="../../util/0.1/ValueRestriction.html" xlink:title="o&#45;owl&#45;ut:ValueRestriction">
+<polygon fill="#fad09f" stroke="black" points="166,-154.33 0,-154.33 0,-131.33 166,-131.33 166,-154.33"/>
+<text text-anchor="middle" x="83" y="-139.13" font-family="Arial" font-size="14.00">o&#45;owl&#45;ut:ValueRestriction</text>
+</a>
+</g>
+</g>
+<!-- o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction -->
+<g id="edge3" class="edge">
+<title>o&#45;owl&#45;re:HasValue&#45;&gt;o&#45;owl&#45;ut:ValueRestriction</title>
+<path fill="none" stroke="black" d="M83,-54.01C83,-70.33 83,-100.49 83,-121.1"/>
+<polygon fill="black" stroke="black" points="79.5,-121.15 83,-131.15 86.5,-121.15 79.5,-121.15"/>
+</g>
+<!-- ottr:Triple -->
+<g id="node5" class="node">
+<title>ottr:Triple</title>
+<polygon fill="#ddefff" stroke="black" points="215.42,-185.33 141.42,-185.33 141.42,-162.33 215.42,-162.33 215.42,-185.33"/>
+<text text-anchor="middle" x="178.42" y="-170.13" font-family="Arial" font-size="14.00">ottr:Triple</text>
+</g>
+<!-- o&#45;rdf:Type&#45;&gt;ottr:Triple -->
+<g id="edge4" class="edge">
+<title>o&#45;rdf:Type&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M228.94,-104.3C219.57,-117.19 204.28,-138.24 192.97,-153.8"/>
+<polygon fill="black" stroke="black" points="189.9,-152.08 186.85,-162.23 195.56,-156.19 189.9,-152.08"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type -->
+<g id="edge5" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;o&#45;rdf:Type</title>
+<path fill="none" stroke="black" d="M118.42,-131.32C140.31,-124.21 168.61,-115.01 192.12,-107.38"/>
+<polygon fill="black" stroke="black" points="193.44,-110.63 201.87,-104.21 191.27,-103.97 193.44,-110.63"/>
+</g>
+<!-- o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple -->
+<g id="edge6" class="edge">
+<title>o&#45;owl&#45;ut:ValueRestriction&#45;&gt;ottr:Triple</title>
+<path fill="none" stroke="black" d="M118.53,-154.38C123.25,-155.91 128.14,-157.5 133,-159.08"/>
+<polygon fill="black" stroke="black" points="132.27,-162.52 142.86,-162.28 134.43,-155.86 132.27,-162.52"/>
+</g>
+</g>
+</svg>
+</div></details></div> <h4>List of dependencies</h4> <p class="info">&#128712; The number in parenthesis is the number of instances of each template.</p> <div class="treeview toggle-all click-first"><details><summary><span>o-owl-re:DataHasValue</span></summary><details><summary><span>o-owl-re:HasValue<span> (1)</span></span></summary><details><summary><span>o-owl-ut:ValueRestriction<span> (1)</span></span></summary><span class="leaf"><span>ottr:Triple<span> (2)</span></span></span><details><summary><span>o-rdf:Type<span> (1)</span></span></summary><span class="leaf"><span>ottr:Triple<span> (1)</span></span></span></details></details></details><details><summary><span>o-rdf:Type<span> (1)</span></span></summary><span class="leaf"><span>ottr:Triple<span> (1)</span></span></span></details></details></div><h4>Depending templates</h4><p class="info">&#128712; The templates in this library that depend on this template.</p><ul><li><a href="../../../../spec.equonto.org/template/maintenance-procedure/PROC_SPO_ClassAxioms_AuxilliaryMaintenanceTaskDescription.html">proc-tpl:PROC_SPO_ClassAxioms_AuxilliaryMaintenanceTaskDescription</a></li><li><a href="../../../../spec.equonto.org/template/maintenance-procedure/PROC_SPO_ClassAxioms_InstructionalMaintenanceTaskDescription.html">proc-tpl:PROC_SPO_ClassAxioms_InstructionalMaintenanceTaskDescription</a></li></ul></div><div id="metrics"><h2 id="Metrics">Metrics</h2><p class="info">&#128712; Dependency graph metrics. Depth is the number of steps to a leaf node in the dependency graph. Branching is the number of outgoing edges from a node.</p><ul><li>Max. dependency depth: 4</li><li>Min. dependency depth: 2</li><li>Max. branching: 2</li><li>Min. branching: 1</li></ul><h4>Templates used</h4><table><tr><td><b class="heading">Direct dependencies</b><ul><li>Number of instances: 2</li><li>Templates used: (2 templates)<ul><li><a href="HasValue.html">o-owl-re:HasValue</a> (1)</li><li><a href="../../../rdf/0.1/Type.html">o-rdf:Type</a> (1)</li></ul></li></ul></td><td><b class="heading">Complete expansion</b><ul><li>Number of instances: 9</li><li>Templates used: (5 templates)<ul><li><a>ottr:Triple</a> (4)</li><li><a href="DataHasValue.html">o-owl-re:DataHasValue</a> (1)</li><li><a href="HasValue.html">o-owl-re:HasValue</a> (1)</li><li><a href="../../util/0.1/ValueRestriction.html">o-owl-ut:ValueRestriction</a> (1)</li><li><a href="../../../rdf/0.1/Type.html">o-rdf:Type</a> (2)</li></ul></li></ul></td></tr></table><h4>Vocabulary introduced</h4><table><tr><td><b class="heading">Direct dependencies</b><ul><li>Namespaces introduced: (1)<ul><li><b class="heading">owl</b>: <code>http://www.w3.org/2002/07/owl#</code><ul><li><a href="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></li></ul></li></ul></li></ul></td><td><b class="heading">Complete expansion</b><ul><li>Namespaces introduced: (2)<ul><li><b class="heading">rdf</b>: <code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code><ul><li><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a></li></ul></li><li><b class="heading">owl</b>: <code>http://www.w3.org/2002/07/owl#</code><ul><li><a href="http://www.w3.org/2002/07/owl#DatatypeProperty">owl:DatatypeProperty</a></li><li><a href="http://www.w3.org/2002/07/owl#Restriction">owl:Restriction</a></li><li><a href="http://www.w3.org/2002/07/owl#hasValue">owl:hasValue</a></li><li><a href="http://www.w3.org/2002/07/owl#onProperty">owl:onProperty</a></li></ul></li></ul></li></ul></td></tr></table></div><div id="serialisations"><h2 id="Serialisations">Serialisations</h2><div><h4>stOTTR</h4><pre>o-owl-re:DataHasValue[
+    ottr:IRI ?blank328,
+    owl:DatatypeProperty ?blank329,
+    rdfs:Literal ?blank330
+] :: {
+    o-owl-re:HasValue(?blank328, ?blank329, ?blank330),
+    o-rdf:Type(?blank329, owl:DatatypeProperty)
+} .</pre><h4>RDF/wOTTR</h4><pre>
+o-owl-re:DataHasValue
+        rdf:type         ottr:Template ;
+        ottr:parameters  ( [ ottr:name      &quot;blank328&quot; ;
+                             ottr:type      ottr:IRI ;
+                             ottr:variable  _:b0
+                           ]
+                           [ ottr:name      &quot;blank329&quot; ;
+                             ottr:type      owl:DatatypeProperty ;
+                             ottr:variable  _:b1
+                           ]
+                           [ ottr:name      &quot;blank330&quot; ;
+                             ottr:type      rdfs:Literal ;
+                             ottr:variable  _:b2
+                           ]
+                         ) ;
+        ottr:pattern     [ ottr:of      o-owl-re:HasValue ;
+                           ottr:values  ( _:b0
+                                          _:b1
+                                          _:b2
+                                        )
+                         ] ;
+        ottr:pattern     [ ottr:of      o-rdf:Type ;
+                           ottr:values  ( _:b1
+                                          owl:DatatypeProperty
+                                        )
+                         ] .</pre></div></div><h2 id="Prefixes">Prefixes</h2><div id="prefixes"><p class="info">&#128712; Prefixes are removed from all listings on this page for readability, but are listed here in RDF Turtle format.</p><pre>@prefix ottr:       &lt;http://ns.ottr.xyz/0.4/&gt;.
+@prefix o-owl-re:   &lt;http://tpl.ottr.xyz/owl/restriction/0.1/&gt;.
+@prefix o-rdf:      &lt;http://tpl.ottr.xyz/rdf/0.1/&gt;.
+@prefix rdf:        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
+@prefix rdfs:       &lt;http://www.w3.org/2000/01/rdf-schema#&gt;.
+@prefix owl:        &lt;http://www.w3.org/2002/07/owl#&gt;.</pre></div></div><div class="footer"><p>This is a generated documentation page for an OTTR template library. For more information about Reasonable Ontology Templates (OTTR), visit <a href="http://ottr.xyz" target="_blank">ottr.xyz</a>.</p><p>Generated: 2024/05/29 05:27:13 Z</p></div><script>var treeviewCounter=0;for(var treeview of document.getElementsByClassName("treeview")){if(treeview.classList.contains('toggle-all')){treeviewCounter+=1;treeview.setAttribute("id","treeview"+treeviewCounter)
+treeview.insertAdjacentHTML('beforebegin','<p class="treeviewbuttons"><span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 1)">Expand all</span> '
++'<span class="button" onclick="treeViewToggleAll(\'treeview'+treeviewCounter+'\', 0)">Contract all</span></p>');}
+if(treeview.classList.contains('click-first')){treeview.firstChild.firstChild.click();}
+if(treeview.classList.contains('expand-all')){treeViewToggleAll('treeview'+treeviewCounter,1);}}
+function treeViewToggleAll(elementid,open){var treeview=document.getElementById(elementid);for(var list of treeview.querySelectorAll("details")){if(open){list.setAttribute("open","open");}else{list.removeAttribute("open");}}}</script></body></html>
